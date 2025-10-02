@@ -1,0 +1,69 @@
+
+
+<!doctype html>
+<html lang="mn">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>6r bag</title>
+  <meta name="description" content="online movie site">
+</head>
+
+<body>
+
+  <header role="banner">
+    <div>
+      <img src="assets/logo.svg" alt="6r bag logo" width="100" height="100" />
+      <h1>Movies</h1>
+      <p>Онлайн кино сайт</p>
+    </div>
+
+    <nav aria-label="Үндсэн цэс">
+      <ul>
+        <li><a href="movies.html">Кино сан</a></li>
+        <li><a href="genres.html">Төрлүүд</a></li>
+        <li><a href="about.html">Тухай</a></li>
+        <li><a href="contact.html">Холбоо барих</a></li>
+      </ul>
+    </nav>
+  </header>
+  </main>
+  <BODY>
+    <h1>
+    Нэвтрэхийн тулд нэр болон нууц үгээ оруулна уу:
+    </h1>
+    
+    <FORM name="fome2" Action="url" method="get"> Хэрэглэгчийн нэр: <INPUT TYPE="TEXT“ Name=" FName" SIZE="15" MAXLENGTH="25">
+        
+      <BR> Нууц үг: <INPUT TYPE="PASSWORD" NAME="PWord" value="" SIZE="15” MAXLENGTH=" 25">
+      <BR>
+    </FORM>
+    <a><button href="index.html">Нэвтрэх</button></a>
+    <li><a href="register.html">Бүртгүүлэх</a></li>
+    
+  </BODY>
+  <footer role="contentinfo">
+    <section aria-labelledby="contact-title">
+      <h2 id="contact-title">Холбоо барих</h2>
+      <address>
+        Имэйл: <a href="mailto:support@solastracinema.example">support@solastracinema.example</a><br />
+        Байршил: Улаанбаатар, Монгол
+      </address>
+    </section>
+
+    <section aria-labelledby="rights-title">
+      <h2 id="rights-title">Зохиогчийн эрх</h2>
+      <p>© 2025 Solastra Movies. Бүх эрх хуулиар хамгаалагдсан.</p>
+    </section>
+
+    <nav aria-label="Доод цэс">
+      <ul>
+        <li><a href="terms.html">Үйлчилгээний нөхцөл</a></li>
+        <li><a href="privacy.html">Нууцлал</a></li>
+        <li><a href="help.html">Тусламж</a></li>
+      </ul>
+    </nav>
+  </footer>
+
+</body>
+</html>
