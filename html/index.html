@@ -9,46 +9,58 @@
 
 <body>
   <header role="banner">
+    <table border="1" cellpadding="6" summary="Login and Register">
+      <tr>
+        <td><a href="login.html">Нэвтрэх</a></td>
+        <td><a href="register.html">Бүртгүүлэх</a></td>
+      </tr>
+    </table>  
     <div>
       <img src="assets/logo.svg" alt="6r bag logo" width="100" height="100" />
       <h1>Movies</h1>
       <p>Онлайн кино сайт</p>
     </div>
-    <nav aria-label="Үндсэн цэс">
+    <nav>
       <ul>
         <li><a href="genres.html">Төрлүүд</a></li>
       </ul>
     </nav>
+    <nav>
+      <a href="login.html">Гарах</a> |
+      <a href="profile.html">Profile</a>
+    </nav>  
   </header>
   <main id="main" role="main">
     <section >
       <h2></h2>
       <li><a href="shop.html">Бусад төрлүүд</a></li>
     </section>
+    <header>
+      <h2>Үндсэн цэс</h2>
+    </header>
     <section aria-labelledby="row-continue">
       <h2 id="row-continue">Үргэлжлүүлэн үзэх</h2>
       <ul>
-        <li><img src="assets/posters/Astronaut.jpg" alt="Astronaut" width="220" /></a></li>
-        <li><img src="assets/posters/Avatar.jpg" alt="Avatar" width="220" /> <source/></a></li>
-        <li><img src="assets/posters/EmpireOfSmt.jpg" alt="EmpireOfSmt" width="220" /></a></li>
-        <li><img src="assets/posters/Paradise.jpg" alt="Paradise" width="220" /></a></li>
-        <li><img src="assets/posters/Raven.jpg" alt="Raven" width="220" /></a></li>
+        <li><a href="assets/trailers/AstronautTrailer.mp4"><img src="assets/posters/Astronaut.jpg" alt="Astronaut" width="220" /></a></li>
+        <li><a href="assets/trailers/avatar.mp4"></a><img src="assets/posters/Avatar.jpg" alt="Avatar" width="220" /> <source/></a></li>
+        <li><a href="assets/trailers/Empireofsmt.mp4"></a><img src="assets/posters/EmpireOfSmt.jpg" alt="EmpireOfSmt" width="220" /></a></li>
+        <li><a href="assets/trailers/Paradise.mp4"></a><img src="assets/posters/Paradise.jpg" alt="Paradise" width="220" /></a></li>
+        <li><a href="assets/trailers/rave.mp4"></a><img src="assets/posters/Raven.jpg" alt="Raven" width="220" /></a></li>
       </ul>
       <p><a href="movies.html">Бүгдийг харах →</a></p>
     </section>
     <section >
       <h2 id="row-action">Адал явдал & Триллер</h2>
       <ul>
-        <li><a href=""><img src="assets/posters/28dayslater.jpg" alt="Desert Chase — постер" width="220" /></a></li>
-        <li><a href="movie/urban-myth.html"><img src="assets/posters/TheBoy.jpg" alt="Хотын Домог — постер" width="220" /></a></li>
-        <li><a href="movie/night-runner.html"><img src="assets/posters/darkestnight.jpg" alt="Night Runner — постер" width="220" /></a></li>
-        <li><a href="movie/frozen-code.html"><img src="assets/posters/28dayslater.jpg" alt="Frozen Code — постер" width="220" /></a></li>
+        <li><a href="assets/trailers/AstronautTrailer.mp4"><img src="assets/posters/28dayslater.jpg" alt="Desert Chase — постер" width="220" /></a></li>
+        <li><a href="assets/trailers/rave.mp4"><img src="assets/posters/TheBoy.jpg" alt="Хотын Домог — постер" width="220" /></a></li>
+        <li><a href="assets/trailers/avatar.mp4"><img src="assets/posters/darkestnight.jpg" alt="Night Runner — постер" width="220" /></a></li>
+        <li><a href="assets/trailers/rave.mp4"><img src="assets/posters/28dayslater.jpg" alt="Frozen Code — постер" width="220" /></a></li>
       </ul>
     </section>
 
     <section aria-labelledby="trailers-title">
       <h2 id="trailers-title">Трейлер</h2>
-
       <article>
         <h3>“Astronaut” — Трейлер</h3>
         <video controls width="300" poster="assets/posters/Astronaut.jpg">
@@ -71,25 +83,25 @@
             <th scope="col">Байр</th>
             <th scope="col">Кино</th>
             <th scope="col">Төрөл</th>
+            <th scope="col">Зураг</th> 
           </tr>
         </thead>
         <tbody>
-          <tr><td>1</td><td>The Dark Knight</td><td>Адал явдал, тулаант</td></tr>
-          <tr><td>2</td><td>The Darkest Night</td><td>Нууцлаг , Триллер</td></tr>
-          <tr><td>3</td><td>After</td><td>Триллер, адал явдалт</td></tr>
-          <tr><td>4</td><td>Avatar</td><td>Тулаант, адал явдалт</td></tr>
-          <tr><td>5</td><td>The Boy</td><td>Нууцлаг, триллер</td></tr>
+          <tr><td>1</td><td>The Dark Knight</td><td>Адал явдал, тулаант</td><td><img src="assets/posters/TheDarkKnight.jpg"/></td> </tr>
+          <tr><td>2</td><td>The Darkest Night</td><td>Нууцлаг , Триллер</td><td><img src="assets/posters/darkestnight.jpg"/></td> </tr>
+          <tr><td>3</td><td>After</td><td>Триллер, адал явдалт</td><td><img src="assets/posters/After.jpg"/></td></tr>
+          <tr><td>4</td><td>Avatar</td><td>Тулаант, адал явдалт</td><td><img src="assets/posters/Avatar.jpg"/></td> </tr>
+          <tr><td>5</td><td>The Boy</td><td>Нууцлаг, триллер</td><td><img src="assets/posters/TheBoy.jpg"/></td></tr>
         </tbody>
       </table>
     </section>
 
     <aside aria-labelledby="notes-title">
       <h2 id="notes-title">Тайлбар</h2>
-      <p>Энэ сайт бүрэн статик. Зураг, видео байршуулахдаа дараах хавтас ашигла:
+      <p>Зураг, видео байршуулахдаа дараах хавтас:
         <code>assets/</code> (лого, баннер),
         <code>posters/</code> (постер),
-        <code>thumbnails/</code> (видео постер),
-        <code>videos/</code> (mp4)</p>
+        <code>trailer/</code> (trailer)</p>
       <p>Хэрэв олон хуудас хийх бол энэ загварыг хуулж <em>header/footer</em>-ийг ижил хэвээр хадгал.</p>
     </aside>
 
