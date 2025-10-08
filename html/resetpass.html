@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="mn">
+<head>
+  <meta charset="utf-8">
+  <title>6r bag</title>
+</head>
+<body>
+  <h1>Шинэ нууц үг тогтоох</h1>
+
+  <p>Таны имэйлд ирсэн холбоос дээр дарахад энэ хуудас нээгдэх бөгөөд сервер token (эсвэл uid) дамжуулна. Доорх формд шинэ нууц үгээ оруулна уу.</p>
+  <form action="/auth/password-reset" method="post">
+ 
+    <input type="hidden" name="token" value="">
+
+    <label for="newpass">Шинэ нууц үг:</label><br>
+    <input type="password" id="newpass" name="new_password" required minlength="8" placeholder="Шинэ нууц үгээ оруулна уу"><br><br>
+
+    <label for="conf">Нууц үг давтах:</label><br>
+    <input type="password" id="conf" name="confirm_password" required minlength="8" placeholder="Нууц үгээ давтан оруулна уу"><br><br>
+
+    <button type="submit">Шинэ нууц үг хадгалах</button>
+  </form>
+
+  <p><a href="login.html">← Нэвтрэх рүү буцах</a></p>
+</body>
+</html>
