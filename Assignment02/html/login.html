@@ -1,85 +1,220 @@
-
-
 <!doctype html>
 <html lang="mn">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>6r bag</title>
-  <meta name="description" content="online movie site">
-</head>
+  <title>Нэвтрэх - 6р баг</title>
+  <meta name="description" content="online movie site" />
 
+  <style>
+    body {
+      font-family: "Poppins", sans-serif;
+      background-color: #0b0c10;
+      color: #f1f1f1;
+      margin: 0;
+      padding: 0;
+    }
+
+    header, footer {
+      background-color: #1f2833;
+      color: #66fcf1;
+      text-align: center;
+      padding: 15px 0;
+      border-bottom: 2px solid #45a29e;
+    }
+
+    h1, h2 {
+      color: #66fcf1;
+      text-align: center;
+    }
+
+    a {
+      color: #45a29e;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    a:hover {
+      color: #66fcf1;
+      text-shadow: 0 0 5px #66fcf1;
+    }
+
+    table {
+      margin: 0 auto;
+      border-collapse: collapse;
+      background-color: #1f2833;
+      border: 1px solid #45a29e;
+      width: 80%;
+    }
+
+    td {
+      text-align: center;
+      padding: 10px;
+    }
+
+    nav a {
+      margin: 0 8px;
+    }
+
+    main {
+      max-width: 500px;
+      margin: 40px auto;
+      background-color: #1f2833;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px #45a29e;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+
+    label {
+      color: #66fcf1;
+      font-weight: bold;
+    }
+
+    input {
+      padding: 10px;
+      border-radius: 5px;
+      border: 1px solid #45a29e;
+      background-color: #0b0c10;
+      color: #fff;
+    }
+
+    input:focus {
+      outline: none;
+      border-color: #66fcf1;
+      box-shadow: 0 0 5px #66fcf1;
+    }
+
+    button {
+      background-color: #45a29e;
+      color: #0b0c10;
+      font-weight: bold;
+      padding: 10px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    button:hover {
+      background-color: #66fcf1;
+      box-shadow: 0 0 10px #66fcf1;
+    }
+
+    ul {
+      list-style: none;
+      padding: 0;
+      text-align: center;
+    }
+
+    ul li {
+      margin: 10px 0;
+    }
+
+    footer {
+      margin-top: 40px;
+      border-top: 2px solid #45a29e;
+      padding: 20px;
+    }
+
+    footer a {
+      color: #66fcf1;
+    }
+
+    @media (max-width: 600px) {
+      table, td {
+        display: block;
+        width: 100%;
+      }
+
+      main {
+        width: 90%;
+      }
+    }
+  </style>
+</head>
 
 <body>
 
-  <header role="banner">
-    <table border="1" cellpadding="6" summary="Login and Register">
-      <tr>
-        <td><a href="index.html">Нэвтрэх</a></td>
-        <td><a href="register.html">Бүртгүүлэх</a></td>
-        <td><a href="about.html">Бидний тухай</a></td>
-      </tr>
-    </table>
+<header role="banner">
+  <table border="1" cellpadding="6" summary="Login and Register">
+    <tr>
+      <td><a href="login.html">Нэвтрэх</a></td>
+      <td><a href="register.html">Бүртгүүлэх</a></td>
+      <td><a href="about.html">Бидний тухай</a></td>
+    </tr>
+  </table>
 
-    <table border="1" cellpadding="6" summary="Logo and Navigation">
-      <tr>
-        <td rowspan="2">
-          <img src="assets/logo.svg" alt="6r bag logo" width="100" height="100" />
-        </td>
-        <td>
-          <h1>Movies</h1>
-          <p>Онлайн кино сайт</p>
-        </td>
-      </tr>
-      <tr>
-        <td>
-          <nav>
-            <a href="index.html">Нүүр</a> |
-            <a href="login.html">Гарах</a> |
-            <a href="profile.html">Profile</a> |
-            <a href="payment.html">Гишүүнчлэл</a> |
-            <a href="shop.html"> Дэлгүүр</a>
-          </nav>
-        </td>
-      </tr>
-    </table>
-  </header>
-  </main>
-  <BODY>
-    <h1>
-    Нэвтрэхийн тулд нэр болон нууц үгээ оруулна уу:
-    </h1>
-    
-    <FORM name="fome2" Action="url" method="get"> Хэрэглэгчийн нэр: <INPUT TYPE="TEXT“ Name=" FName" SIZE="15" MAXLENGTH="25">
-        
-      <BR> Нууц үг: <INPUT TYPE="PASSWORD" NAME="PWord" value="" SIZE="15” MAXLENGTH=" 25">
-      <BR>
-    </FORM>
-    <a href="index.html">Нэвтрэх</button></a>
+  <table border="1" cellpadding="6" summary="Logo and Navigation">
+    <tr>
+      <td rowspan="2">
+        <img src="assets/logo.svg" alt="6r bag logo" width="100" height="100" />
+      </td>
+      <td>
+        <h1>Movies</h1>
+        <p>Онлайн кино сайт</p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <nav>
+          <a href="genres.html">Төрлүүд</a> |
+          <a href="login.html">Гарах</a> |
+          <a href="profile.html">Profile</a> |
+          <a href="payment.html">Гишүүнчлэл</a> |
+          <a href="shop.html">Дэлгүүр</a>
+        </nav>
+      </td>
+    </tr>
+  </table>
+</header>
+
+<main>
+  <h1>Нэвтрэх</h1>
+  <p style="text-align:center;">Нэвтрэхийн тулд нэр болон нууц үгээ оруулна уу.</p>
+
+  <form>
+    <label for="username">Хэрэглэгчийн нэр:</label>
+    <input type="text" id="username" name="username" required maxlength="25" placeholder="Таны нэр">
+
+    <label for="password">Нууц үг:</label>
+    <input type="password" id="password" name="password" required maxlength="25" placeholder="••••••">
+
+    <button type="button" onclick="alert('Амжилттай нэвтэрлээ!')">Нэвтрэх</button>
+  </form>
+
+  <ul>
     <li><a href="register.html">Бүртгүүлэх</a></li>
-    <li><a href="resetpass.html" >Нууц үг сэргээх</a></li>
-    
-  </BODY>
-  <footer role="contentinfo">
-      <section aria-labelledby="contact-title">
-        <h2 id="contact-title">Холбоо барих</h2>
-        <address>
-          Имэйл: <a href="mailto:Munkhb4y4r@gmail.com">munkhb4y4r@gmail.com</a><br />
-          Байршил: Улаанбаатар, Монгол
-        </address>
-      </section>
+    <li><a href="resetpass.html">Нууц үг сэргээх</a></li>
+  </ul>
+</main>
 
-      <section aria-labelledby="rights-title">
-        <h2 id="rights-title">Зохиогчийн эрх</h2>
-        <p>© 2025 6r bag Movies. Бүх эрх хуулиар хамгаалагдсан.</p>
-      </section>
+<footer role="contentinfo">
+  <section aria-labelledby="contact-title">
+    <h2 id="contact-title">Холбоо барих</h2>
+    <address>
+      Имэйл: <a href="mailto:Munkhb4y4r@gmail.com">munkhb4y4r@gmail.com</a><br />
+      Байршил: Улаанбаатар, Монгол
+    </address>
+  </section>
 
-      <nav aria-label="Доод цэс">
-        <ul>
-          <li><a href="terms.html">Үйлчилгээний нөхцөл</a></li>
-          <li><a href="feedback.html">Санал хүсэлт</a></li>
-        </ul>
-      </nav>
-    </footer>
-  </body>
-  </html> 
+  <section aria-labelledby="rights-title">
+    <h2 id="rights-title">Зохиогчийн эрх</h2>
+    <p>© 2025 6r bag Movies. Бүх эрх хуулиар хамгаалагдсан.</p>
+  </section>
+
+  <nav aria-label="Доод цэс">
+    <ul>
+      <li><a href="terms.html">Үйлчилгээний нөхцөл</a></li>
+      <li><a href="feedback.html">Санал хүсэлт</a></li>
+    </ul>
+  </nav>
+</footer>
+
+</body>
+</html>
