@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="mn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Тасалбар — Кино Театр</title>
+</head>
+<body>
+<header role="banner">
+    <table border="1" cellpadding="6" summary="Login and Register">
+      <tr>
+        <td><a href="login.html">Нэвтрэх</a></td>
+        <td><a href="register.html">Бүртгүүлэх</a></td>
+        <td><a href="about.html">Бидний тухай</a></td>
+      </tr>
+    </table>
+
+    <table border="1" cellpadding="6" summary="Logo and Navigation">
+      <tr>
+        <td rowspan="2">
+          <img src="assets/logo.svg" alt="6r bag logo" width="100" height="100" />
+        </td>
+        <td>
+          <h1>Movies</h1>
+          <p>Онлайн кино сайт</p>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <nav>
+            <a href="index.html">Нүүр</a> |
+            <a href="login.html">Гарах</a> |
+            <a href="profile.html">Profile</a> |
+            <a href="payment.html">Гишүүнчлэл</a> |
+            <a href="shop.html"> Дэлгүүр</a>
+          </nav>
+        </td>
+      </tr>
+    </table>
+  </header>
+
+<main>
+    <h2>Тасалбар захиалах</h2>
+
+    
+    <form action="#" method="post" aria-label="Билет захиалах форм">
+        <fieldset>
+            <legend>Хувийн мэдээлэл</legend>
+
+            <p>
+                <label for="fullName">Нэр:</label><br>
+                <input id="fullName" name="fullName" type="text" placeholder="Таны нэр" required aria-required="true">
+            </p>
+
+            <p>
+                <label for="email">Имэйл (санамж):</label><br>
+                <input id="email" name="email" type="email" placeholder="example@mail.com" required aria-required="true">
+            </p>
+
+            <p>
+                <label for="phone">Утас (сонголт):</label><br>
+                <input id="phone" name="phone" type="tel" placeholder="+976 99 123456">
+            </p>
+        </fieldset>
+
+        <fieldset>
+            <legend>Кино болон цаг</legend>
+
+            <p>
+                <label for="movie">Сонгох кино:</label><br>
+                <select id="movie" name="movie" required aria-required="true">
+                    <option value="">-- Кино сонгох --</option>
+                    <option value="avatar2">Avatar 2</option>
+                    <option value="insideout2">Inside Out 2</option>
+                    <option value="dune2">Dune 2</option>
+                </select>
+            </p>
+
+            <p>
+                <label for="date">Огноо:</label><br>
+                <input id="date" name="date" type="date" required aria-required="true">
+            </p>
+
+            <p>
+                <label for="time">Цаг:</label><br>
+                <input id="time" name="time" type="time" required aria-required="true">
+            </p>
+
+            <p>
+                <label for="tickets">Тасалбарын тоо:</label><br>
+                <input id="tickets" name="tickets" type="number" min="1" max="10" value="1" required aria-required="true">
+            </p>
+
+            <p>
+                <label for="seat">Суудлын төрөл:</label><br>
+                <select id="seat" name="seat">
+                    <option value="standard">Стандарт</option>
+                    <option value="vip">VIP</option>
+                    <option value="couple">Хос</option>
+                </select>
+            </p>
+        </fieldset>
+
+        <fieldset>
+            <legend>Нэмэлт</legend>
+
+            <p>
+                <label for="notes">Тэмдэглэл (сонголт):</label><br>
+                <textarea id="notes" name="notes" rows="4" cols="40" placeholder="Хүсэлт байвал бичнэ үү..."></textarea>
+            </p>
+
+            <p>
+                <input id="agree" name="agree" type="checkbox" required aria-required="true">
+                <label for="agree">Захиалгын нөхцөлийг хүлээн авч байна</label>
+            </p>
+        </fieldset>
+
+        <p>
+            <input type="submit" value="Захиалах">
+            <input type="reset" value="Буцах">
+        </p>
+    </form>
+</main>
+
+<footer>
+    <hr>
+    <p>© 2025 Кино Театр. Бүх эрх хуулиар хамгаалагдсан.</p>
+</footer>
+</body>
+</html>

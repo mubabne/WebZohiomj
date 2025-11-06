@@ -1,0 +1,139 @@
+<!doctype html>
+<html lang="mn">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Ивээн тэтгэгчид — 6r bag</title>
+  <meta name="description" content="6r bag Movies төслийн ивээн тэтгэгчид болон хамтран ажиллагчид.">
+
+  <style>
+    :root{
+      --bg:#1a1a1a;--panel:#2c2c2c;--ink:#f0f0f0;--muted:#9aa0a6;
+      --teal:#008080;--teal-2:#004d4d;--cyan:#00ffff;--gold:#ffd700;--border:#444
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;font-family:Arial,system-ui,-apple-system,Segoe UI,Roboto,sans-serif;
+      background:var(--bg);color:var(--ink);line-height:1.6
+    }
+    a{color:var(--gold);text-decoration:none;transition:color .2s}
+    a:hover{color:var(--cyan);text-decoration:underline}
+    .container{max-width:1180px;margin:0 auto;padding:16px}
+    header,footer{background:#000}
+
+    /* Header (Flex) */
+    header .bar{display:flex;align-items:center;gap:16px;padding:10px 0}
+    .logo-wrap{display:flex;align-items:center;gap:12px}
+    .site-title h1{margin:0;font-size:1.6rem}
+    .site-title p{margin:2px 0 0;color:var(--muted);font-size:.95rem}
+    .top-links{display:flex;gap:14px;margin-left:auto;flex-wrap:wrap}
+    .top-links a{color:var(--ink);opacity:.9}
+    .top-links a:hover{opacity:1;color:var(--gold)}
+
+    nav.main{
+      background:#000;border-top:1px solid var(--teal-2);border-bottom:1px solid var(--teal-2);
+      margin-top:8px;padding:10px 0;display:flex;gap:18px;flex-wrap:wrap
+    }
+    nav.main a{
+      padding:6px 14px;color:var(--ink);font-weight:bold;text-transform:uppercase;border-radius:4px
+    }
+    nav.main a:hover{color:var(--bg);background:var(--gold);text-decoration:none}
+
+    /* Panels */
+    section.panel{
+      background:var(--panel);border:1px solid var(--teal-2);border-radius:8px;
+      padding:16px;margin:16px 0;box-shadow:0 0 12px rgba(0,0,0,.35)
+    }
+    section.panel>h2{
+      color:var(--cyan);border-bottom:2px solid var(--teal-2);padding-bottom:8px;margin-top:0
+    }
+
+    /* Sponsor list styling */
+    .sponsor-list{margin:0;padding-left:20px}
+    .sponsor-list li{margin:8px 0}
+    blockquote{
+      margin:12px 0 0;padding:12px 14px;border-left:4px solid var(--gold);
+      background:#232323;color:#ddd;border-radius:6px
+    }
+
+    /* Optional: two-column layout for sections on wide screens */
+    .two-col{display:flex;gap:16px;flex-wrap:wrap}
+    .two-col .panel{flex:1 1 360px;min-width:300px}
+
+    /* Footer */
+    footer .container{padding:18px 16px}
+    footer p,footer address{color:var(--muted)}
+    footer .legal{border-top:2px solid var(--teal);margin-top:12px;padding-top:12px;text-align:center;color:#888}
+  </style>
+</head>
+
+<body>
+  <header role="banner">
+    <div class="container">
+      <div class="bar">
+        <div class="logo-wrap">
+          <img src="assets/logo.svg" alt="6r bag logo" width="64" height="64" />
+          <div class="site-title">
+            <h1>Movies</h1>
+            <p>Онлайн кино сайт</p>
+          </div>
+        </div>
+
+        <div class="top-links">
+          <a href="login.html">Нэвтрэх</a>
+          <a href="register.html">Бүртгүүлэх</a>
+          <a href="about.html">Бидний тухай</a>
+        </div>
+      </div>
+
+      <nav class="main">
+        <a href="index.html">Нүүр</a>
+        <a href="login.html">Гарах</a>
+        <a href="profile.html">Profile</a>
+        <a href="payment.html">Гишүүнчлэл</a>
+        <a href="shop.html">Дэлгүүр</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="panel">
+      <h2>Бидний хамтрагчид</h2>
+      <p>6r bag Movies төслийг дараах байгууллагууд дэмжиж байна:</p>
+      <ul class="sponsor-list">
+        <li><strong>Smart Software LLC</strong> — Техникийн дэмжлэг, серверийн хостинг.</li>
+        <li><strong>CinexShop</strong> — Бүтээгдэхүүн, постер, стикерийн ивээн тэтгэгч.</li>
+        <li><strong>Must Media Club</strong> — Сурталчилгаа болон сошиал хуудасны менежмент.</li>
+        <li><strong>Tsagaan Zurag</strong> — Уран сайхны контент, зураглал, график дизайн.</li>
+      </ul>
+    </section>
+
+    <div class="two-col">
+      <section class="panel">
+        <h2>Ивээн тэтгэх хүсэлт</h2>
+        <p>Хэрэв та манай төслийг дэмжих сонирхолтой бол дараах хаягаар холбогдоно уу:</p>
+        <address>
+          Имэйл: <a href="mailto:Munkhb4y4r@gmail.com">Munkhb4y4r@gmail.com</a><br />
+          Утас: +976 9911 2233
+        </address>
+        <p><em>Бид хамтран хөгжих, шинэ санааг дэмжихэд нээлттэй.</em></p>
+      </section>
+
+      <section class="panel">
+        <h2>Талархал</h2>
+        <p>Биднийг дэмжиж, хамтран ажилласан бүх хувь хүн, байгууллагуудад чин сэтгэлийн талархал илэрхийлье.</p>
+        <blockquote>“Кино бол зөвхөн урлаг биш, хамтын мөрөөдөл юм.” — 6r bag</blockquote>
+      </section>
+    </div>
+  </main>
+
+  <footer role="contentinfo">
+    <div class="container">
+      <div class="legal">
+        <p>© 2025 6r bag Movies — Ивээн тэтгэгчдийн дэмжлэгтэйгээр бүтээгдэв.</p>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

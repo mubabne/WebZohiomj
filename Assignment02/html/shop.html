@@ -1,0 +1,473 @@
+<!doctype html>
+<html lang="mn">
+<head>
+    <meta charset="utf-8">
+    <title>CinexShop — Киноны дэлгүүр</title>
+    <style>
+       
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #1a1a1a; 
+            color: #f0f0f0; 
+            line-height: 1.6;
+        }
+
+        
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #2c2c2c; 
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+        }
+
+        
+        h1, h2, h3 {
+            color: #00FFFF; 
+            border-bottom: 2px solid #004d4d; 
+            padding-bottom: 10px;
+        }
+
+        a {
+            color: #FFD700; 
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        a:hover {
+            color: #00FFFF; 
+            text-decoration: underline;
+        }
+
+        hr {
+            border: 0;
+            height: 1px;
+            background: #004d4d;
+            margin: 20px 0;
+        }
+
+        
+        nav {
+            background-color: #000000;
+            padding: 10px 0;
+            display: flex; 
+            justify-content: center; 
+            gap: 20px; 
+            flex-wrap: wrap; 
+            margin-bottom: 20px;
+            border-radius: 5px;
+        }
+
+        nav a {
+            padding: 5px 15px;
+            color: #f0f0f0;
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+
+        nav a:hover {
+            color: #008080; 
+            background-color: #FFD700; 
+            border-radius: 3px;
+            text-decoration: none;
+        }
+        
+        
+        #baraa table {
+            width: 100%;
+            border-collapse: collapse;
+            border: 1px solid #004d4d; 
+        }
+
+        #baraa th, #baraa td {
+            padding: 12px;
+            text-align: left;
+            border-bottom: 1px solid #444;
+        }
+
+        #baraa th {
+            background-color: #008080; 
+            color: white;
+            text-transform: uppercase;
+        }
+        
+        #baraa tr:nth-child(even) {
+            background-color: #383838; 
+        }
+        
+        #baraa img {
+            border-radius: 5px;
+            border: 2px solid #FFD700; 
+        }
+
+
+        
+        form fieldset {
+            border: 2px solid #FFD700; 
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 5px;
+        }
+        
+        form legend {
+            color: #00FFFF; 
+            font-size: 1.2em;
+            padding: 0 10px;
+            font-weight: bold;
+        }
+
+        form input[type="text"],
+        form input[type="email"],
+        form input[type="tel"],
+        form input[type="number"],
+        form textarea {
+            width: 90%;
+            padding: 10px;
+            margin-top: 5px;
+            margin-bottom: 10px;
+            border: 1px solid #555;
+            background-color: #444;
+            color: #f0f0f0;
+            border-radius: 3px;
+        }
+
+        
+        form input[type="submit"],
+        form input[type="reset"] {
+            background-color: #008080; 
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+            font-size: 1em;
+            margin-right: 10px;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        form input[type="submit"]:hover,
+        form input[type="reset"]:hover {
+            background-color: #FFD700; 
+            color: #1a1a1a;
+        }
+        
+        
+        .info-grid {
+            display: flex;
+            flex-wrap: wrap; 
+            justify-content: space-between;
+        }
+        
+        .info-grid > p {
+            flex-basis: 48%; 
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 10px;
+        }
+
+        .info-grid > p input {
+            width: 100%; 
+        }
+        
+        .full-width-p {
+             flex-basis: 100% !important;
+        }
+
+        
+        .product-row {
+             display: flex;
+             align-items: center; 
+             justify-content: space-between; 
+             padding: 10px 5px;
+             border-bottom: 1px dotted #555;
+        }
+
+        .product-name-and-price {
+            display: flex;
+            align-items: center;
+            flex-grow: 1;
+            gap: 10px;
+        }
+
+        .product-row input[type="number"] {
+            width: 60px; 
+            text-align: center;
+            margin-right: 0;
+            margin-left: 10px;
+        }
+        
+        
+        footer {
+            text-align: center;
+            padding: 15px;
+            background-color: #000000;
+            color: #888;
+            margin-top: 20px;
+            border-top: 2px solid #008080; 
+        }
+        
+        
+        @media (max-width: 600px) {
+            .info-grid > p {
+                flex-basis: 100%; 
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        
+        <h1>🎬 CinexShop — Киноны дэлгүүр</h1>
+
+        <nav>
+            <a href="index.html">Нүүр</a>
+            <a href="#baraa">Бараа</a>
+            <a href="#zahialga">🛒 Захиалга өгөх</a> 
+            <a href="#holboo">Холбоо барих</a>
+            <a href="#tuuh">Бидний тухай</a> 
+        </nav>
+
+
+        <hr>
+
+
+        <section id="nuur">
+            <h2>Манай онлайн дэлгүүрт тавтай морил!</h2>
+            <p><strong>Онцлох бүтээгдэхүүн:</strong></p>
+            <ul>
+                <li>Avengers Poster</li>
+                <li>Star Wars Sticker Set</li>
+                <li>Ghibli Poster</li>
+                <li>Aftersun Poster</li>
+                <li>Ponyo Sticker Set</li>
+                <li>Stevin Universe Sticker Set</li>
+            </ul>
+            <p><a href="#baraa">Бүх барааг үзэх</a> | <a href="#zahialga">Захиалга хийх</a></p>
+        </section>
+
+        <hr>
+
+
+        <section id="baraa">
+            <h2>🎁 Барааны жагсаалт</h2>
+            <table border="0">
+                <thead>
+                    <tr>
+                        <th>Зураг</th>
+                        <th>Нэр</th>
+                        <th>Үнэ</th>
+                        <th>Тайлбар</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><img src="avengers poster.jpg" alt="Avengers Poster" width="100"></td>
+                        <td><strong>Avengers Poster</strong></td>
+                        <td>₮25,000</td>
+                        <td>Чанартай хатуу материалтай ханын постер. Хэмжээ А3.</td>
+                    </tr>
+                    <tr>
+                        <td><img src="star war sticker.png" alt="Star Wars Sticker" width="100"></td>
+                        <td><strong>Star Wars Sticker</strong></td>
+                        <td>₮10,000</td>
+                        <td>Стикерийн багц (24 ширхэг).</td>
+                    </tr>
+                    <tr>
+                        <td><img src="iron man figure.jpg" alt="Iron Man Figure" width="100"></td>
+                        <td><strong>Iron Man Figure</strong></td>
+                        <td>₮85,000</td>
+                        <td>Цуглуулгын дүр, чанартай төмөр материалтай.</td>
+                    </tr>
+                    <tr>
+                        <td><img src="ponyo.jpg" alt="Ponyo Poster" width="100"></td>
+                        <td><strong>Ponyo Poster</strong></td>
+                        <td>₮25,000</td>
+                        <td>Чанартай хатуу материалтай ханын постер. Хэмжээ А3.</td>
+                    </tr>
+                    <tr>
+                        <td><img src="gravity falls sticker.png" alt="Gravity Falls" width="100"></td>
+                        <td><strong>Gravity Falls Sticker</strong></td>
+                        <td>₮8,000</td>
+                        <td>Стикерийн багц (13 ширхэг).</td>
+                    </tr>
+                    <tr>
+                        <td><img src="spidermanfigure.jpg" alt="Spider Man Figure, Poster" width="100"></td>
+                        <td><strong>Spider Man Figure, Poster</strong></td>
+                        <td>₮100,000</td>
+                        <td>Цуглуулгын дүр, чанартай төмөр материалтай.</td>
+                    </tr>
+                    <tr>
+                        <td><img src="aftersun.jpg" alt="Aftersun Poster" width="100"></td>
+                        <td><strong>Aftersun Poster</strong></td>
+                        <td>₮25,000</td>
+                        <td>Нимгэн ханын постер. Хэмжээ А4.</td>
+                    </tr>
+                    <tr>
+                        <td><img src="Paradise.jpg" alt="Paradise" width="100"></td>
+                        <td><strong>Paradise Poster</strong></td>
+                        <td>₮25,000</td>
+                        <td>Чанартай хатуу материалтай ханын постер. Хэмжээ А3.</td>
+                    </tr>
+                </tbody>
+            </table>
+            <p><a href="#nuur">← Нүүр рүү буцах</a></p>
+        </section>
+
+        <hr>
+
+
+        <section id="zahialga">
+            <h2>🛒 Захиалга өгөх (Илүү цэгцтэй)</h2>
+            <p>Захиалга хийхдээ мэдээллээ үнэн зөв бөглөнө үү. <strong>Захиалахгүй бараан дээрх тоог 0 эсвэл хоосон орхиж болно.</strong></p>
+
+            <form action="mailto:oyungereluyanga64@gmail.com" method="post" enctype="text/plain">
+                
+                <fieldset>
+                    <legend><strong>1. Хэрэглэгч болон Хүргэлтийн Үндсэн Мэдээлэл</strong></legend>
+                    
+                    <div class="info-grid">
+                        <p>
+                            <label for="ner">Таны **Нэр (бүрэн)**:</label>
+                            <input type="text" id="ner" name="Захиалагчийн_Нэр" required>
+                        </p>
+    
+                        <p>
+                            <label for="ut">**Утасны Дугаар**:</label>
+                            <input type="tel" id="ut" name="Захиалагчийн_Утас" required>
+                        </p>
+                        
+                        <p class="full-width-p">
+                            <label for="email">**Имэйл**:</label>
+                            <input type="email" id="email" name="Захиалагчийн_Имэйл" required>
+                        </p>
+                        
+                        <p class="full-width-p">
+                            <label for="hayg">**Хүргэлтийн Хаяг (Дүүрэг, Хороо, Гудамж, Байрны нэр)**:</label>
+                            <textarea id="hayg" name="Хүргэлтийн_Хаяг" rows="3" required></textarea>
+                        </p>
+                    </div>
+                </fieldset>
+                
+                <br>
+                
+                <fieldset>
+                    <legend><strong>2. Захиалах Бараанууд (Сонголт ба Тоо ширхэг)</strong></legend>
+                    <p style="border-bottom: 2px solid #004d4d; padding-bottom: 5px;">Сонгохыг хүссэн барааныхаа өмнөх нүдийг чагталж, тоо ширхэгийг **зөв** оруулна уу.</p>
+
+                    <div class="product-row">
+                        <div class="product-name-and-price">
+                            <input type="checkbox" id="avengers_poster_check" name="Сонгосон_Бараа" value="Avengers Poster">
+                            <label for="avengers_poster_check"><strong>Avengers Poster</strong> (₮25,000)</label>
+                        </div>
+                        <label for="too_avengers">Тоо:</label>
+                        <input type="number" id="too_avengers" name="Avengers_Poster_Тоо" min="0" value="0">
+                    </div>
+
+                    <div class="product-row">
+                        <div class="product-name-and-price">
+                            <input type="checkbox" id="star_wars_sticker_check" name="Сонгосон_Бараа" value="Star Wars Sticker">
+                            <label for="star_wars_sticker_check"><strong>Star Wars Sticker</strong> (₮10,000)</label>
+                        </div>
+                        <label for="too_starwars">Тоо:</label>
+                        <input type="number" id="too_starwars" name="Star_Wars_Sticker_Тоо" min="0" value="0">
+                    </div>
+
+                    <div class="product-row">
+                        <div class="product-name-and-price">
+                            <input type="checkbox" id="iron_man_figure_check" name="Сонгосон_Бараа" value="Iron Man Figure">
+                            <label for="iron_man_figure_check"><strong>Iron Man Figure</strong> (₮85,000)</label>
+                        </div>
+                        <label for="too_ironman">Тоо:</label>
+                        <input type="number" id="too_ironman" name="Iron_Man_Figure_Тоо" min="0" value="0">
+                    </div>
+                    
+                    <div class="product-row">
+                        <div class="product-name-and-price">
+                            <input type="checkbox" id="ponyo_poster_check" name="Сонгосон_Бараа" value="Ponyo Poster">
+                            <label for="ponyo_poster_check"><strong>Ponyo Poster</strong> (₮25,000)</label>
+                        </div>
+                        <label for="too_ponyo">Тоо:</label>
+                        <input type="number" id="too_ponyo" name="Ponyo_Poster_Тоо" min="0" value="0">
+                    </div>
+
+                    <div class="product-row">
+                        <div class="product-name-and-price">
+                            <input type="checkbox" id="gravity_falls_sticker_check" name="Сонгосон_Бараа" value="Gravity Falls Sticker">
+                            <label for="gravity_falls_sticker_check"><strong>Gravity Falls Sticker</strong> (₮8,000)</label>
+                        </div>
+                        <label for="too_gravityfalls">Тоо:</label>
+                        <input type="number" id="too_gravityfalls" name="Gravity_Falls_Sticker_Тоо" min="0" value="0">
+                    </div>
+                    
+                    <div class="product-row">
+                        <div class="product-name-and-price">
+                            <input type="checkbox" id="aftersun_poster_check" name="Сонгосон_Бараа" value="Aftersun Poster">
+                            <label for="aftersun_poster_check"><strong>Aftersun Poster</strong> (₮25,000)</label>
+                        </div>
+                        <label for="too_aftersun">Тоо:</label>
+                        <input type="number" id="too_aftersun" name="Aftersun_Poster_Тоо" min="0" value="0">
+                    </div>
+                    
+                </fieldset>
+                
+                <br>
+                
+                <fieldset>
+                    <legend><strong>3. Нэмэлт Тэмдэглэл </strong></legend>
+                    <p style="flex-direction: column;">
+                        <label for="comment">Хүргэлтийн онцгой нөхцөл(шуурхай хүргэлт, ubcab гэх мэт):</label>
+                        <textarea id="comment" name="Нэмэлт_Тэмдэглэл" rows="4"></textarea>
+                    </p>
+                </fieldset>
+
+                <br>
+                
+                <p style="display: block; text-align: center;">
+                    <input type="submit" value="✅ ЗАХИАЛГА БАТЛАХ">
+                    <input type="reset" value="❌ ЦЭВЭРЛЭХ">
+                </p>
+            </form>
+            <p><a href="#nuur">← Нүүр рүү буцах</a></p>
+        </section>
+
+        <hr>
+
+
+        <section id="holboo">
+            <h2>📞 Холбоо барих</h2>
+            <p><strong>Имэйл:</strong> <a href="mailto:cinex12@gmail.com">cinex12@gmail.com</a></p>
+            <p><strong>Утас:</strong> +976 99652438</p>
+            <p><strong>Хаяг:</strong> БГДүүрэг 18-р хороо, Улаанбаатар, Монгол</p>
+            <p><a href="#nuur">← Нүүр рүү буцах</a></p>
+        </section>
+
+        <hr>
+
+
+        <section id="tuuh">
+            <h2>🏢 Бидний тухай & Бүтээгдэхүүний мэдээлэл</h2>
+            
+            <p>CinexShop нь 2025 онд байгуулагдсан, кино сонирхогчдод зориулсан онлайн дэлгүүр юм. Бид өндөр чанартай постер, стикер, цуглуулгын фигүрыг худалдаалдаг.</p>
+
+            <hr>
+
+            <h3>Манай бүтээгдэхүүний онцлог:</h3>
+            <p>Манай дэлгүүрт байгаа бүх бараа нь кино сонирхогчдод зориулагдсан. 
+                Постер, стикер болон цуглуулгын дүрс нь гэртээ эсвэл оффисодоо тавихад тохиромжтой. Хэрэв та хүсвэл өөрийн дуртай кино, анимэ зэргээр <strong>хүссэн постер, стикер, фигүрээ захиалах боломжтой.</strong> Манайхыг сонгосонд баярлалаа.</p>
+
+            <p><a href="#nuur">← Нүүр рүү буцах</a></p>
+        </section>
+
+        <hr>
+
+
+        <footer>
+            <p>© 2025 CineShop — Кинонд дурлагсдын дэлгүүр</p>
+        </footer>
+
+    </div>
+</body>
+</html>

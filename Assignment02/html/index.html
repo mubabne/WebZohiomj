@@ -1,0 +1,250 @@
+<!doctype html>
+<html lang="mn">
+<head>
+  <meta charset="utf-8" />
+  <title>6r bag — Онлайн кино сайт</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="6r bag — Онлайн кино сайт">
+
+  <style>
+    body{
+      font-family: Arial, sans-serif;
+      margin:0; padding:0;
+      background:#1a1a1a;           
+      color:#f0f0f0;                 
+      line-height:1.6;
+    }
+    .container{
+      max-width:1000px;
+      margin:0 auto;
+      padding:20px;
+      background:#2c2c2c;          
+      box-shadow:0 0 20px rgba(0,0,0,.5);
+    }
+    h1,h2,h3{
+      color:#00FFFF;                
+      border-bottom:2px solid #004d4d;
+      padding-bottom:10px;
+      margin-top:0;
+    }
+    a{
+      color:#FFD700;                
+      text-decoration:none;
+      transition:color .3s;
+    }
+    a:hover{ color:#00FFFF; text-decoration:underline; }
+    hr{
+      border:0; height:1px; background:#004d4d; margin:20px 0;
+    }
+
+    nav{
+      background:#000;
+      padding:10px 0;
+      display:flex;
+      justify-content:center;
+      gap:20px;
+      flex-wrap:wrap;
+      margin-bottom:20px;
+      border-radius:5px;
+    }
+    nav a{
+      padding:5px 15px;
+      color:#f0f0f0;
+      font-weight:bold;
+      text-transform:uppercase;
+    }
+    nav a:hover{
+      color:#008080;
+      background:#FFD700;
+      border-radius:3px;
+      text-decoration:none;
+    }
+
+    .thumbs{
+      display:flex;
+      gap:14px;
+      flex-wrap:wrap;
+      align-items:stretch;
+    }
+    .thumb{
+      flex:1 1 180px;
+      max-width:220px;
+    }
+    .thumb img{
+      width:100%; height:auto;
+      border-radius:6px;
+      border:2px solid #FFD700;
+      display:block;
+    }
+
+    .flex2{
+      display:flex;
+      gap:16px;
+      flex-wrap:wrap;
+      align-items:flex-start;
+    }
+    .flex2 > *{ flex:1 1 420px; }
+    .frame{
+      width:100%;
+      border:2px solid #FFD700;
+      border-radius:8px;
+      display:block;
+    }
+    .video{
+      width:100%;
+      border:2px solid #FFD700;
+      border-radius:8px;
+      display:block;
+    }
+
+    .data-table{
+      width:100%;
+      border-collapse:collapse;
+      border:1px solid #004d4d;
+      background:#242424;
+    }
+    .data-table th, .data-table td{
+      padding:12px;
+      text-align:left;
+      border-bottom:1px solid #444;
+    }
+    .data-table th{
+      background:#008080; color:#fff;
+      text-transform:uppercase;
+    }
+    .data-table tr:nth-child(even){ background:#383838; }
+    .data-table img{
+      border-radius:6px;
+      border:2px solid #FFD700;
+      width:120px; height:auto;
+    }
+
+    footer{
+      text-align:center;
+      padding:15px;
+      background:#000;
+      color:#888;
+      margin-top:20px;
+      border-top:2px solid #008080;
+      border-radius:5px;
+    }
+
+    @media (max-width: 600px){
+      .thumb{ flex-basis: 46%; max-width: none; }
+      .data-table img{ width:88px; }
+    }
+    @media (max-width: 380px){
+      .thumb{ flex-basis: 100%; }
+      nav{ gap:12px; }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <h1>🎬 6r bag — Онлайн кино сайт</h1>
+
+    <nav>
+      <a href="genres.html">Төрлүүд</a>
+      <a href="genres.html">Төрлүүд</a>
+      <a href="movies.html">Кино жагсаалт</a>
+      <a href="profile.html">Профайл</a>
+      <a href="payment.html">Гишүүнчлэл</a>
+      <a href="shop.html">Дэлгүүр</a>
+      <a href="about.html">Бидний тухай</a>
+    </nav>
+
+    <section id="continue">
+      <h2>Үргэлжлүүлэн үзэх</h2>
+      <div class="thumbs" aria-label="Үргэлжлүүлэн үзэх — постерууд">
+        <a class="thumb" href="MovieDetails/Astronaut.html"><img src="assets/posters/Astronaut.jpg" alt="Astronaut"></a>
+        <a class="thumb" href="MovieDetails/avatar.html"><img src="assets/posters/Avatar.jpg" alt="Avatar"></a>
+        <a class="thumb" href="MovieDetails/EmpireOfSmt.html"><img src="assets/posters/EmpireOfSmt.jpg" alt="Empire Of Smt"></a>
+        <a class="thumb" href="MovieDetails/Paradise.html"><img src="assets/posters/Paradise.jpg" alt="Paradise"></a>
+        <a class="thumb" href="MovieDetails/rave.html"><img src="assets/posters/Raven.jpg" alt="Raven"></a>
+      </div>
+      <p style="margin-top:10px;"><a href="movies.html">Бүгдийг харах →</a></p>
+    </section>
+
+    <hr>
+
+    <section id="action">
+      <h2>Адал явдал &amp; Триллер</h2>
+      <div class="thumbs" aria-label="Адал явдал болон триллер кинонууд">
+        <a class="thumb" href="MovieDetails/Astronaut.html"><img src="assets/posters/28dayslater.jpg" alt="28 Days Later"></a>
+        <a class="thumb" href="MovieDetails/avatar.html"><img src="assets/posters/TheBoy.jpg" alt="The Boy"></a>
+        <a class="thumb" href="MovieDetails/EmpireOfSmt.html"><img src="assets/posters/darkestnight.jpg" alt="The Darkest Night"></a>
+        <a class="thumb" href="MovieDetails/Paradise.html"><img src="assets/posters/28dayslater.jpg" alt="28 Days Later"></a>
+      </div>
+    </section>
+
+    <hr>
+
+    <section id="cinema">
+      <h2>Кино Театр</h2>
+      <div class="flex2">
+        <img class="frame" src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/09/13/ae/ff/cinemax-cinemas.jpg?w=800&h=500&s=1" alt="Кино театр">
+        <div>
+          <p>Манай кино театрт шинэ, шилдэг кинонуудыг тухтай орчинд үзэх боломжтой.</p>
+          <p>🎥 Өнөөдрийн хамгийн их үзэлттэй кино: <strong>Avatar: The Way of Water</strong></p>
+          <iframe class="frame" src="https://www.youtube.com/embed/d9MyW72ELq0" title="Avatar Trailer" allowfullscreen></iframe>
+          <p style="margin-top:10px">
+            <a href="schedule.html">Киноны хуваарь</a> ·
+            <a href="tickets.html">Тасалбар</a> ·
+            <a href="reviews.html">Сэтгэгдэл</a>
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <hr>
+
+    <section id="trailers">
+      <h2>Трейлерууд</h2>
+      <div class="flex2">
+        <div>
+          <h3>Astronaut</h3>
+          <video class="video" controls>
+            <source src="assets/trailers/AstronautTrailer.mp4" type="video/mp4">
+          </video>
+        </div>
+        <div>
+          <h3>The Dark Knight</h3>
+          <video class="video" controls>
+            <source src="assets/trailers/TheDarkKnightTrailer.mp4" type="video/mp4">
+          </video>
+        </div>
+      </div>
+    </section>
+
+    <hr>
+
+    <section id="top">
+      <h2>Top 5 Кино</h2>
+      <table class="data-table" summary="Top 5 жагсаалт">
+        <thead>
+          <tr>
+            <th>Байр</th>
+            <th>Кино</th>
+            <th>Төрөл</th>
+            <th>Зураг</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>1</td><td>The Dark Knight</td><td>Адал явдал, тулаант</td><td><img src="assets/posters/TheDarkKnight.jpg" alt=""></td></tr>
+          <tr><td>2</td><td>The Darkest Night</td><td>Нууцлаг, Триллер</td><td><img src="assets/posters/darkestnight.jpg" alt=""></td></tr>
+          <tr><td>3</td><td>After</td><td>Триллер, адал явдалт</td><td><img src="assets/posters/After.jpg" alt=""></td></tr>
+          <tr><td>4</td><td>Avatar</td><td>Тулаант, адал явдалт</td><td><img src="assets/posters/Avatar.jpg" alt=""></td></tr>
+          <tr><td>5</td><td>The Boy</td><td>Нууцлаг, триллер</td><td><img src="assets/posters/TheBoy.jpg" alt=""></td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <hr>
+
+    <footer>
+      <p>© 2025 6r bag Movies — Бүх эрх хуулиар хамгаалагдсан.</p>
+    </footer>
+  </div>
+</body>
+</html>

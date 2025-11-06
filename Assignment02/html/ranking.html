@@ -1,0 +1,244 @@
+<!doctype html>
+<html lang="mn">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>6r bag</title>
+  <meta name="description" content="online movie site">
+
+  <style>
+     body {
+      margin: 0;
+      background-color: #1e1e1e;
+    }
+
+    .container {
+      max-width: 1000px;
+      margin: 0 auto;
+      font-family: Arial, sans-serif;
+      color: #f0f0f0;
+      background-color: #2c2c2c;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+      padding: 20px;
+    }
+
+    h2 {
+      color: #00FFFF;
+      border-bottom: 2px solid #004d4d;
+      padding-bottom: 5px;
+    }
+
+    /* --- Кинонуудыг Flexbox-оор байрлуулах --- */
+    .movie-list {
+      display: flex;
+      justify-content: space-around;
+      gap: 20px;
+      margin-top: 20px;
+    }
+
+    .movie {
+      background-color: #3f3f3f;
+      border-radius: 10px;
+      padding: 15px;
+      flex: 1 1 300px;
+      max-width: 300px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+      text-align: center;
+    }
+
+    .movie img {
+      width: 100%;
+      border-radius: 10px;
+      display: block;
+      margin: 0 auto;
+    }
+
+     .movie img{
+      transition: transform 0.3s;
+    }
+    .movie img:hover{
+      transform: scale(1.05);
+    }
+
+
+    .watch {
+      text-align: left;
+      margin-top: 20px;
+    }
+
+    .watch a {
+      background-color: #00FFFF;
+      color: #000;
+      padding: 5px 30px;
+      border-radius: 5px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .watch a:hover {
+      background-color: #009999;
+      color: #fff;
+    }
+
+    .movie p {
+      text-align: justify;
+    }
+
+    /* --- Үнэлгээний хүснэгт хэвээр үлдэнэ --- */
+    .rating-table {
+      border: 2px solid #555;
+      border-collapse: collapse;
+      margin-top: 10px;
+      width: 100%;
+      color: #fff;
+    }
+    
+
+    .rating-table th,
+    .rating-table td {
+      border: 1px solid #666;
+      padding: 6px;
+      text-align: center;
+    }
+
+    .rating-table th {
+      background-color: #004d4d;
+      color: #00ffff;
+    }
+
+  </style>
+</head>
+
+<body>
+  <div class="container">
+  <header role="banner">
+    <table border="1" cellpadding="6" summary="Login and Register">
+      <tr>
+        <td><a href="login.html">Нэвтрэх</a></td>
+        <td><a href="register.html">Бүртгүүлэх</a></td>
+      </tr>
+    </table>
+
+    <div>
+      <img src="assets/logo.svg" alt="6r bag logo" width="100" height="100" />
+      <h1>Movies</h1>
+      <p>Онлайн кино сайт</p>
+    </div>
+
+    <nav>
+      <ul>
+        <li><a href="genres.html">Төрлүүд</a></li>
+      </ul>
+    </nav>
+
+    <nav>
+      <a href="login.html">Гарах</a> |
+      <a href="profile.html">Profile</a>
+    </nav>
+  </header>
+
+
+  <main>
+    <h2>Өндөр үнэлгээтэй кинонууд</h2>
+
+    <div class="movie-list">
+      <!-- Кино 1 -->
+      <div class="movie">
+        <a href="assets/trailers/Paradise.mp4">
+          <img src="assets/posters/28dayslater.jpg" alt="28 Days Later зураг">
+        </a>
+        <div class="watch"><a href="record.html">ҮЗЭХ</a></div>
+
+        <p><b>Үйл явдал:</b> Лондонд зомби вирустэй холбоотой тахал дэгдэж, Jim, Selena, Mark зэрэг амьд үлдсэн хүмүүс амьдрахын тулд
+        хорвоогийн шинэ аюултай орчинд тэмцэж, гэр бүлээ хайж, амьд үлдэх арга замыг эрэлхийлнэ.</p>
+
+        <table class="rating-table">
+          <thead>
+            <tr><th>Сайт</th><th>Үнэлгээ</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>IMDb</td><td>7.6/10</td></tr>
+            <tr><td>Rotten Tomatoes</td><td>87%</td></tr>
+            <tr><td>Metacritic</td><td>75/100</td></tr>
+            <tr><td>FilmAffinity</td><td>6.8/10</td></tr>
+            <tr><td>Letterboxd</td><td>3.5/5</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- Кино 2 -->
+      <div class="movie">
+        <a href="assets/trailers/avatar.mp4">
+          <img src="assets/posters/Avatar.jpg" alt="Avatar 2 кино зураг">
+        </a>
+        <div class="watch"><a href="record.html">ҮЗЭХ</a></div>
+
+        <p><b>Үйл явдал:</b> 2154 онд параплегик цэргийн ахмад Jake Sully нь Pandora гаригт Аватар биеэр илгээгдэж, Na’vi омгийн соёлд суралцан,
+        тэдний байгаль, амьдралын хэв маягтай танилцдаг. Тэр Neytiri-тэй дотно болж, RDA корпорацийн Pandora-гийн байгалийг сүйтгэх оролдлогоос Na’vi ард түмнийг хамгаалахад тэдний талд орж тэмцдэг.</p>
+
+        <table class="rating-table">
+          <thead>
+            <tr><th>Сайт</th><th>Үнэлгээ</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>IMDb</td><td>7.9/10</td></tr>
+            <tr><td>Rotten Tomatoes</td><td>83%</td></tr>
+            <tr><td>Metacritic</td><td>83/100</td></tr>
+            <tr><td>FilmAffinity</td><td>7.1/10</td></tr>
+            <tr><td>Letterboxd</td><td>4.1/5</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- Кино 3 -->
+      <div class="movie">
+        <a href="assets/trailers/Empireofsmt.mp4">
+          <img src="assets/posters/After.jpg" alt="After кино зураг">
+        </a>
+        <div class="watch"><a href="record.html">ҮЗЭХ</a></div>
+
+        <p><b>Үйл явдал:</b> Томас Тад (Hardin) болон Тесса Янг нарын залуу хайр дурлалын түүхийг өгүүлдэг. Тэсса нь дээд сургуульд шинэ
+        сурагч болж, Hardin-тэй танилцсанаар амьдрал нь эрс өөрчлөгдөж, хайр, итгэлцэл, сэтгэл хөдлөл, амьдралын сорилтуудтай нүүр тулна.</p>
+
+        <table class="rating-table">
+          <thead>
+            <tr><th>Сайт</th><th>Үнэлгээ</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>IMDb</td><td>7.4/10</td></tr>
+            <tr><td>Rotten Tomatoes</td><td>79%</td></tr>
+            <tr><td>Metacritic</td><td>82/100</td></tr>
+            <tr><td>FilmAffinity</td><td>7.5/10</td></tr>
+            <tr><td>Letterboxd</td><td>3.9/5</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <u><p>Та трейлер үзэхийг хүсвэл постер дээр дарна уу.</p></u>
+  </main>
+
+
+  <footer role="contentinfo">
+    <section aria-labelledby="contact-title">
+      <h2 id="contact-title">Холбоо барих</h2>
+      <address>
+        Имэйл: <a href="mailto:Munkhb4y4r@gmail.com">munkhb4y4r@gmail.com</a><br />
+        Байршил: Улаанбаатар, Монгол
+      </address>
+    </section>
+
+    <section aria-labelledby="rights-title">
+      <h2 id="rights-title">Зохиогчийн эрх</h2>
+      <p>© 2025 6r bag Movies. Бүх эрх хуулиар хамгаалагдсан.</p>
+    </section>
+
+    <nav aria-label="Доод цэс">
+      <ul>
+        <li><a href="terms.html">Үйлчилгээний нөхцөл</a></li>
+      </ul>
+    </nav>
+  </footer>
+</div>
+</body>
+</html>

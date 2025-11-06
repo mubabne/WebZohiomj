@@ -1,0 +1,178 @@
+<!doctype html>
+<html lang="mn">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>6r bag</title>
+  <meta name="description" content="online movie site">
+  <style>
+    body {
+      margin: 0;
+      background-color: #1e1e1e;
+    }
+
+    .container {
+      max-width: 1000px;
+      margin: 0 auto;
+      font-family: Arial, sans-serif;
+      color: #f0f0f0;
+      background-color: #2c2c2c;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+      padding: 20px;
+    }
+
+    h1 {
+      color: #00FFFF;
+      border-bottom: 2px solid #004d4d;
+      padding-bottom: 0;
+    }
+
+    
+    .movie-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: center;
+    }
+
+    .movie {
+      background-color: #3a3a3a;
+      border-radius: 10px;
+      padding: 10px;
+      width: 300px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.5);
+    }
+
+    .movie img {
+      width: 100%;
+      border-radius: 10px;
+      display: block;
+    }
+
+    .movie h3 {
+      margin: 10px 0 5px;
+      color: #ffffff;
+    }
+
+    .movie p {
+      text-align: justify;
+      font-size: 14px;
+    }
+    .movie img{
+      transition: transform 0.3s;
+    }
+    .movie img:hover{
+      transform: scale(1.05);
+    }
+
+
+    .watch-link {
+      text-align: left;
+      margin-top: 20px;
+    }
+
+    .watch-link a {
+      background-color: #00FFFF;
+      color: #000;
+      padding: 5px 30px;
+      border-radius: 5px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .watch-link a:hover {
+      background-color: #009999;
+      color: #fff;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <header role="banner">
+      <table border="1" cellpadding="6" summary="Login and Register">
+        <tr>
+          <td><a href="login.html">Нэвтрэх</a></td>
+          <td><a href="register.html">Бүртгүүлэх</a></td>
+        </tr>
+      </table>  
+      <div>
+        <img src="assets/logo.svg" alt="6r bag logo" width="100" height="100" />
+        <h1>Movies</h1>
+        <p>Онлайн кино сайт</p>
+      </div>
+      <nav>
+        <ul>
+          <li><a href="genres.html">Төрлүүд</a></li>
+        </ul>
+      </nav>
+      <nav>
+        <a href="login.html">Гарах</a> |
+        <a href="profile.html">Profile</a>
+      </nav>  
+    </header>
+
+    <main>
+      <h1>Сайтад шинээр нэмэгдэж буй кинонууд</h1>
+
+      <dv class="movie-list">
+        <div class="movie">
+          <a href="assets/trailers/avatar.mp4">
+            <img src="assets/posters/Avatar.jpg" alt="Avatar 2 кино зураг">
+          </a>
+          <div class="watch-link">
+            <a href="record.html">ҮЗЭХ</a>
+          </div>
+          <h3>Avatar 2</h3>
+          <p><b>Үйл явдал:</b> "Avatar 2" нь Pandora гариг дээрх шинэ адал явдлыг харуулна. Jake Sully ба Neytiri гэр бүлээ хамгаалан, далд нууц болон шинэ аюултай тулгарч, эх дэлхийтэй холбоотой нууцыг илрүүлэхээр тэмцдэг. Шинээр танилцаж буй амьтад, соёл, далай болон уран зөгнөлт орчин нь киноны гол сэдэв болж байна.</p>
+        </div>
+
+        <div class="movie">
+          <a href="assets/trailers/TheDarkKnightTrailer.mp4">
+            <img src="assets/posters/TheDarkKnight.jpg" alt="TheDarkKnight">
+          </a>
+          <div class="watch-link">
+            <a href="record.html">ҮЗЭХ</a>
+          </div>
+          <h3>THE DARK KNIGHT</h3>
+          <p><b>Үйл явдал:</b> Бэтмэн Готам хотын гэмт хэрэгтэй тэмцэж байх үед шинэ дайсан Жокер гарч ирдэг. Жокер бол эмх замбараагүй байдлыг бий болгож, хотын итгэл найдвар, ёс суртахууныг нураахыг зорьдог галзуу гэмт хэрэгтэн. Бэтмэн түүнийг зогсоохын тулд Цагдаа комиссар Гордон, Айдаас хуульч Харви Дэнт нартай хамтардаг.</p>
+        </div>
+
+        <div class="movie">
+          <a href="assets/trailers/Paradise.mp4">
+            <img src="assets/posters/Paradise.jpg" alt="Paradise">
+          </a>
+          <div class="watch-link">
+            <a href="record.html">ҮЗЭХ</a>
+          </div>
+          <h3>PARADISE</h3>
+          <p><b>Үйл явдал:</b> Ойрын ирээдүйд AEON нэртэй корпораци хүмүүсийн насыг худалдах, шилжүүлэх технологи гаргаж ирдэг. Хүн өөрийн амьдралын жилүүдийг мөнгөөр солих боломжтой болдог. Гол дүр Макс AEON компанид ажилладаг бөгөөд түүний эхнэр Элена гэнэт 40 жилийнхээ насыг алдаж, хөгшин болж хувирна.</p>
+        </div>
+      </dv>
+
+      <u><p>Та трейлер үзэхийг хүсвэл постер дээр дарна уу.</p></u>
+    </main>
+
+    <footer role="contentinfo">
+      <section aria-labelledby="contact-title">
+        <h2 id="contact-title">Холбоо барих</h2>
+        <address>
+          Имэйл: <a href="mailto:Munkhb4y4r@gmail.com">munkhb4y4r@gmail.com</a><br />
+          Байршил: Улаанбаатар, Монгол
+        </address>
+      </section>
+
+      <section aria-labelledby="rights-title">
+        <h2 id="rights-title">Зохиогчийн эрх</h2>
+        <p>© 2025 6r bag Movies. Бүх эрх хуулиар хамгаалагдсан.</p>
+      </section>
+
+      <nav aria-label="Доод цэс">
+        <ul>
+          <li><a href="terms.html">Үйлчилгээний нөхцөл</a></li>
+        </ul>
+      </nav>
+    </footer>
+  </div>
+</body>
+</html>

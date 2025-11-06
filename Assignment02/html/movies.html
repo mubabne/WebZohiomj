@@ -1,0 +1,237 @@
+<!doctype html>
+<html lang="mn">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Кино жагсаалт — 6r bag</title>
+  <meta name="description" content="Сайтад байгаа кинонуудын жагсаалт">
+
+  <style>
+    :root{
+      --bg:#1a1a1a;--panel:#2c2c2c;--ink:#f0f0f0;--muted:#9aa0a6;
+      --teal:#008080;--teal-2:#004d4d;--cyan:#00ffff;--gold:#ffd700;--border:#444
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;font-family:Arial,system-ui,-apple-system,Segoe UI,Roboto,sans-serif;
+      background:var(--bg);color:var(--ink);line-height:1.6
+    }
+    a{color:var(--gold);text-decoration:none;transition:color .2s}
+    a:hover{color:var(--cyan);text-decoration:underline}
+    .container{max-width:1180px;margin:0 auto;padding:16px}
+    header,footer{background:#000}
+
+    /* Header */
+    header .bar{display:flex;align-items:center;gap:16px;padding:10px 0}
+    .logo-wrap{display:flex;align-items:center;gap:12px}
+    .site-title h1{margin:0;font-size:1.6rem}
+    .site-title p{margin:2px 0 0;color:var(--muted);font-size:.95rem}
+    .top-links{display:flex;gap:14px;margin-left:auto;flex-wrap:wrap}
+    .top-links a{color:var(--ink);opacity:.9}
+    .top-links a:hover{opacity:1;color:var(--gold)}
+    nav.main{
+      background:#000;border-top:1px solid var(--teal-2);border-bottom:1px solid var(--teal-2);
+      margin-top:8px;padding:10px 0;display:flex;gap:18px;flex-wrap:wrap
+    }
+    nav.main a{
+      padding:6px 14px;color:var(--ink);font-weight:bold;text-transform:uppercase;border-radius:4px
+    }
+    nav.main a:hover{color:var(--bg);background:var(--gold);text-decoration:none}
+
+    /* Panels */
+    section.panel{
+      background:var(--panel);border:1px solid var(--teal-2);border-radius:8px;
+      padding:16px;margin:16px 0;box-shadow:0 0 12px rgba(0,0,0,.35)
+    }
+    section.panel>h2{
+      color:var(--cyan);border-bottom:2px solid var(--teal-2);padding-bottom:8px;margin-top:0
+    }
+
+    /* FLEX “table” (poster | name | trailer) */
+    .list-head,.movie-row{
+      display:flex;align-items:center;gap:12px;border-bottom:1px solid var(--border);padding:10px 8px
+    }
+    .list-head{background:var(--teal);color:#fff;font-weight:700;text-transform:uppercase}
+    .col-poster{flex:0 0 240px}
+    .col-title{flex:1 1 auto;min-width:180px}
+    .col-trailer{flex:0 0 260px}
+    .movie-row:nth-child(even){background:#2b2b2b}
+    .movie-row:hover{background:#323232}
+    .poster-img{width:220px;max-width:100%;height:auto;border-radius:6px;border:2px solid var(--gold);display:block}
+
+    @media (max-width:820px){
+      .list-head{display:none}
+      .movie-row{flex-wrap:wrap;align-items:flex-start}
+      .col-poster{flex:1 1 220px}
+      .col-title{flex:1 1 240px}
+      .col-trailer{flex:1 1 240px}
+      .col-title strong{display:block;margin-top:6px}
+      .label{display:inline-block;color:var(--muted);margin-right:8px}
+    }
+
+    footer .container{padding:18px 16px}
+    footer h2{margin:0 0 8px;color:var(--cyan)}
+    footer p,footer address{color:var(--muted)}
+    footer .legal{border-top:2px solid var(--teal);margin-top:12px;padding-top:12px;text-align:center;color:#888}
+  </style>
+</head>
+<body>
+
+<header role="banner">
+  <div class="container">
+    <div class="bar">
+      <div class="logo-wrap">
+        <img src="assets/logo.svg" alt="6r bag logo" width="64" height="64" />
+        <div class="site-title">
+          <h1>Movies</h1>
+          <p>Онлайн кино сайт</p>
+        </div>
+      </div>
+
+      <div class="top-links">
+        <a href="login.html">Нэвтрэх</a>
+        <a href="register.html">Бүртгүүлэх</a>
+        <a href="about.html">Бидний тухай</a>
+      </div>
+    </div>
+
+    <nav class="main">
+      <a href="index.html">Нүүр</a> |
+      <a href="login.html">Гарах</a>
+      <a href="profile.html">Профайл</a>
+      <a href="payment.html">Гишүүнчлэл</a>
+      <a href="shop.html">Дэлгүүр</a>
+    </nav>
+  </div>
+</header>
+
+<main class="container">
+  <section class="panel" aria-labelledby="list-all">
+    <h2 id="list-all">Бүх кино (жишээ)</h2>
+
+    <!-- Flex header (acts like table header) -->
+    <div class="list-head" role="row">
+      <div class="col-poster">Постер</div>
+      <div class="col-title">Киноны нэр</div>
+      <div class="col-trailer">Трейлер</div>
+    </div>
+
+    <!-- Rows -->
+    <div class="movie-row" role="row">
+      <div class="col-poster">
+        <a href="assets/trailers/AstronautTrailer.mp4" title="Astronaut — трейлер">
+          <img class="poster-img" src="assets/posters/Astronaut.jpg" alt="Astronaut постер">
+        </a>
+      </div>
+      <div class="col-title"><strong>Astronaut</strong></div>
+      <div class="col-trailer"><a href="assets/trailers/AstronautTrailer.mp4">Трейлер үзэх (mp4)</a></div>
+    </div>
+
+    <div class="movie-row" role="row">
+      <div class="col-poster">
+        <a href="assets/trailers/avatar.mp4" title="Avatar — трейлер">
+          <img class="poster-img" src="assets/posters/Avatar.jpg" alt="Avatar постер">
+        </a>
+      </div>
+      <div class="col-title"><strong>Avatar</strong></div>
+      <div class="col-trailer"><a href="assets/trailers/avatar.mp4">Трейлер үзэх (mp4)</a></div>
+    </div>
+
+    <div class="movie-row" role="row">
+      <div class="col-poster">
+        <a href="assets/trailers/Empireofsmt.mp4" title="Empire of Something — трейлер">
+          <img class="poster-img" src="assets/posters/EmpireOfSmt.jpg" alt="Empire of Something постер">
+        </a>
+      </div>
+      <div class="col-title"><strong>Empire of Something</strong></div>
+      <div class="col-trailer"><a href="assets/trailers/Empireofsmt.mp4">Трейлер үзэх (mp4)</a></div>
+    </div>
+
+    <div class="movie-row" role="row">
+      <div class="col-poster">
+        <a href="assets/trailers/Paradise.mp4" title="Paradise — трейлер">
+          <img class="poster-img" src="assets/posters/Paradise.jpg" alt="Paradise постер">
+        </a>
+      </div>
+      <div class="col-title"><strong>Paradise</strong></div>
+      <div class="col-trailer"><a href="assets/trailers/Paradise.mp4">Трейлер үзэх (mp4)</a></div>
+    </div>
+
+    <div class="movie-row" role="row">
+      <div class="col-poster">
+        <a href="assets/trailers/rave.mp4" title="Raven — трейлер">
+          <img class="poster-img" src="assets/posters/Raven.jpg" alt="Raven постер">
+        </a>
+      </div>
+      <div class="col-title"><strong>Raven</strong></div>
+      <div class="col-trailer"><a href="assets/trailers/rave.mp4">Трейлер үзэх (mp4)</a></div>
+    </div>
+
+    <div class="movie-row" role="row">
+      <div class="col-poster">
+        <a href="assets/trailers/TheDarkKnightTrailer.mp4" title="The Dark Knight — тизер/трейлер">
+          <img class="poster-img" src="assets/posters/TheDarkKnight.jpg" alt="The Dark Knight постер">
+        </a>
+      </div>
+      <div class="col-title"><strong>The Dark Knight</strong></div>
+      <div class="col-trailer"><a href="assets/trailers/TheDarkKnightTrailer.mp4">Тизер/трейлер үзэх (mp4)</a></div>
+    </div>
+
+    <div class="movie-row" role="row">
+      <div class="col-poster">
+        <a href="assets/trailers/AfterTrailer.mp4" title="After — трейлер">
+          <img class="poster-img" src="assets/posters/After.jpg" alt="After постер">
+        </a>
+      </div>
+      <div class="col-title"><strong>After</strong></div>
+      <div class="col-trailer"><a href="assets/trailers/AfterTrailer.mp4">Трейлер үзэх (mp4)</a></div>
+    </div>
+
+    <div class="movie-row" role="row">
+      <div class="col-poster">
+        <a href="assets/trailers/darkestnight.mp4" title="Darkest Night — трейлер">
+          <img class="poster-img" src="assets/posters/darkestnight.jpg" alt="Darkest Night постер">
+        </a>
+      </div>
+      <div class="col-title"><strong>Darkest Night</strong></div>
+      <div class="col-trailer"><a href="assets/trailers/darkestnight.mp4">Трейлер үзэх (mp4)</a></div>
+    </div>
+
+    <div class="movie-row" role="row">
+      <div class="col-poster">
+        <img class="poster-img" src="assets/posters/28dayslater.jpg" alt="28 Days Later постер">
+      </div>
+      <div class="col-title"><strong>28 Days Later</strong></div>
+      <div class="col-trailer">Трейлер байхгүй</div>
+    </div>
+
+    <div class="movie-row" role="row">
+      <div class="col-poster">
+        <img class="poster-img" src="assets/posters/TheBoy.jpg" alt="The Boy постер">
+      </div>
+      <div class="col-title"><strong>The Boy</strong></div>
+      <div class="col-trailer">Трейлер байхгүй</div>
+    </div>
+
+  </section>
+</main>
+
+<footer role="contentinfo">
+  <div class="container">
+    <section>
+      <h2>Холбоо барих</h2>
+      <address>
+        Имэйл: <a href="mailto:Munkhb4y4r@gmail.com">munkhb4y4r@gmail.com</a><br />
+        Байршил: Улаанбаатар, Монгол
+      </address>
+    </section>
+
+    <div class="legal">
+      <p>© 2025 6r bag Movies. Бүх эрх хуулиар хамгаалагдсан.</p>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

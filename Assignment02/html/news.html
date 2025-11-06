@@ -1,0 +1,202 @@
+<!doctype html>
+<html lang="mn">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>6r bag</title>
+  <meta name="description" content="online movie site">
+  <style>
+     body {
+      margin: 0;
+      background-color: #1e1e1e;
+    }
+
+    .container {
+      max-width: 1000px;
+      margin: 0 auto;
+      font-family: Arial, sans-serif;
+      color: #f0f0f0;
+      background-color: #2c2c2c;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+      padding: 20px;
+    }
+
+    
+    h2 {
+      color: #00FFFF;
+      border-bottom: 2px solid #004d4d;
+      padding-bottom: 5px;
+    }
+
+    /* --- Flexbox styling --- */
+    .movie-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: center;
+      margin-top: 20px;
+    }
+
+    .movie {
+      background-color: #2c2c2c;
+      padding: 10px;
+      border-radius: 10px;
+      width: 300px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.5);
+    }
+
+    .movie img {
+      width: 100%;
+      border-radius: 10px;
+      display: block;
+    }
+
+
+     .movie img{
+      transition: transform 0.3s;
+    }
+    .movie img:hover{
+      transform: scale(1.05);
+    }
+
+
+    .movie h3 {
+      margin: 10px 0 5px;
+      color: #00FFFF;
+    }
+
+    .movie p {
+      text-align: justify;
+      font-size: 14px;
+    }
+
+    .movie ul {
+      font-size: 14px;
+      padding-left: 20px;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+  <header role="banner">
+    <table border="1" cellpadding="6" summary="Login and Register">
+      <tr>
+        <td><a href="login.html">Нэвтрэх</a></td>
+        <td><a href="register.html">Бүртгүүлэх</a></td>
+      </tr>
+    </table>  
+    <div>
+      <img src="assets/logo.svg" alt="6r bag logo" width="100" height="100" />
+      <h1>Movies</h1>
+      <p>Онлайн кино сайт</p>
+    </div>
+    <nav>
+      <ul>
+        <li><a href="genres.html">Төрлүүд</a></li>
+      </ul>
+    </nav>
+    <nav>
+      <a href="login.html">Гарах</a> |
+      <a href="profile.html">Profile</a>
+    </nav>  
+  </header>
+
+  <main>
+    <h2>Дэлхий дахинаа шинээр нээлтээ хийж байгаа кинонууд</h2>
+
+    <div class="movie-list">
+      <div class="movie">
+        <a href="assets/trailers/rave.mp4">
+          <img src="assets/posters/Raven.jpg" alt="Rave кино зураг">
+        </a>
+        <h3>RAVEN</h3>
+        <p><b>Үйл явдал:</b> Цусан улаан сар, манан бүрхсэн жихүүцэм үдэш болсон тэр аймшигт явдлыг харсан цор ганц амьд гэрч нь хүн бус байв. Энэхүү нууцлаг хэргийг тайлахаар мөрдөгч Sam walker ажиллах болов.</p>
+        <ul>
+          <li>Найруулагч: John Kenny</li>
+          <li>Жанр: Адал явдалт, нэмт хэрэг</li>
+          <li>Үргэлжлэх хугацаа: 2 цаг 30 минут</li>
+          <li>Насны ангилал: PG-18</li>
+          <li>Жүжигчдийн бүрэлдэхүүн
+            <ul>
+              <li>Colin Firth - Sam walker</li>
+              <li>Toni Collette - Ethan Hunt</li>
+              <li>Mark Strong - Agent Frank Powell</li>
+              <li>Golshifteh Farahani - Dr. Leila Brohn</li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+
+      <div class="movie">
+        <a href="assets/trailers/AstronautTrailer.mp4">
+          <img src="assets/posters/Astronaut.jpg" alt="The Astronaut">
+        </a>
+        <h3>THE ASTRONAUT</h3>
+        <p><b>Үйл явдал:</b> Сам Уокер НАСА-гийн сансрын нисгэгч. Тэр сансраас буцаж ирсний дараа түүний хөлөг сансрын хөлөг саатаж осолддог. Түүнийг амьд байлгах, эргэн сэргээх зорилгоор өндөр хамгаалалттай объект руу авчирна. Гэвч Самд хачирхалтай зүйлс тохиолдох болсноор, тэр сансар огторгуйгаас “дагалдан ирсэн” эсэх сэжигтэй нөхцөл байдал үүсдэг.</p>
+        <ul>
+          <li>Найруулагч: Shelagh McLeod</li>
+          <li>Жанр: Адал явдалт, Нууцлаг</li>
+          <li>Үргэлжлэх хугацаа: 1 цаг 50 минут</li>
+          <li>Насны ангилал: PG-13</li>
+          <li>Жүжигчдийн бүрэлдэхүүн
+            <ul>
+              <li>Colin Firth - Sam Walker</li>
+              <li>Toni Collette - Dr. Emma Foster</li>
+              <li>Mark Strong - Agent Frank Powell</li>
+              <li>Golshifteh Farahani - Dr. Leila Hassan</li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+
+      <div class="movie">
+        <a href="assets/trailers/Empireofsmt.mp4">
+          <img src="assets/posters/EmpireOfSmt.jpg" alt="Empire of Shadows">
+        </a>
+        
+        <h3>EMPIRE OF SHADOWS</h3>
+        <p><b>Үйл явдал:</b> Энэ кино нь адал явдалт, нууцлаг мөрдлөгийн төрөл. James Bond ба Ethan Hunt гэсэн хоёр алдарт агент хамтарч, SPECTRE гэдэг байгууллагын гол удирдагч, Blofeld-ийг олохын тулд нууц харилцаа, сенсаци, мөрдлөгийн сүлжээг даван туулна. Тэдгээрийн зорилго SPECTRE-ийг сүйтгэн, түүний далд үйл ажиллагааг илрүүлэх юм.</p>
+        <ul>
+          <li>Найруулагч: John Kenny</li>
+          <li>Жанр: Адал явдалт, Сэтгэл зүй</li>
+          <li>Үргэлжлэх хугацаа: 1 цаг 40 минут</li>
+          <li>Насны ангилал: PG-18</li>
+          <li>Жүжигчдийн бүрэлдэхүүн
+            <ul>
+              <li>Colin Firth - James Bond</li>
+              <li>Toni Collette - Ethan Hunt</li>
+              <li>Mark Strong - Agent Frank Powell</li>
+              <li>Golshifteh Farahani - Dr. Leila Hassan</li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <u><p>Та трейлер үзэхийг хүсвэл постер дээр дарна уу.</p></u>
+  </main>
+
+  <footer role="contentinfo">
+    <section aria-labelledby="contact-title">
+      <h2 id="contact-title">Холбоо барих</h2>
+      <address>
+        Имэйл: <a href="mailto:Munkhb4y4r@gmail.com">munkhb4y4r@gmail.com</a><br />
+        Байршил: Улаанбаатар, Монгол
+      </address>
+    </section>
+
+    <section aria-labelledby="rights-title">
+      <h2 id="rights-title">Зохиогчийн эрх</h2>
+      <p>© 2025 6r bag Movies. Бүх эрх хуулиар хамгаалагдсан.</p>
+    </section>
+
+    <nav aria-label="Доод цэс">
+      <ul>
+        <li><a href="terms.html">Үйлчилгээний нөхцөл</a></li>
+      </ul>
+    </nav>
+  </footer>
+  </div>
+</body>
+</html>
