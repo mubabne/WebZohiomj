@@ -6,35 +6,111 @@
   <title>6r bag</title>
   <meta name="description" content="online movie site">
   <style>
-     body {
-      margin: 0;
-      background-color: #1e1e1e;
+:root{
+      --bg:#1a1a1a;
+      --ink:#f0f0f0;
+      --muted:#9aa0a6;
+      --teal:#008080;
+      --teal-2:#004d4d;
+      --cyan:#00ffff;
+      --gold:#ffd700;
     }
-
-    .container {
-      max-width: 1000px;
-      margin: 0 auto;
-      font-family: Arial, sans-serif;
-      color: #f0f0f0;
-      background-color: #2c2c2c;
-      box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
-      padding: 20px;
-    }
-
+    *{
+      box-sizing:border-box}
     
-    h2 {
-      color: #00FFFF;
-      border-bottom: 2px solid #004d4d;
-      padding-bottom: 5px;
+    body{
+      margin:0;font-family:Arial,system-ui,-apple-system,Segoe UI,Roboto,sans-serif;
+      background:var(--bg);
+      color:var(--ink);
+      line-height:1.6;
+    }
+    a{
+      color:var(--gold);
+      text-decoration:none;
+      transition:color .2s
+    }
+    a:hover{
+      color:var(--cyan);
+      text-decoration:underline;
+    }
+    .container{
+      max-width:1180px;
+      margin:0 auto;
+      padding:16px
+    }
+    header,footer{
+      background:#000
     }
 
-    /* --- Flexbox styling --- */
+    header .bar{
+      display:flex;
+      align-items:center;
+      gap:16px;
+      padding:10px 0
+    }
+    .logo-wrap
+    {display:flex;
+      align-items:center;
+      gap:12px
+    }
+    .site-title h1{
+      margin:0;
+      font-size:1.6rem
+    }
+    .site-title p{
+      margin:2px 0 0;color:var(--muted);
+      font-size:.95rem
+    }
+    .top-links{
+      display:flex;gap:14px;margin-left:auto;
+      flex-wrap:wrap
+    }
+    .top-links a{
+      color:var(--ink);opacity:.9
+    }
+    .top-links a:hover{
+      opacity:1;color:var(--gold)
+    }
+    nav.main{
+      background:#000;border-top:1px solid var(--teal-2);border-bottom:1px solid var(--teal-2);
+      margin-top:8px;padding:10px 0;display:flex;gap:18px;flex-wrap:wrap
+    }
+    nav.main a{
+      padding:6px 14px;
+      color:var(--ink);
+      font-weight:bold;text-transform:uppercase;
+      border-radius:4px
+    }
+    nav.main a:hover{
+      color:var(--bg);background:var(--gold);
+      text-decoration:none
+    }
+    footer .container{padding:18px 16px}
+    footer h2{margin:0 0 8px;color:var(--cyan)}
+    footer p,footer address{color:var(--muted)}
+    footer .legal{border-top:2px solid var(--teal);margin-top:12px;padding-top:12px;text-align:center;color:#888}
+
+     main{
+      padding:16px;
+      max-width:1180px;
+      margin:0 auto;
+    }
     .movie-list {
+      border:var(--gold) 2px solid;
       display: flex;
       flex-wrap: wrap;
       gap: 20px;
       justify-content: center;
-      margin-top: 20px;
+      padding: 20px; 
+      border-radius: 8px;
+    }
+    .movie-list legend {
+      background-color: var(--bg);
+      color: var(--cyan); 
+      font-size: 1.8rem;  
+      font-weight: bold;
+      padding: 0 10px;   
+      margin-left: 20px; 
     }
 
     .movie {
@@ -78,125 +154,121 @@
 </head>
 
 <body>
-  <div class="container">
-  <header role="banner">
-    <table border="1" cellpadding="6" summary="Login and Register">
-      <tr>
-        <td><a href="login.html">Нэвтрэх</a></td>
-        <td><a href="register.html">Бүртгүүлэх</a></td>
-      </tr>
-    </table>  
-    <div>
-      <img src="assets/logo.svg" alt="6r bag logo" width="100" height="100" />
-      <h1>Movies</h1>
-      <p>Онлайн кино сайт</p>
+      <header role="banner">
+    <div class="container">
+      <div class="bar">
+        <div class="logo-wrap">
+          <img src="assets/logo.svg" alt="6r bag logo" width="64" height="64" />
+          <div class="site-title">
+            <h1>Movies</h1>
+            <p>Онлайн кино сайт</p>
+          </div>
+        </div>
+
+        <div class="top-links">
+          <a href="login.html">Нэвтрэх</a>
+          <a href="register.html">Бүртгүүлэх</a>
+          <a href="about.html">Бидний тухай</a>
+        </div>
+      </div>
+
+      <nav class="main">
+        <a href="index.html">Нүүр</a>
+        <a href="login.html">Гарах</a>
+        <a href="profile.html">Profile</a>
+        <a href="payment.html">Гишүүнчлэл</a>
+        <a href="shop.html">Дэлгүүр</a>
+      </nav>
     </div>
-    <nav>
-      <ul>
-        <li><a href="genres.html">Төрлүүд</a></li>
-      </ul>
-    </nav>
-    <nav>
-      <a href="login.html">Гарах</a> |
-      <a href="profile.html">Profile</a>
-    </nav>  
   </header>
 
-  <main>
-    <h2>Дэлхий дахинаа шинээр нээлтээ хийж байгаа кинонууд</h2>
+  <main class="main">
+    <fieldset class="movie-list">
+      <legend>Дэлхий дахинаа шинээр нээлтээ хийж байгаа кинонууд</legend>
 
-    <div class="movie-list">
-      <div class="movie">
-        <a href="assets/trailers/rave.mp4">
-          <img src="assets/posters/Raven.jpg" alt="Rave кино зураг">
-        </a>
-        <h3>RAVEN</h3>
-        <p><b>Үйл явдал:</b> Цусан улаан сар, манан бүрхсэн жихүүцэм үдэш болсон тэр аймшигт явдлыг харсан цор ганц амьд гэрч нь хүн бус байв. Энэхүү нууцлаг хэргийг тайлахаар мөрдөгч Sam walker ажиллах болов.</p>
-        <ul>
-          <li>Найруулагч: John Kenny</li>
-          <li>Жанр: Адал явдалт, нэмт хэрэг</li>
-          <li>Үргэлжлэх хугацаа: 2 цаг 30 минут</li>
-          <li>Насны ангилал: PG-18</li>
-          <li>Жүжигчдийн бүрэлдэхүүн
-            <ul>
-              <li>Colin Firth - Sam walker</li>
-              <li>Toni Collette - Ethan Hunt</li>
-              <li>Mark Strong - Agent Frank Powell</li>
-              <li>Golshifteh Farahani - Dr. Leila Brohn</li>
-            </ul>
-          </li>
-        </ul>
-      </div>
+        <div class="movie">
+          <a href="assets/trailers/rave.mp4">
+            <img src="assets/posters/Raven.jpg" alt="Rave кино зураг">
+          </a>
+          <h3>RAVEN</h3>
+          <p><b>Үйл явдал:</b> Цусан улаан сар, манан бүрхсэн жихүүцэм үдэш болсон тэр аймшигт явдлыг харсан цор ганц амьд гэрч нь хүн бус байв. Энэхүү нууцлаг хэргийг тайлахаар мөрдөгч Sam walker ажиллах болов.</p>
+          <ul>
+            <li>Найруулагч: John Kenny</li>
+            <li>Жанр: Адал явдалт, нэмт хэрэг</li>
+            <li>Үргэлжлэх хугацаа: 2 цаг 30 минут</li>
+            <li>Насны ангилал: PG-18</li>
+            <li>Жүжигчдийн бүрэлдэхүүн
+              <ul>
+                <li>Colin Firth - Sam walker</li>
+                <li>Toni Collette - Ethan Hunt</li>
+                <li>Mark Strong - Agent Frank Powell</li>
+                <li>Golshifteh Farahani - Dr. Leila Brohn</li>
+              </ul>
+            </li>
+          </ul>
+        </div>
 
-      <div class="movie">
-        <a href="assets/trailers/AstronautTrailer.mp4">
-          <img src="assets/posters/Astronaut.jpg" alt="The Astronaut">
-        </a>
-        <h3>THE ASTRONAUT</h3>
-        <p><b>Үйл явдал:</b> Сам Уокер НАСА-гийн сансрын нисгэгч. Тэр сансраас буцаж ирсний дараа түүний хөлөг сансрын хөлөг саатаж осолддог. Түүнийг амьд байлгах, эргэн сэргээх зорилгоор өндөр хамгаалалттай объект руу авчирна. Гэвч Самд хачирхалтай зүйлс тохиолдох болсноор, тэр сансар огторгуйгаас “дагалдан ирсэн” эсэх сэжигтэй нөхцөл байдал үүсдэг.</p>
-        <ul>
-          <li>Найруулагч: Shelagh McLeod</li>
-          <li>Жанр: Адал явдалт, Нууцлаг</li>
-          <li>Үргэлжлэх хугацаа: 1 цаг 50 минут</li>
-          <li>Насны ангилал: PG-13</li>
-          <li>Жүжигчдийн бүрэлдэхүүн
-            <ul>
-              <li>Colin Firth - Sam Walker</li>
-              <li>Toni Collette - Dr. Emma Foster</li>
-              <li>Mark Strong - Agent Frank Powell</li>
-              <li>Golshifteh Farahani - Dr. Leila Hassan</li>
-            </ul>
-          </li>
-        </ul>
-      </div>
+        <div class="movie">
+          <a href="assets/trailers/AstronautTrailer.mp4">
+            <img src="assets/posters/Astronaut.jpg" alt="The Astronaut">
+          </a>
+          <h3>THE ASTRONAUT</h3>
+          <p><b>Үйл явдал:</b> Сам Уокер НАСА-гийн сансрын нисгэгч. Тэр сансраас буцаж ирсний дараа түүний хөлөг сансрын хөлөг саатаж осолддог. Түүнийг амьд байлгах, эргэн сэргээх зорилгоор өндөр хамгаалалттай объект руу авчирна. Гэвч Самд хачирхалтай зүйлс тохиолдох болсноор, тэр сансар огторгуйгаас “дагалдан ирсэн” эсэх сэжигтэй нөхцөл байдал үүсдэг.</p>
+          <ul>
+            <li>Найруулагч: Shelagh McLeod</li>
+            <li>Жанр: Адал явдалт, Нууцлаг</li>
+            <li>Үргэлжлэх хугацаа: 1 цаг 50 минут</li>
+            <li>Насны ангилал: PG-13</li>
+            <li>Жүжигчдийн бүрэлдэхүүн
+              <ul>
+                <li>Colin Firth - Sam Walker</li>
+                <li>Toni Collette - Dr. Emma Foster</li>
+                <li>Mark Strong - Agent Frank Powell</li>
+                <li>Golshifteh Farahani - Dr. Leila Hassan</li>
+              </ul>
+            </li>
+          </ul>
+        </div>
 
-      <div class="movie">
-        <a href="assets/trailers/Empireofsmt.mp4">
-          <img src="assets/posters/EmpireOfSmt.jpg" alt="Empire of Shadows">
-        </a>
-        
-        <h3>EMPIRE OF SHADOWS</h3>
-        <p><b>Үйл явдал:</b> Энэ кино нь адал явдалт, нууцлаг мөрдлөгийн төрөл. James Bond ба Ethan Hunt гэсэн хоёр алдарт агент хамтарч, SPECTRE гэдэг байгууллагын гол удирдагч, Blofeld-ийг олохын тулд нууц харилцаа, сенсаци, мөрдлөгийн сүлжээг даван туулна. Тэдгээрийн зорилго SPECTRE-ийг сүйтгэн, түүний далд үйл ажиллагааг илрүүлэх юм.</p>
-        <ul>
-          <li>Найруулагч: John Kenny</li>
-          <li>Жанр: Адал явдалт, Сэтгэл зүй</li>
-          <li>Үргэлжлэх хугацаа: 1 цаг 40 минут</li>
-          <li>Насны ангилал: PG-18</li>
-          <li>Жүжигчдийн бүрэлдэхүүн
-            <ul>
-              <li>Colin Firth - James Bond</li>
-              <li>Toni Collette - Ethan Hunt</li>
-              <li>Mark Strong - Agent Frank Powell</li>
-              <li>Golshifteh Farahani - Dr. Leila Hassan</li>
-            </ul>
-          </li>
-        </ul>
-      </div>
-    </div>
-
-    <u><p>Та трейлер үзэхийг хүсвэл постер дээр дарна уу.</p></u>
+        <div class="movie">
+          <a href="assets/trailers/Empireofsmt.mp4">
+            <img src="assets/posters/EmpireOfSmt.jpg" alt="Empire of Shadows">
+          </a>
+          
+          <h3>EMPIRE OF SHADOWS</h3>
+          <p><b>Үйл явдал:</b> Энэ кино нь адал явдалт, нууцлаг мөрдлөгийн төрөл. James Bond ба Ethan Hunt гэсэн хоёр алдарт агент хамтарч, SPECTRE гэдэг байгууллагын гол удирдагч, Blofeld-ийг олохын тулд нууц харилцаа, сенсаци, мөрдлөгийн сүлжээг даван туулна. Тэдгээрийн зорилго SPECTRE-ийг сүйтгэн, түүний далд үйл ажиллагааг илрүүлэх юм.</p>
+          <ul>
+            <li>Найруулагч: John Kenny</li>
+            <li>Жанр: Адал явдалт, Сэтгэл зүй</li>
+            <li>Үргэлжлэх хугацаа: 1 цаг 40 минут</li>
+            <li>Насны ангилал: PG-18</li>
+            <li>Жүжигчдийн бүрэлдэхүүн
+              <ul>
+                <li>Colin Firth - James Bond</li>
+                <li>Toni Collette - Ethan Hunt</li>
+                <li>Mark Strong - Agent Frank Powell</li>
+                <li>Golshifteh Farahani - Dr. Leila Hassan</li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+    </fieldset>
   </main>
 
-  <footer role="contentinfo">
-    <section aria-labelledby="contact-title">
-      <h2 id="contact-title">Холбоо барих</h2>
-      <address>
-        Имэйл: <a href="mailto:Munkhb4y4r@gmail.com">munkhb4y4r@gmail.com</a><br />
-        Байршил: Улаанбаатар, Монгол
-      </address>
-    </section>
+     <footer role="contentinfo">
+    <div class="container">
+      <section>
+        <h2>Холбоо барих</h2>
+        <address>
+          Имэйл: <a href="mailto:Munkhb4y4r@gmail.com">munkhb4y4r@gmail.com</a><br />
+          Байршил: Улаанбаатар, Монгол
+        </address>
+      </section>
 
-    <section aria-labelledby="rights-title">
-      <h2 id="rights-title">Зохиогчийн эрх</h2>
-      <p>© 2025 6r bag Movies. Бүх эрх хуулиар хамгаалагдсан.</p>
-    </section>
-
-    <nav aria-label="Доод цэс">
-      <ul>
-        <li><a href="terms.html">Үйлчилгээний нөхцөл</a></li>
-      </ul>
-    </nav>
+      <div class="legal">
+        <p>© 2025 6r bag Movies. Бүх эрх хуулиар хамгаалагдсан.</p>
+      </div>
+    </div>
   </footer>
-  </div>
 </body>
 </html>
