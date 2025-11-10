@@ -7,48 +7,126 @@
   <meta name="description" content="online movie site">
 
   <style>
-    body {
-      margin: 0;
-      background-color: #1e1e1e;
+:root{
+      --bg:#1a1a1a;
+      --ink:#f0f0f0;
+      --muted:#9aa0a6;
+      --teal:#008080;
+      --teal-2:#004d4d;
+      --cyan:#00ffff;
+      --gold:#ffd700;
+    }
+    *{
+      box-sizing:border-box}
+    
+    body{
+      margin:0;font-family:Arial,system-ui,-apple-system,Segoe UI,Roboto,sans-serif;
+      background:var(--bg);
+      color:var(--ink);
+      line-height:1.6;
+    }
+    a{
+      color:var(--gold);
+      text-decoration:none;
+      transition:color .2s
+    }
+    a:hover{
+      color:var(--cyan);
+      text-decoration:underline;
+    }
+    .container{
+      max-width:1180px;
+      margin:0 auto;
+      padding:16px
+    }
+    header,footer{
+      background:#000
     }
 
-    .container {
-      max-width: 1000px;
-      margin: 0 auto;
-      font-family: Arial, sans-serif;
-      color: #f0f0f0;
-      background-color: #2c2c2c;
-      box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
-      padding: 20px;
+    header .bar{
+      display:flex;
+      align-items:center;
+      gap:16px;
+      padding:10px 0
     }
-    h2 {
-      color: #00FFFF;
-      border-bottom: 2px solid #004d4d;
-      padding-bottom: 0px;
+    .logo-wrap
+    {display:flex;
+      align-items:center;
+      gap:12px
     }
+    .site-title h1{
+      margin:0;
+      font-size:1.6rem
+    }
+    .site-title p{
+      margin:2px 0 0;color:var(--muted);
+      font-size:.95rem
+    }
+    .top-links{
+      display:flex;gap:14px;margin-left:auto;
+      flex-wrap:wrap
+    }
+    .top-links a{
+      color:var(--ink);opacity:.9
+    }
+    .top-links a:hover{
+      opacity:1;color:var(--gold)
+    }
+    nav.main{
+      background:#000;border-top:1px solid var(--teal-2);border-bottom:1px solid var(--teal-2);
+      margin-top:8px;padding:10px 0;display:flex;gap:18px;flex-wrap:wrap
+    }
+    nav.main a{
+      padding:6px 14px;
+      color:var(--ink);
+      font-weight:bold;text-transform:uppercase;
+      border-radius:4px
+    }
+    nav.main a:hover{
+      color:var(--bg);background:var(--gold);
+      text-decoration:none
+    }
+    footer .container{padding:18px 16px}
+    footer h2{margin:0 0 8px;color:var(--cyan)}
+    footer p,footer address{color:var(--muted)}
+    footer .legal{border-top:2px solid var(--teal);margin-top:12px;padding-top:12px;text-align:center;color:#888}
 
-    a {
-      color: #4da3ff;
-      text-decoration: none;
+     main{
+      padding:16px;
+      max-width:85%;
+      margin:0 auto;
     }
-
-    a:hover {
-      text-decoration: underline;
-    }
-
-    /* --- Flexbox кино хэсэг --- */
-    .movie {
+    .movie-list {
+      border:var(--gold) 2px solid;
       display: flex;
       gap: 20px;
-      align-items: flex-start;
+      justify-content: center;
+      padding: 20px; 
+      border-radius: 8px;
+    }
+    .movie-list legend {
+      background-color: var(--bg);
+      color: var(--cyan); 
+      font-size: 1.8rem;  
+      font-weight: bold;
+      padding: 0 10px;   
+      margin-left: 20px; 
+    }
+  
+    .movie {
+      display: flex;
+      gap: 0px;
+      flex-direction: column  ;
       background-color: #333;
       border-radius: 10px;
       padding: 20px;
-      margin-bottom: 40px;
+      background-color: #3a3a3a;
+      width: 80%;     
+      box-shadow: 0 0 10px rgba(0,0,0,0.5);
     }
 
     .movie img {
-      width: 400px;
+      width: 460px;
       border-radius: 10px;
       display: block;
     }
@@ -62,97 +140,90 @@
 
     .movie-info h3 {
       margin-top: 0;
-      color: #00FFFF;
+      color: var(--cyan);
     }
-
-    ul {
-      margin-top: 5px;
-    }
-
-    
-
   </style>
 </head>
 
 <body>
-  <div class="container">
-  <header role="banner">
-    <table border="1" cellpadding="6" summary="Login and Register">
-      <tr>
-        <td><a href="login.html">Нэвтрэх</a></td>
-        <td><a href="register.html">Бүртгүүлэх</a></td>
-      </tr>
-    </table>  
-    <div>
-      <img src="assets/logo.svg" alt="6r bag logo" width="100" height="100" />
-      <h1>Movies</h1>
-      <p>Онлайн кино сайт</p>
+        <header role="banner">
+    <div class="container">
+      <div class="bar">
+        <div class="logo-wrap">
+          <img src="assets/logo.svg" alt="6r bag logo" width="64" height="64" />
+          <div class="site-title">
+            <h1>Movies</h1>
+            <p>Онлайн кино сайт</p>
+          </div>
+        </div>
+
+        <div class="top-links">
+          <a href="login.html">Нэвтрэх</a>
+          <a href="register.html">Бүртгүүлэх</a>
+          <a href="about.html">Бидний тухай</a>
+        </div>
+      </div>
+
+      <nav class="main">
+        <a href="index.html">Нүүр</a>
+        <a href="login.html">Гарах</a>
+        <a href="profile.html">Profile</a>
+        <a href="payment.html">Гишүүнчлэл</a>
+        <a href="shop.html">Дэлгүүр</a>
+      </nav>
     </div>
-    <nav>
-      <ul>
-        <li><a href="genres.html">Төрлүүд</a></li>
-      </ul>
-    </nav>
-    <nav>
-      <a href="login.html">Гарах</a> |
-      <a href="profile.html">Profile</a>
-    </nav>  
   </header>
 
-  <main>
-    <h2>Кино ертөнцийн шуугиан</h2>
+  <main class="main">
+    <fieldset class="movie-list">
+      <legend>Кино ертөнцийн шуугиан</legend>
 
-    <div class="movie">
-      <img src="assets/posters/a2.webp" alt="Blake Lively болон Justin Baldoni">
-      <div class="movie-info">
-        <h3>Blake Lively ба Justin Baldoni: “It Ends With Us” киноны маргаан</h3>
-        <p>Blake Lively болон Justin Baldoni нарын хооронд үүссэн маргаан нь 2024 оны сүүлээр эхэлсэн бөгөөд дараах үйл явдлуудтай холбоотой:</p>
-        <ul>
-          <li>Blake Lively нь California Civil Rights Department-т гомдол гаргаж, Baldoni нь ажлын байран дахь доромжлол болон аюулгүй байдлын асуудлуудыг үүсгэсэн гэж мэдэгджээ.</li>
-          <li>Үүний хариуд, Baldoni нь Lively, түүний нөхөр Ryan Reynolds болон сурталчилгааны ажилтан Leslie Sloane-ийг 400 сая долларын хуулийн хэрэгт татсан.</li>
-          <li>Taylor Swift-ийг гэрчээр дуудахыг хүссэн боловч түүний төлөөлөгч үүнийг няцаажээ.</li>
-          <li>2025 оны 6-р сард шүүх Baldoni-гийн 400 сая долларын нэхэмжлэлийг хэрэгсэхгүй болгосон байна.</li>
-        </ul>
+      <div class="movie">
+        <img src="assets/posters/a2.webp" alt="Blake Lively болон Justin Baldoni">
+        <div class="movie-info">
+          <h3>Blake Lively ба Justin Baldoni: “It Ends With Us” киноны маргаан</h3>
+          <p>Blake Lively болон Justin Baldoni нарын хооронд үүссэн маргаан нь 2024 оны сүүлээр эхэлсэн бөгөөд дараах үйл явдлуудтай холбоотой:</p>
+          <ul>
+            <li>Blake Lively нь California Civil Rights Department-т гомдол гаргаж, Baldoni нь ажлын байран дахь доромжлол болон аюулгүй байдлын асуудлуудыг үүсгэсэн гэж мэдэгджээ.</li>
+            <li>Үүний хариуд, Baldoni нь Lively, түүний нөхөр Ryan Reynolds болон сурталчилгааны ажилтан Leslie Sloane-ийг 400 сая долларын хуулийн хэрэгт татсан.</li>
+            <li>Taylor Swift-ийг гэрчээр дуудахыг хүссэн боловч түүний төлөөлөгч үүнийг няцаажээ.</li>
+            <li>2025 оны 6-р сард шүүх Baldoni-гийн 400 сая долларын нэхэмжлэлийг хэрэгсэхгүй болгосон байна.</li>
+          </ul>
+        </div>
       </div>
-    </div>
 
-    <div class="movie">
-      <img src="assets/posters/a3.jpg" alt="Nicole Kidman ба Keith Urban">
-      <div class="movie-info">
-        <h3>Nicole Kidman ба Keith Urban: 19 жилийн дараа салалт</h3>
-        <p>Nicole Kidman болон Keith Urban нар 2025 оны 9-р сард 19 жилийн хамтын амьдралынхаа дараа салсан гэж мэдээлэгдсэн. Салалтын шалтгаан нь хоёрын ажил амьдралын зөрчилдөөн, тус тусдаа амьдрах шаардлагаас үүдэлтэй гэж үзэж байна. Urban нь салалтын дараа шинэ орон сууцанд нүүж, Kidman нь хүүхдүүдтэйгээ хамт амьдарч байгаа бөгөөд хувийн амьдралдаа анхаарал хандуулж байна.</p>
+      <div class="movie">
+        <img src="assets/posters/a3.jpg" alt="Nicole Kidman ба Keith Urban">
+        <div class="movie-info">
+          <h3>Nicole Kidman ба Keith Urban: 19 жилийн дараа салалт</h3>
+          <p>Nicole Kidman болон Keith Urban нар 2025 оны 9-р сард 19 жилийн хамтын амьдралынхаа дараа салсан гэж мэдээлэгдсэн. Салалтын шалтгаан нь хоёрын ажил амьдралын зөрчилдөөн, тус тусдаа амьдрах шаардлагаас үүдэлтэй гэж үзэж байна. Urban нь салалтын дараа шинэ орон сууцанд нүүж, Kidman нь хүүхдүүдтэйгээ хамт амьдарч байгаа бөгөөд хувийн амьдралдаа анхаарал хандуулж байна.</p>
+        </div>
       </div>
-    </div>
 
-    <div class="movie">
-      <img src="assets/posters/a4.jpg" alt="Sydney Sweeney ба Scooter Braun">
-      <div class="movie-info">
-        <h3>Sydney Sweeney ба Scooter Braun: Шинэ хосууд</h3>
-        <p>Sydney Sweeney болон Scooter Braun нарын харилцаа 2025 оны 9-р сард эхэлсэн бөгөөд тэднийг хамтдаа олон нийтийн арга хэмжээнүүдэд харагдсан байна. Sweeney нь саяхан 28 насныхаа төрсөн өдрийг тэмдэглэж, түүний эцэг эхтэйгээ хамт Halloween Horror Nights арга хэмжээнд оролцсон байна. Braun нь алдартай хөгжмийн менежер бөгөөд тэдний харилцаа нь "бодит" бөгөөд "тогтвортой" гэж эх сурвалжууд мэдээлж байна.</p>
+      <div class="movie">
+        <img src="assets/posters/a4.jpg" alt="Sydney Sweeney ба Scooter Braun">
+        <div class="movie-info">
+          <h3>Sydney Sweeney ба Scooter Braun: Шинэ хосууд</h3>
+          <p>Sydney Sweeney болон Scooter Braun нарын харилцаа 2025 оны 9-р сард эхэлсэн бөгөөд тэднийг хамтдаа олон нийтийн арга хэмжээнүүдэд харагдсан байна. Sweeney нь саяхан 28 насныхаа төрсөн өдрийг тэмдэглэж, түүний эцэг эхтэйгээ хамт Halloween Horror Nights арга хэмжээнд оролцсон байна. Braun нь алдартай хөгжмийн менежер бөгөөд тэдний харилцаа нь "бодит" бөгөөд "тогтвортой" гэж эх сурвалжууд мэдээлж байна.</p>
+        </div>
       </div>
-    </div>
+    </fieldset>
   </main>
 
-  <footer role="contentinfo">
-    <section aria-labelledby="contact-title">
-      <h2 id="contact-title">Холбоо барих</h2>
-      <address>
-        Имэйл: <a href="mailto:Munkhb4y4r@gmail.com">munkhb4y4r@gmail.com</a><br />
-        Байршил: Улаанбаатар, Монгол
-      </address>
-    </section>
+     <footer role="contentinfo">
+    <div class="container">
+      <section>
+        <h2>Холбоо барих</h2>
+        <address>
+          Имэйл: <a href="mailto:Munkhb4y4r@gmail.com">munkhb4y4r@gmail.com</a><br />
+          Байршил: Улаанбаатар, Монгол
+        </address>
+      </section>
 
-    <section aria-labelledby="rights-title">
-      <h2 id="rights-title">Зохиогчийн эрх</h2>
-      <p>© 2025 6r bag Movies. Бүх эрх хуулиар хамгаалагдсан.</p>
-    </section>
-
-    <nav aria-label="Доод цэс">
-      <ul>
-        <li><a href="terms.html">Үйлчилгээний нөхцөл</a></li>
-      </ul>
-    </nav>
+      <div class="legal">
+        <p>© 2025 6r bag Movies. Бүх эрх хуулиар хамгаалагдсан.</p>
+      </div>
+    </div>
   </footer>
-  </div>
 </body>
 </html>
