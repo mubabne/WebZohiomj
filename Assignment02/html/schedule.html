@@ -1,159 +1,237 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="mn">
 <head>
-    <meta charset="UTF-8">
-    <title>Хуваарь — Кино Театр</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>🎞 Хуваарь — 6r bag Movies</title>
+  <meta name="description" content="Кино үзвэрийн хуваарь">
+
   <style>
-    :root{
-      --bg:#1a1a1a;--panel:#2c2c2c;--ink:#f0f0f0;--muted:#9aa0a6;
-      --teal:#008080;--teal-2:#004d4d;--cyan:#00ffff;--gold:#ffd700;--border:#444
+    :root {
+      --bg: #1a1a1a;
+      --panel: #2c2c2c;
+      --ink: #f0f0f0;
+      --muted: #9aa0a6;
+      --teal: #008080;
+      --teal-2: #004d4d;
+      --cyan: #00ffff;
+      --gold: #ffd700;
+      --border: #444;
     }
-    *{box-sizing:border-box}
-    html,body{height:100%}
-    body{
-      margin:0;font-family:Arial,system-ui,-apple-system,Segoe UI,Roboto,sans-serif;
-      background:var(--bg);color:var(--ink);line-height:1.6
+    * { box-sizing: border-box; }
+    html, body { height: 100%; }
+    body {
+      margin: 0;
+      font-family: Arial, system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+      background: var(--bg);
+      color: var(--ink);
+      line-height: 1.6;
     }
-    a{color:var(--gold);text-decoration:none;transition:color .2s}
-    a:hover{color:var(--cyan);text-decoration:underline}
-    .container{max-width:1180px;margin:0 auto;padding:16px}
-    header,footer{background:#000}
+    a { color: var(--gold); text-decoration: none; transition: color 0.2s; }
+    a:hover { color: var(--cyan); text-decoration: underline; }
+    .container { max-width: 1180px; margin: 0 auto; padding: 16px; }
 
-    header .bar{display:flex;align-items:center;gap:16px;padding:10px 0}
-    .logo-wrap{display:flex;align-items:center;gap:12px}
-    .site-title h1{margin:0;font-size:1.6rem}
-    .site-title p{margin:2px 0 0;color:var(--muted);font-size:.95rem}
-    .top-links{display:flex;gap:14px;margin-left:auto;flex-wrap:wrap}
-    .top-links a{color:var(--ink);opacity:.9}
-    .top-links a:hover{opacity:1;color:var(--gold)}
-    nav.main{
-      background:#000;border-top:1px solid var(--teal-2);border-bottom:1px solid var(--teal-2);
-      margin-top:8px;padding:10px 0;display:flex;gap:18px;flex-wrap:wrap
+    header, footer { background: #000; }
+    header .bar {
+      display: flex; align-items: center; gap: 16px; padding: 10px 0;
     }
-    nav.main a{
-      padding:6px 14px;color:var(--ink);font-weight:bold;text-transform:uppercase;border-radius:4px
-    }
-    nav.main a:hover{color:var(--bg);background:var(--gold);text-decoration:none}
+    .logo-wrap { display: flex; align-items: center; gap: 12px; }
+    .site-title h1 { margin: 0; font-size: 1.6rem; }
+    .site-title p { margin: 2px 0 0; color: var(--muted); font-size: .95rem; }
 
-    section.panel{
-      background:var(--panel);border:1px solid var(--teal-2);border-radius:8px;
-      padding:16px;margin:16px 0;box-shadow:0 0 12px rgba(0,0,0,.35)
+    .top-links {
+      display: flex; gap: 14px; margin-left: auto; flex-wrap: wrap;
     }
-    section.panel>h2{
-      color:var(--cyan);border-bottom:2px solid var(--teal-2);padding-bottom:8px;margin-top:0
-    }
+    .top-links a { color: var(--ink); opacity: .9; }
+    .top-links a:hover { opacity: 1; color: var(--gold); }
 
-    .list-head,.genre-row{
-      display:flex;align-items:center;gap:12px;border-bottom:1px solid var(--border);padding:10px 8px
+    nav.main {
+      background: #000;
+      border-top: 1px solid var(--teal-2);
+      border-bottom: 1px solid var(--teal-2);
+      margin-top: 8px;
+      padding: 10px 0;
+      display: flex;
+      gap: 18px;
+      flex-wrap: wrap;
     }
-    .list-head{background:var(--teal);color:#fff;font-weight:700;text-transform:uppercase}
-    .col-no{flex:0 0 50px;text-align:center}
-    .col-name{flex:0 0 180px}
-    .col-desc{flex:1 1 auto;min-width:240px}
-    .col-example{flex:0 0 220px}
-    .genre-row:nth-child(even){background:#2b2b2b}
-    .genre-row:hover{background:#323232}
-
-    @media (max-width:820px){
-      .list-head{display:none}
-      .genre-row{flex-wrap:wrap;align-items:flex-start}
-      .col-no{flex:0 0 50px}
-      .col-name{flex:1 1 220px}
-      .col-desc{flex:1 1 100%}
-      .col-example{flex:1 1 220px}
-      .label{display:inline-block;color:var(--muted);margin-right:8px}
+    nav.main a {
+      padding: 6px 14px;
+      color: var(--ink);
+      font-weight: bold;
+      text-transform: uppercase;
+      border-radius: 4px;
+    }
+    nav.main a:hover {
+      color: var(--bg);
+      background: var(--gold);
+      text-decoration: none;
     }
 
-    footer .container{padding:18px 16px}
-    footer h2{margin:0 0 8px;color:var(--cyan)}
-    footer p,footer address{color:var(--muted)}
-    footer .legal{border-top:2px solid var(--teal);margin-top:12px;padding-top:12px;text-align:center;color:#888}
+    section.panel {
+      background: var(--panel);
+      border: 1px solid var(--teal-2);
+      border-radius: 8px;
+      padding: 16px;
+      margin: 16px 0;
+      box-shadow: 0 0 12px rgba(0,0,0,.35);
+    }
+    section.panel > h2 {
+      color: var(--cyan);
+      border-bottom: 2px solid var(--teal-2);
+      padding-bottom: 8px;
+      margin-top: 0;
+      text-align: center;
+    }
+
+    /* --- Хуваарийн хүснэгт --- */
+    table.schedule {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 10px;
+    }
+    table.schedule th, table.schedule td {
+      border: 1px solid var(--border);
+      padding: 10px;
+      text-align: center;
+    }
+    table.schedule th {
+      background: var(--teal-2);
+      color: var(--cyan);
+      text-transform: uppercase;
+    }
+    table.schedule tr:nth-child(even) {
+      background: #2b2b2b;
+    }
+    table.schedule tr:hover {
+      background: #323232;
+    }
+    table.schedule img {
+      border-radius: 6px;
+      border: 2px solid var(--gold);
+    }
+
+    footer .container {
+      padding: 18px 16px;
+    }
+    footer h2 {
+      margin: 0 0 8px;
+      color: var(--cyan);
+    }
+    footer p, footer address {
+      color: var(--muted);
+    }
+    footer .legal {
+      border-top: 2px solid var(--teal);
+      margin-top: 12px;
+      padding-top: 12px;
+      text-align: center;
+      color: #888;
+    }
+
+    @media (max-width: 650px) {
+      table.schedule th, table.schedule td {
+        font-size: 0.9rem;
+        padding: 6px;
+      }
+      table.schedule img { width: 70px; }
+    }
   </style>
 </head>
-<body>
-<header role="banner">
-    <table border="1" cellpadding="6" summary="Login and Register">
-      <tr>
-        <td><a href="login.html">Нэвтрэх</a></td>
-        <td><a href="register.html">Бүртгүүлэх</a></td>
-        <td><a href="about.html">Бидний тухай</a></td>
-      </tr>
-    </table>
 
-    <table border="1" cellpadding="6" summary="Logo and Navigation">
-      <tr>
-        <td rowspan="2">
-          <img src="assets/logo.svg" alt="6r bag logo" width="100" height="100" />
-        </td>
-        <td>
-          <h1>Movies</h1>
-          <p>Онлайн кино сайт</p>
-        </td>
-      </tr>
-      <tr>
-        <td>
-          <nav>
-            <a href="index.html">Нүүр</a> |
-            <a href="login.html">Гарах</a> |
-            <a href="profile.html">Profile</a> |
-            <a href="payment.html">Гишүүнчлэл</a> |
-            <a href="shop.html"> Дэлгүүр</a>
-          </nav>
-        </td>
-      </tr>
-    </table>
+<body>
+  <header role="banner">
+    <div class="container">
+      <div class="bar">
+        <div class="logo-wrap">
+          <img src="assets/logo.svg" alt="6r bag logo" width="64" height="64" />
+          <div class="site-title">
+            <h1>6r bag Movies</h1>
+            <p>Кино үзвэрийн албан ёсны сайт</p>
+          </div>
+        </div>
+
+        <div class="top-links">
+          <a href="login.html">Нэвтрэх</a>
+          <a href="register.html">Бүртгүүлэх</a>
+          <a href="about.html">Бидний тухай</a>
+        </div>
+      </div>
+
+      <nav class="main">
+        <a href="index.html">Нүүр</a>
+        <a href="profile.html">Профайл</a>
+        <a href="payment.html">Гишүүнчлэл</a>
+        <a href="shop.html">Дэлгүүр</a>
+        <a href="tickets.html">Тасалбар</a>
+        <a href="schedule.html">Хуваарь</a>
+        <a href="reviews.html">Сэтгэгдэл</a>
+      </nav>
+    </div>
   </header>
 
-<main>
-    <h2>Кино үзвэрийн хуваарь</h2>
+  <main class="container">
+    <section class="panel">
+      <h2>🎞 Кино үзвэрийн хуваарь</h2>
 
-    <table border="1" cellpadding="5" cellspacing="0">
+      <table class="schedule">
         <thead>
-            <tr>
-                <th>Огноо</th>
-                <th>Кино</th>
-                <th>Цаг</th>
-                <th>Танхим</th>
-                <th>Постер</th>
-            </tr>
+          <tr>
+            <th>Огноо</th>
+            <th>Кино</th>
+            <th>Цаг</th>
+            <th>Танхим</th>
+            <th>Постер</th>
+          </tr>
         </thead>
         <tbody>
-            <tr>
-                <td>10-р сар 8</td>
-                <td>28days later</td>
-                <td>18:00</td>
-                <td>1</td>
-                <td><img src="28dayslater.jpg" alt="28 days later" width="100"></td>
-            </tr>
-            <tr>
-                <td>10-р сар 8</td>
-                <td>After</td>
-                <td>20:30</td>
-                <td>2</td>
-                <td><img src="After.jpg" alt="After" width="100"></td>
-            </tr>
-            <tr>
-                <td>10-р сар 9</td>
-                <td>Astronaut</td>
-                <td>19:00</td>
-                <td>3</td>
-                <td><img src="Astronaut.jpg" alt="Astronaut" width="100"></td>
-            </tr>
-            <tr>
-                <td>10-р сар 10</td>
-                <td>Raven</td>
-                <td>21:00</td>
-                <td>2</td>
-                <td><img src="Raven.jpg" alt="Raven" width="100"></td>
-            </tr>
+          <tr>
+            <td>10-р сар 8</td>
+            <td>28 Days Later</td>
+            <td>18:00</td>
+            <td>1</td>
+            <td><img src="28dayslater.jpg" alt="28 Days Later" width="100"></td>
+          </tr>
+          <tr>
+            <td>10-р сар 8</td>
+            <td>After</td>
+            <td>20:30</td>
+            <td>2</td>
+            <td><img src="After.jpg" alt="After" width="100"></td>
+          </tr>
+          <tr>
+            <td>10-р сар 9</td>
+            <td>Astronaut</td>
+            <td>19:00</td>
+            <td>3</td>
+            <td><img src="Astronaut.jpg" alt="Astronaut" width="100"></td>
+          </tr>
+          <tr>
+            <td>10-р сар 10</td>
+            <td>Raven</td>
+            <td>21:00</td>
+            <td>2</td>
+            <td><img src="Raven.jpg" alt="Raven" width="100"></td>
+          </tr>
         </tbody>
-    </table>
-</main>
+      </table>
+    </section>
+  </main>
 
-<footer>
-    <hr>
-    <p>© 2025 Кино Театр. Бүх эрх хуулиар хамгаалагдсан.</p>
-</footer>
+  <footer role="contentinfo">
+    <div class="container">
+      <section>
+        <h2>Холбоо барих</h2>
+        <address>
+          Имэйл: <a href="mailto:Munkhb4y4r@gmail.com">munkhb4y4r@gmail.com</a><br>
+          Байршил: Улаанбаатар, Монгол
+        </address>
+      </section>
+
+      <div class="legal">
+        <p>© 2025 6r bag Movies. Бүх эрх хуулиар хамгаалагдсан.</p>
+      </div>
+    </div>
+  </footer>
 </body>
 </html>
-
