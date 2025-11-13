@@ -96,12 +96,9 @@
       margin:0 auto;
     }
     .movie-list {
-      border:var(--gold) 2px solid;
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      width: auto; 
-      margin: auto;
+      border:var(--gold) 2px solid;          
+      width: 100%; 
+      margin: auto;      
       border-radius: 8px;
     }
     .movie-list legend {
@@ -111,19 +108,28 @@
       font-weight: bold;   
       margin-left: 20px; 
     }
+
     .movie-video {
-      text-align: center;
-      width: auto;
-      margin: 0%;
+      margin: 10px auto; 
+      padding: 0;
+    }
+    .movie-video video {
+      max-width: 100%;
+      height: auto;
+      display: block;
+      margin: 0 auto; 
+      border: var(--gold) 3px solid; 
+      border-radius: 5px;
     }
     h2{
-      color: var(--cyan);
+      color: var(--cyan);    
+      text-align: center;
     }
     .movie-description {
-      margin: 0%;
       padding: 0%;
       width: 90%;
       text-align: justify;
+      margin-left: 80px;
     }
 
     .comment-section {
@@ -207,13 +213,12 @@
       
         <div class="movie-video">
           <video src="assets/trailers/avatar.mp4" controls></video>
-          <h2>Киноны нэр</h2>
         </div>
-        
+        <h2>Киноны нэр</h2>
         <div class="movie-description">
           <p><b>Товч үйл явдал:</b> Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nulla hic, accusantium quas sapiente vitae, nostrum autem officiis eveniet natus est eius obcaecati rem ab in molestiae? Ut, molestiae doloribus aspernatur tempora quam quidem, ipsum accusamus iusto dolorum exercitationem quos! Quo perferendis, illo eius impedit eos quibusdam totam officiis neque laudantium sapiente recusandae,</p>
         </div>
-      </fieldset>
+    </fieldset>
     
 
     <div class="comment-section">
