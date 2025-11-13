@@ -1,198 +1,250 @@
 <!doctype html>
 <html lang="mn">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Шинэ нууц үг - 6-р баг</title>
-    <meta name="description" content="online movie site" />
-    <style>
-      body {
-        font-family: "Poppins", sans-serif;
-        background-color: #0b0c10;
-        color: #f1f1f1;
-        margin: 0;
-        padding: 0;
-      }
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Шинэ нууц үг — 6r bag</title>
+  <meta name="description" content="Онлайн кино сайтын шинэ нууц үг тохируулах хуудас">
 
-      header,
-      footer {
-        background-color: #1f2833;
-        color: #66fcf1;
-        text-align: center;
-        padding: 15px 0;
-        border-bottom: 2px solid #45a29e;
-      }
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #1a1a1a;
+      color: #f0f0f0;
+      line-height: 1.6;
+    }
 
-      h1,
-      h2 {
-        color: #66fcf1;
-        text-align: center;
-      }
+    .container {
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 16px;
+    }
 
-      a {
-        color: #45a29e;
-        text-decoration: none;
-        font-weight: bold;
-      }
+    header, footer {
+      background-color: #000;
+      color: #f0f0f0;
+    }
+    .bar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 10px 0;
+    }
 
-      a:hover {
-        color: #66fcf1;
-        text-shadow: 0 0 5px #66fcf1;
-      }
+    .logo-wrap {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
 
-      table {
-        margin: 0 auto;
-        border-collapse: collapse;
-        background-color: #1f2833;
-        border: 1px solid #45a29e;
-        width: 80%;
-      }
+    .site-title h1 {
+      margin: 0;
+      font-size: 1.6rem;
+    }
 
-      td {
-        text-align: center;
-        padding: 10px;
-      }
+    .site-title p {
+      margin: 2px 0 0;
+      color: #aaa;
+      font-size: 0.9rem;
+    }
 
-      nav a {
-        margin: 0 8px;
-      }
+    .top-links a {
+      color: #f0f0f0;
+      text-decoration: none;
+      margin-left: 14px;
+    }
 
-      main {
-        max-width: 500px;
-        margin: 40px auto;
-        background-color: #1f2833;
-        padding: 30px;
-        border-radius: 10px;
-        box-shadow: 0 0 10px #45a29e;
-      }
+    .top-links a:hover {
+      color: #ffd700;
+    }
+    nav.main {
+      background-color: #000;
+      border-top: 1px solid #004d4d;
+      border-bottom: 1px solid #004d4d;
+      padding: 10px 0;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 15px;
+    }
 
-      form {
-        display: flex;
-        flex-direction: column;
-        gap: 15px;
-      }
+    nav.main a {
+      color: #f0f0f0;
+      text-transform: uppercase;
+      font-weight: bold;
+      text-decoration: none;
+      padding: 6px 12px;
+      border-radius: 4px;
+    }
 
-      label {
-        color: #66fcf1;
-        font-weight: bold;
-      }
+    nav.main a:hover {
+      background-color: #ffd700;
+      color: #000;
+    }
+    .panel {
+      background-color: #2c2c2c;
+      border: 1px solid #004d4d;
+      border-radius: 8px;
+      padding: 24px;
+      margin: 24px 0;
+      box-shadow: 0 0 10px rgba(0,0,0,0.5);
+    }
 
-      input {
-      
-        padding: 10px;
-        border-radius: 5px;
-        border: 1px solid #45a29e;
-        background-color: #0b0c10;
-        color: #fff;
-        width: auto;
-      
-      }
+    .panel h2 {
+      color: #00ffff;
+      border-bottom: 2px solid #004d4d;
+      padding-bottom: 8px;
+      text-align: center;
+    }
 
-      input:focus {
-        outline: none;
-        border-color: #66fcf1;
-        box-shadow: 0 0 5px #66fcf1;
-      }
+    p.intro {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+      max-width: 500px;
+      margin: 0 auto;
+    }
 
-      button {
-        background-color: #45a29e;
-        color: #0b0c10;
-        font-weight: bold;
-        padding: 10px;
-        border: none;
-        border-radius: 5px;
-        cursor: pointer;
-        transition: 0.3s;
-      }
+    label {
+      font-weight: bold;
+      color: #00ffff;
+    }
 
-      button:hover {
-        background-color: #66fcf1;
-        box-shadow: 0 0 10px #66fcf1;
-      }
+    input {
+      padding: 10px;
+      border-radius: 5px;
+      border: 1px solid #008080;
+      background-color: #0b0c10;
+      color: #fff;
+      font-size: 15px;
+    }
 
-      ul {
-        list-style: none;
-        padding: 0;
-        text-align: center;
-      }
+    input:focus {
+      outline: none;
+      border-color: #00ffff;
+      box-shadow: 0 0 5px #00ffff;
+    }
 
-      ul li {
-        margin: 10px 0;
-     
-      }
+    button {
+      background-color: #008080;
+      color: #fff;
+      font-weight: bold;
+      padding: 12px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: 0.3s;
+      font-size: 16px;
+    }
 
-      footer {
-        margin-top: 40px;
-        border-top: 2px solid #45a29e;
-        padding: 20px;
-       
-      }
+    button:hover {
+      background-color: #ffd700;
+      color: #000;
+    }
 
-      footer a {
-        color: #66fcf1;
-      }
+    .back-link {
+      text-align: center;
+      margin-top: 15px;
+    }
 
-      @media (max-width: 600px) {
+    .back-link a {
+      color: #00ffff;
+      text-decoration: none;
+    }
 
-        table,
-        td {
-          display: block;
-          width: 100%;
-        }
+    .back-link a:hover {
+      text-decoration: underline;
+    }
+    footer .container {
+      padding: 18px 16px;
+    }
 
-        main {
-          width: 90%;
-        }
-      }
-    </style>
-  </head>
-  <body>
-    <header role="banner">
-      <table border="1" cellpadding="6" summary="Login and Register">
-        <tr>
-          <td><a href="login.html">Нэвтрэх</a></td>
-          <td><a href="register.html">Бүртгүүлэх</a></td>
-          <td><a href="about.html">Бидний тухай</a></td>
-        </tr>
-      </table>
-      <table border="1" cellpadding="6" summary="Logo and Navigation">
-        <tr>
-          <td rowspan="2"><img src="assets/logo.svg" alt="6r bag logo" width="100" height="100" /></td>
-          <td>
+    footer h2 {
+      margin: 0 0 8px;
+      color: #00ffff;
+    }
+
+    footer p, footer address {
+      color: #9aa0a6;
+    }
+
+    footer .legal {
+      border-top: 2px solid #008080;
+      margin-top: 12px;
+      padding-top: 12px;
+      text-align: center;
+      color: #888;
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <div class="container">
+      <div class="bar">
+        <div class="logo-wrap">
+          <img src="assets/logo.svg" alt="6r bag logo" width="60" height="60">
+          <div class="site-title">
             <h1>Movies</h1>
             <p>Онлайн кино сайт</p>
-          </td>
-        </tr>
-        <tr>
-          <td>
-            <nav><a href="genres.html">Төрлүүд</a> | <a href="login.html">Гарах</a> | <a href="profile.html">Profile</a> | <a href="payment.html">Гишүүнчлэл</a> | <a href="shop.html">Дэлгүүр</a></nav>
-          </td>
-        </tr>
-      </table>
-    </header>
-    <main>
-      <h1> Шинэ нууц үг тохируулах</h1>
-      <p style="text-align:center;">Доорх талбарт шинэ нууц үгээ оруулж баталгаажуулна уу.</p>
-      <form><label for="newpass">Шинэ нууц үг:</label><input type="password" id="newpass" name="newpass" required><label for="confpass">Нууц үг давтах:</label><input type="password" id="confpass" name="confpass" required><button type="button" onclick="alert('Шинэ нууц үг хадгалагдлаа ')">Хадгалах</button></form>
-      <ul style="margin-top:20px;">
-        <li><a href="login.html">← Нэвтрэх хуудас руу буцах</a></li>
-      </ul>
-    </main>
-    <footer role="contentinfo">
-      <section aria-labelledby="contact-title">
-        <h2 id="contact-title"> Холбоо барих</h2>
-        <address> Имэйл: <a href="mailto:Munkhb4y4r@gmail.com">munkhb4y4r@gmail.com</a><br /> Байршил: Улаанбаатар, Монгол </address>
-      </section>
-      <section aria-labelledby="rights-title">
-        <h2 id="rights-title"> Зохиогчийн эрх</h2>
-        <p>© 2025 6-р баг Movies. Бүх эрх хуулиар хамгаалагдсан.</p>
-      </section>
-      <nav aria-label="Доод цэс">
-        <ul>
-          <li><a href="terms.html">Үйлчилгээний нөхцөл</a></li>
-          <li><a href="feedback.html">Санал хүсэлт</a></li>
-        </ul>
+          </div>
+        </div>
+        <div class="top-links">
+          <a href="login.html">Нэвтрэх</a>
+          <a href="register.html">Бүртгүүлэх</a>
+          <a href="about.html">Бидний тухай</a>
+        </div>
+      </div>
+
+      <nav class="main">
+        <a href="index.html">Нүүр</a>
+        <a href="genres.html">Төрлүүд</a>
+        <a href="movies.html">Кино жагсаалт</a>
+        <a href="profile.html">Профайл</a>
+        <a href="payment.html">Гишүүнчлэл</a>
+        <a href="shop.html">Дэлгүүр</a>
       </nav>
-    </footer>
-  </body>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="panel">
+      <h2>Шинэ нууц үг тохируулах</h2>
+      <p class="intro">Доорх талбарт шинэ нууц үгээ оруулж баталгаажуулна уу.</p>
+      <form id="resetForm">
+        <label for="newpass">Шинэ нууц үг:</label>
+        <input type="password" id="newpass" name="newpass" required>
+
+        <label for="confpass">Нууц үг давтах:</label>
+        <input type="password" id="confpass" name="confpass" required>
+
+        <button type="button" onclick="resetPassword()">Хадгалах</button>
+      </form>
+
+      <div class="back-link">
+        <a href="login.html">← Нэвтрэх хуудас руу буцах</a>
+      </div>
+    </section>
+  </main>
+
+  <footer role="contentinfo">
+    <div class="container">
+      <section>
+        <h2>Холбоо барих</h2>
+        <address>
+          Имэйл: <a href="mailto:Munkhb4y4r@gmail.com">Munkhb4y4r@gmail.com</a><br />
+          Байршил: Улаанбаатар, Монгол
+        </address>
+      </section>
+
+      <div class="legal">
+        <p>© 2025 6r bag Movies. Бүх эрх хуулиар хамгаалагдсан.</p>
+      </div>
+    </div>
+  </footer>
+</body>
 </html>

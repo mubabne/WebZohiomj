@@ -3,230 +3,256 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Санал хүсэлт - 6-р баг</title>
-  <meta name="description" content="online movie site">
+  <title>Санал хүсэлт — 6r bag</title>
+  <meta name="description" content="6r bag - Онлайн кино сайтын санал хүсэлт хуудас">
 
   <style>
-    body {
-      font-family: "Poppins", sans-serif;
-      background-color: #0b0c10;
-      color: #f1f1f1;
-      margin: 0;
-      padding: 0;
-    }
+    
 
-    header, footer {
-      background-color: #1f2833;
-      color: #66fcf1;
-      text-align: center;
-      padding: 15px 0;
-      border-bottom: 2px solid #45a29e;
-    }
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #1a1a1a;
+  color: #f0f0f0;
+  line-height: 1.6;
+}
 
-    h1, h2 {
-      color: #66fcf1;
-      text-align: center;
-    }
+.container {
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 16px;
+}
 
-    a {
-      color: #45a29e;
-      text-decoration: none;
-      font-weight: bold;
-    }
+header, footer {
+  background-color: #000;
+}
 
-    a:hover {
-      color: #66fcf1;
-      text-shadow: 0 0 5px #66fcf1;
-    }
+.bar {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 10px 0;
+}
 
-    table {
-      margin: 0 auto;
-      border-collapse: collapse;
-      background-color: #1f2833;
-      border: 1px solid #45a29e;
-      width: 80%;
-    }
+.logo-wrap {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
 
-    td {
-      text-align: center;
-      padding: 10px;
-    }
+.site-title h1 {
+  margin: 0;
+  font-size: 1.6rem;
+}
 
-    nav a {
-      margin: 0 8px;
-    }
+.site-title p {
+  margin: 2px 0 0;
+  color: #9aa0a6;
+  font-size: 0.95rem;
+}
 
-    main {
-      max-width: 600px;
-      margin: 40px auto;
-      background-color: #1f2833;
-      padding: 30px;
-      border-radius: 10px;
-      box-shadow: 0 0 10px #45a29e;
-    }
+.top-links {
+  display: flex;
+  gap: 14px;
+  margin-left: auto;
+  flex-wrap: wrap;
+}
 
-    form {
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
-    }
+.top-links a {
+  color: #f0f0f0;
+  opacity: 0.9;
+  text-decoration: none;
+}
 
-    label {
-      font-weight: bold;
-      color: #66fcf1;
-    }
+.top-links a:hover {
+  color: #ffd700;
+  opacity: 1;
+}
 
-    input, select, textarea {
-      padding: 10px;
-      border-radius: 5px;
-      border: 1px solid #45a29e;
-      background-color: #0b0c10;
-      color: #fff;
-      font-size: 14px;
-    }
+nav.main {
+  background-color: #000;
+  border-top: 1px solid #004d4d;
+  border-bottom: 1px solid #004d4d;
+  margin-top: 8px;
+  padding: 10px 0;
+  display: flex;
+  gap: 18px;
+  flex-wrap: wrap;
+}
 
-    input:focus, textarea:focus, select:focus {
-      outline: none;
-      border-color: #66fcf1;
-      box-shadow: 0 0 5px #66fcf1;
-    }
+nav.main a {
+  padding: 6px 14px;
+  color: #f0f0f0;
+  font-weight: bold;
+  text-transform: uppercase;
+  border-radius: 4px;
+  text-decoration: none;
+}
 
-    button {
-      background-color: #45a29e;
-      color: #0b0c10;
-      font-weight: bold;
-      padding: 10px;
-      border: none;
-      border-radius: 5px;
-      cursor: pointer;
-      transition: 0.3s;
-    }
+nav.main a:hover {
+  color: #1a1a1a;
+  background-color: #ffd700;
+}
 
-    button:hover {
-      background-color: #66fcf1;
-      color: #0b0c10;
-      box-shadow: 0 0 10px #66fcf1;
-    }
+.panel {
+  background-color: #2c2c2c;
+  border: 1px solid #004d4d;
+  border-radius: 8px;
+  padding: 24px;
+  margin: 24px 0;
+  box-shadow: 0 0 12px rgba(0,0,0,0.35);
+}
 
-    footer {
-      margin-top: 40px;
-      border-top: 2px solid #45a29e;
-      padding: 20px;
-    }
+.panel h2 {
+  color: #00ffff;
+  border-bottom: 2px solid #004d4d;
+  padding-bottom: 8px;
+  margin-top: 0;
+}
 
-    footer a {
-      color: #66fcf1;
-    }
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  max-width: 640px;
+  margin: 0 auto;
+}
 
-    footer ul {
-      list-style: none;
-      padding: 0;
-    }
+label {
+  font-weight: 600;
+  color: #00ffff;
+  display: block;
+  margin-bottom: 6px;
+}
 
-    footer li {
-      display: inline-block;
-      margin: 0 10px;
-    }
+input, select, textarea {
+  padding: 12px;
+  border-radius: 6px;
+  border: 1px solid #004d4d;
+  background-color: #0b0c10;
+  color: #fff;
+  font-size: 15px;
+  width: 100%;
+  box-sizing: border-box;
+}
 
-    li a {
-      color: #45a29e;
-    }
+input:focus, textarea:focus, select:focus {
+  outline: none;
+  border-color: #00ffff;
+  box-shadow: 0 0 8px rgba(0,255,255,0.4);
+}
 
-    li a:hover {
-      color: #66fcf1;
-    }
+button {
+  background-color: #008080;
+  color: #fff;
+  font-weight: bold;
+  padding: 12px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s, box-shadow 0.3s;
+  font-size: 16px;
+}
 
-    @media (max-width: 600px) {
-      table, td {
-        display: block;
-        width: 100%;
-      }
+button:hover {
+  background-color: #ffd700;
+  color: #000;
+  box-shadow: 0 0 12px #ffd700;
+}
 
-      main {
-        width: 90%;
-      }
-    }
+footer .legal {
+  border-top: 2px solid #008080;
+  margin-top: 12px;
+  padding-top: 12px;
+  text-align: center;
+  color: #888;
+}
   </style>
 </head>
 
 <body>
-<header role="banner">
-  <table border="1" cellpadding="6" summary="Login and Register">
-    <tr>
-      <td><a href="login.html">Нэвтрэх</a></td>
-      <td><a href="register.html">Бүртгүүлэх</a></td>
-      <td><a href="about.html">Бидний тухай</a></td>
-    </tr>
-  </table>
+  <header role="banner">
+    <div class="container">
+      <div class="bar">
+        <div class="logo-wrap">
+          <img src="assets/logo.svg" alt="6r bag logo" width="64" height="64" />
+          <div class="site-title">
+            <h1>Movies</h1>
+            <p>Онлайн кино сайт</p>
+          </div>
+        </div>
 
-  <table border="1" cellpadding="6" summary="Logo and Navigation">
-    <tr>
-      <td rowspan="2">
-        <img src="assets/logo.svg" alt="6r bag logo" width="100" height="100" />
-      </td>
-      <td>
-        <h1>Movies</h1>
-        <p>Онлайн кино сайт</p>
-      </td>
-    </tr>
-    <tr>
-      <td>
-        <nav>
-          <a href="genres.html">Төрлүүд</a> |
-          <a href="login.html">Гарах</a> |
-          <a href="profile.html">Profile</a> |
-          <a href="payment.html">Гишүүнчлэл</a> |
-          <a href="shop.html">Дэлгүүр</a>
-        </nav>
-      </td>
-    </tr>
-  </table>
-</header>
+        <div class="top-links">
+          <a href="login.html">Нэвтрэх</a>
+          <a href="register.html">Бүртгүүлэх</a>
+          <a href="about.html">Бидний тухай</a>
+        </div>
+      </div>
 
-<main>
-  <h1>Санал хүсэлт илгээх</h1>
-  <form>
-    <label for="email">Бүртгэлтэй имэйл:</label>
-    <input type="email" id="email" name="email" required>
+      <nav class="main">
+        <a href="index.html">Нүүр</a>
+        <a href="genres.html">Төрлүүд</a>
+        <a href="movies.html">Кино жагсаалт</a>
+        <a href="profile.html">Профайл</a>
+        <a href="payment.html">Гишүүнчлэл</a>
+        <a href="shop.html">Дэлгүүр</a>
+      </nav>
+    </div>
+  </header>
 
-    <label for="type">Саналын төрөл:</label>
-    <select id="type" name="type">
-      <option value="suggestion">Санал</option>
-      <option value="bug">Алдаа мэдээлэх</option>
-      <option value="other">Бусад</option>
-    </select>
+  <main role="main" class="container">
+    <section class="panel" aria-labelledby="feedback-section" style="min-height:75vh;">
+      <h2 id="feedback-section">Санал хүсэлт илгээх</h2>
+      <form id="feedbackForm">
+        <div>
+          <label for="email">Бүртгэлтэй имэйл:</label>
+          <input type="email" id="email" name="email" required placeholder="Таны имэйл хаяг">
+        </div>
 
-    <label for="message">Мэдээлэл:</label>
-    <textarea id="message" name="message" rows="4" required></textarea>
+        <div>
+          <label for="type">Саналын төрөл:</label>
+          <select id="type" name="type">
+            <option value="suggestion">Санал</option>
+            <option value="bug">Алдаа мэдээлэх</option>
+            <option value="content">Контентын санал</option>
+            <option value="feature">Функционалын санал</option>
+            <option value="other">Бусад</option>
+          </select>
+        </div>
 
-    <button type="button" onclick="alert('Санал илгээгдлээ!')">Илгээх</button>
-  </form>
+        <div>
+          <label for="priority">Чухалчлал:</label>
+          <select id="priority" name="priority">
+            <option value="low">Бага</option>
+            <option value="medium">Дунд</option>
+            <option value="high">Өндөр</option>
+          </select>
+        </div>
 
-  <p style="text-align:center; margin-top:15px;">
-    <a href="index.html">← Нүүр хуудас руу буцах</a>
-  </p>
-</main>
+        <div>
+          <label for="message">Санал хүсэлт:</label>
+          <textarea id="message" name="message" rows="6" required placeholder="Таны санал хүсэлтийг бичнэ үү..."></textarea>
+        </div>
 
-<footer role="contentinfo">
-  <section aria-labelledby="contact-title">
-    <h2 id="contact-title">Холбоо барих</h2>
-    <address>
-      Имэйл: <a href="mailto:Munkhb4y4r@gmail.com">munkhb4y4r@gmail.com</a><br />
-      Байршил: Улаанбаатар, Монгол
-    </address>
-  </section>
+        <button type="button" onclick="submitFeedback()">Санал илгээх</button>
+      </form>
+    </section>
+  </main>
 
-  <section aria-labelledby="rights-title">
-    <h2 id="rights-title">Зохиогчийн эрх</h2>
-    <p>© 2025 6r bag Movies. Бүх эрх хуулиар хамгаалагдсан.</p>
-  </section>
+  <footer role="contentinfo">
+    <div class="container">
+      <section>
+        <h2>Холбоо барих</h2>
+        <address>
+          Имэйл: <a href="mailto:Munkhb4y4r@gmail.com">munkhb4y4r@gmail.com</a><br />
+          Байршил: Улаанбаатар, Монгол
+        </address>
+      </section>
 
-  <nav aria-label="Доод цэс">
-    <ul>
-      <li><a href="terms.html">Үйлчилгээний нөхцөл</a></li>
-    </ul>
-  </nav>
-</footer>
-
+      <div class="legal">
+        <p>© 2025 6r bag Movies. Бүх эрх хуулиар хамгаалагдсан.</p>
+      </div>
+    </div>
+  </footer>
 </body>
 </html>
