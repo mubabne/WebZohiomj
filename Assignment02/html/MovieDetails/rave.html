@@ -4,7 +4,95 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Raven — 6r bag</title>
-  <link rel="stylesheet" href="../css/cinex-theme.css">
+
+  <style>
+    :root{
+      --bg:#1a1a1a;--panel:#2c2c2c;--ink:#f0f0f0;--muted:#9aa0a6;
+      --teal:#008080;--teal-2:#004d4d;--cyan:#00ffff;--gold:#ffd700;--border:#444
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;font-family:Arial,system-ui,-apple-system,Segoe UI,Roboto,sans-serif;
+      background:var(--bg);color:var(--ink);line-height:1.6;
+    }
+    a{color:var(--gold);text-decoration:none;transition:color .2s}
+    a:hover{color:var(--cyan);text-decoration:underline}
+    .container{max-width:1180px;margin:0 auto;padding:16px}
+    header,footer{background:#000}
+
+    header .bar{
+      display:flex;align-items:center;gap:16px;padding:10px 0
+    }
+    .logo-wrap{display:flex;align-items:center;gap:12px}
+    .site-title h1{margin:0;font-size:1.6rem}
+    .site-title p{margin:2px 0 0;color:var(--muted);font-size:.95rem}
+    .top-links{
+      display:flex;gap:14px;margin-left:auto;flex-wrap:wrap
+    }
+    .top-links a{color:var(--ink);opacity:.9}
+    .top-links a:hover{opacity:1;color:var(--gold)}
+
+    nav.main{
+      background:#000;border-top:1px solid var(--teal-2);border-bottom:1px solid var(--teal-2);
+      margin-top:8px;padding:10px 0;display:flex;gap:18px;flex-wrap:wrap
+    }
+    nav.main a{
+      padding:6px 14px;color:var(--ink);
+      font-weight:bold;text-transform:uppercase;border-radius:4px
+    }
+    nav.main a:hover{
+      color:var(--bg);background:var(--gold);text-decoration:none
+    }
+
+    section.panel{
+      background:var(--panel);border:1px solid var(--teal-2);
+      border-radius:8px;padding:18px;margin:18px 0;
+      box-shadow:0 0 12px rgba(0,0,0,.35)
+    }
+    section.panel > h2{
+      color:var(--cyan);border-bottom:2px solid var(--teal-2);
+      padding-bottom:8px;margin-top:0
+    }
+
+    .video{
+      width:100%;border:2px solid var(--gold);
+      border-radius:8px;background:#000;display:block
+    }
+
+    .kv-row{
+      display:flex;gap:12px;border-bottom:1px solid var(--border);
+      padding:10px 4px
+    }
+    .col-key{flex:0 0 170px;color:var(--cyan);font-weight:bold}
+    .col-val{flex:1}
+
+    .thumbs{
+      display:flex;gap:14px;flex-wrap:wrap;margin-top:12px
+    }
+    .thumb{
+      flex:1 1 200px;max-width:220px
+    }
+    .thumb img{
+      width:100%;border-radius:6px;border:2px solid var(--gold)
+    }
+
+    footer .container{padding:18px 16px}
+    footer h2{margin:0 0 8px;color:var(--cyan)}
+    footer p,footer address{color:var(--muted)}
+    footer .legal{
+      border-top:2px solid var(--teal);margin-top:12px;padding-top:12px;
+      text-align:center;color:#888
+    }
+
+    @media(max-width:600px){
+      .col-key{flex:0 0 120px}
+      .thumb{flex-basis:46%}
+    }
+    @media(max-width:380px){
+      .thumb{flex-basis:100%}
+    }
+  </style>
 </head>
 
 <body>
@@ -27,50 +115,47 @@
           <a href="../shop.html">Дэлгүүр</a>
         </div>
       </div>
-    </div>
 
-    <nav class="main">
-      <a href="../index.html">Нүүр</a>
-      <a href="../genres.html">Төрлүүд</a>
-      <a href="../profile.html">Profile</a>
-      <a href="../payment.html">Гишүүнчлэл</a>
-      <a href="../shop.html">Дэлгүүр</a>
-    </nav>
+      <nav class="main">
+        <a href="../index.html">Нүүр</a>
+        <a href="../genres.html">Төрлүүд</a>
+        <a href="../profile.html">Profile</a>
+        <a href="../payment.html">Гишүүнчлэл</a>
+        <a href="../shop.html">Дэлгүүр</a>
+      </nav>
+    </div>
   </header>
 
   <main class="container">
-    <!-- Movie video -->
     <section class="panel" aria-labelledby="movie-video">
       <h2 id="movie-video">Raven</h2>
-      <video controls width="100%">
+      <video class="video" controls>
         <source src="../assets/trailers/rave.mp4" type="video/mp4">
         Таны браузер видео тоглуулах боломжгүй байна.
       </video>
     </section>
 
-    <!-- Movie info -->
     <section class="panel" aria-labelledby="movie-info">
       <h2 id="movie-info">Киноны мэдээлэл</h2>
 
-      <div class="kv-row"><div class="col-key"><strong>Он:</strong></div><div class="col-val">2020</div></div>
-      <div class="kv-row"><div class="col-key"><strong>Төрөл:</strong></div><div class="col-val">Триллер, Мистик</div></div>
-      <div class="kv-row"><div class="col-key"><strong>Үргэлжлэх хугацаа:</strong></div><div class="col-val">1ц 42мин</div></div>
-      <div class="kv-row"><div class="col-key"><strong>Найруулагч:</strong></div><div class="col-val">Alan Moore</div></div>
-      <div class="kv-row"><div class="col-key"><strong>Дүрүүдэд:</strong></div><div class="col-val">Sarah Coleman, Peter Hart, John Evers</div></div>
+      <div class="kv-row"><div class="col-key">Он:</div><div class="col-val">2020</div></div>
+      <div class="kv-row"><div class="col-key">Төрөл:</div><div class="col-val">Триллер, Мистик</div></div>
+      <div class="kv-row"><div class="col-key">Үргэлжлэх хугацаа:</div><div class="col-val">1ц 42мин</div></div>
+      <div class="kv-row"><div class="col-key">Найруулагч:</div><div class="col-val">Alan Moore</div></div>
+      <div class="kv-row"><div class="col-key">Дүрүүдэд:</div><div class="col-val">Sarah Coleman, Peter Hart, John Evers</div></div>
 
       <article style="margin-top: 1em;">
         <p>Хоосон хотын дундаас нэгэн нууцлаг шувуу гарч ирнэ. “Raven” кино нь хүний айдас, гэмшил, дотоод сүүдрийн тухай сэтгэлзүйн триллер юм. Харанхуй, уур амьсгалтай дүрслэл нь үзэгчийг сэтгэлийн айдас, үнэнтэй нүүр тулахад хүргэнэ.</p>
       </article>
     </section>
 
-    <!-- Recommended movies -->
     <section class="panel" aria-labelledby="recommend-title">
       <h2 id="recommend-title">Санал болгож буй кинонууд</h2>
-      <div class="thumbs-flex">
-        <a href="Astronaut.html"><img src="../assets/posters/Astronaut.jpg" alt="Astronaut"></a>
-        <a href="avatar.html"><img src="../assets/posters/Avatar.jpg" alt="Avatar"></a>
-        <a href="EmpireOfSmt.html"><img src="../assets/posters/EmpireOfSmt.jpg" alt="Empire of Something"></a>
-        <a href="Paradise.html"><img src="../assets/posters/Paradise.jpg" alt="Paradise"></a>
+      <div class="thumbs">
+        <a class="thumb" href="Astronaut.html"><img src="../assets/posters/Astronaut.jpg" alt="Astronaut"></a>
+        <a class="thumb" href="avatar.html"><img src="../assets/posters/Avatar.jpg" alt="Avatar"></a>
+        <a class="thumb" href="EmpireOfSmt.html"><img src="../assets/posters/EmpireOfSmt.jpg" alt="Empire of Something"></a>
+        <a class="thumb" href="Paradise.html"><img src="../assets/posters/Paradise.jpg" alt="Paradise"></a>
       </div>
     </section>
   </main>
@@ -80,7 +165,7 @@
       <section>
         <h2>Холбоо барих</h2>
         <address>
-          Имэйл: <a href="mailto:Munkhb4y4r@gmail.com">munkhb4y4r@gmail.com</a><br />
+          Имэйл: <a href="mailto:Munkhb4y4r@gmail.com">Munkhb4y4r@gmail.com</a><br />
           Байршил: Улаанбаатар, Монгол
         </address>
       </section>
