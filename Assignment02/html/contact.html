@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="mn">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Холбоо барих — 6r bag Movies</title>
+<style>
+    :root{
+      --bg:#1a1a1a;--panel:#2c2c2c;--ink:#f0f0f0;--muted:#9aa0a6;
+      --teal:#008080;--teal-2:#004d4d;--cyan:#00ffff;--gold:#ffd700;--border:#444;
+    }
+    *{box-sizing:border-box;}
+    html,body{height:100%;}
+    body{
+      margin:0;font-family:Arial,system-ui,-apple-system,Segoe UI,Roboto,sans-serif;
+      background:var(--bg);color:var(--ink);line-height:1.6;
+    }
+    a{color:var(--gold);text-decoration:none;transition:color .2s;}
+    a:hover{color:var(--cyan);}
+    .container{max-width:1180px;margin:0 auto;padding:16px;}
+    header,footer{background:#000;}
+    header .bar{display:flex;align-items:center;gap:16px;padding:10px 0;}
+    .logo-wrap{display:flex;align-items:center;gap:12px;}
+    .site-title h1{margin:0;font-size:1.6rem;}
+    .site-title p{margin:2px 0 0;color:var(--muted);font-size:.95rem;}
+    .top-links{display:flex;gap:14px;margin-left:auto;flex-wrap:wrap;}
+    .top-links a{color:var(--ink);opacity:.9;}
+    .top-links a:hover{opacity:1;color:var(--gold);}
+    nav.main{
+      background:#000;border-top:1px solid var(--teal-2);border-bottom:1px solid var(--teal-2);
+      margin-top:8px;padding:10px 0;display:flex;gap:18px;flex-wrap:wrap;
+    }
+    nav.main a{
+      padding:6px 14px;color:var(--ink);font-weight:bold;text-transform:uppercase;border-radius:4px;
+    }
+    nav.main a:hover{color:var(--bg);background:var(--gold);text-decoration:none;}
+
+    section.panel{
+      background:var(--panel);border:1px solid var(--teal-2);border-radius:8px;
+      padding:16px;margin:16px 0;box-shadow:0 0 12px rgba(0,0,0,.35);
+    }
+    section.panel>h2{
+      color:var(--cyan);border-bottom:2px solid var(--teal-2);padding-bottom:8px;margin-top:0;
+      text-align:center;
+    }
+    form{display:flex;flex-direction:column;gap:12px;}
+    input,textarea,button,select{padding:8px;border-radius:4px;border:none;font-family:inherit;}
+    input,textarea,select{width:100%;max-width:600px;background:#1f1f1f;color:#fff;}
+    button{cursor:pointer;background:var(--gold);color:#000;font-weight:bold;}
+    button:hover{background:var(--cyan);color:#000;}
+
+    iframe{border-radius:8px;max-width:100%;height:auto;}
+
+    footer .container{padding:18px 16px;}
+    footer h2{margin:0 0 8px;color:var(--cyan);}
+    footer p,footer address{color:var(--muted);}
+    footer .legal{border-top:2px solid var(--teal);margin-top:12px;padding-top:12px;text-align:center;color:#888;}
+</style>
+</head>
+<body>
+<header role="banner">
+  <div class="container">
+    <div class="bar">
+      <div class="logo-wrap">
+        <img src="assets/logo.svg" alt="6r bag logo" width="64" height="64"/>
+        <div class="site-title">
+          <h1>6r bag Movies</h1>
+          <p>Онлайн кино сайт</p>
+        </div>
+      </div>
+      <div class="top-links">
+        <a href="login.html">Нэвтрэх</a>
+        <a href="register.html">Бүртгүүлэх</a>
+        <a href="about.html">Бидний тухай</a>
+      </div>
+    </div>
+    <nav class="main">
+      <a href="index.html">Нүүр</a>
+      <a href="schedule.html">Хуваарь</a>
+      <a href="tickets.html">Тасалбар</a>
+      <a href="reviews.html">Сэтгэгдэл</a>
+      <a href="contact.html"><strong>Холбоо барих</strong></a>
+    </nav>
+  </div>
+</header>
+
+<main class="container">
+  <section class="panel">
+    <h2>Холбоо барих</h2>
+    <p>Та санал хүсэлт, асуулт, хамтын ажиллагааны талаар дараах формоор бидэнд хандана уу.</p>
+
+    <form action="#" method="post" aria-label="Холбоо барих форм">
+        <label for="name">Таны нэр:</label>
+        <input type="text" id="name" name="name" required placeholder="Нэрээ оруулна уу">
+
+        <label for="email">Имэйл хаяг:</label>
+        <input type="email" id="email" name="email" required placeholder="example@mail.com">
+
+        <label for="message">Санал хүсэлт / Захидал:</label>
+        <textarea id="message" name="message" rows="5" required placeholder="Таны мессеж..."></textarea>
+
+        <button type="submit">Илгээх</button>
+    </form>
+
+    <h3>Манай байршил</h3>
+    <iframe 
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2673.920656564825!2d106.98541777624895!3d47.91857267122014!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x5d9691418a0a73cf%3A0x303fc4901cd41242!2sCinema%20Next!5e0!3m2!1smn!2smn!4v1759993932989!5m2!1smn!2smn"
+        allowfullscreen="" loading="lazy">
+    </iframe>
+  </section>
+</main>
+
+<footer role="contentinfo">
+  <div class="container">
+    <section>
+      <h2>Холбоо барих мэдээлэл</h2>
+      <address>
+        Имэйл: <a href="mailto:Munkhb4y4r@gmail.com">munkhb4y4r@gmail.com</a><br>
+        Байршил: Улаанбаатар, Монгол
+      </address>
+    </section>
+    <section>
+      <h2>Зохиогчийн эрх</h2>
+      <p>© 2025 6r bag Movies. Бүх эрх хуулиар хамгаалагдсан.</p>
+    </section>
+  </div>
+</footer>
+</body>
+</html>
