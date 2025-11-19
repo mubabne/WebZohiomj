@@ -15,6 +15,7 @@
       --teal-2:#004d4d;
       --cyan:#00ffff;
       --gold:#ffd700;
+      --panel:#2c2c2c;
     }
     *{
       box-sizing:border-box}
@@ -91,49 +92,47 @@
     footer p,footer address{color:var(--muted)}
     footer .legal{border-top:2px solid var(--teal);margin-top:12px;padding-top:12px;text-align:center;color:#888}
 
-     main{
+
+    main{
       padding:16px;
-      max-width:85%;
-      margin:0 auto;
+      max-width:1180px;
+      margin:20px auto;
+      background-color: var(--panel);
+      border-radius: 15px;
+      border:1px solid var(--teal-2);
+      border-radius:15px;
+      box-shadow:0 0 12px rgba(0,0,0,.35)
     }
-    .movie-list {
-      border:var(--gold) 2px solid;
-      display: flex;
-      gap: 20px;
-      justify-content: center;
-      padding: 20px; 
-      border-radius: 8px;
+    h2{
+      color:var(--cyan);
+      border-bottom:2px solid var(--teal-2);padding-bottom:8px;
+      margin-top:0
     }
-    .movie-list legend {
-      background-color: var(--bg);
-      color: var(--cyan); 
-      font-size: 1.8rem;  
-      font-weight: bold;
-      padding: 0 10px;   
-      margin-left: 20px; 
+    .movielist {
+      margin: 0 auto;
     }
-  
+
     .movie {
-      display: flex;
-      gap: 0px;
-      flex-direction: column  ;
-      background-color: #333;
+      background-color: #292929;
       border-radius: 10px;
-      padding: 20px;
-      background-color: #3a3a3a;
-      width: 80%;     
+      margin: 10px 0;
+      display: flex;
+      padding: 10px;
+      width: auto;
       box-shadow: 0 0 10px rgba(0,0,0,0.5);
+      border: var(--gold) 2px solid;
     }
 
     .movie img {
-      width: 460px;
+      width: 300px;
       border-radius: 10px;
-      border: var(--gold) 3px solid;
+      border: var(--cyan) 1px solid;
       display: block;
     }
     .movie-info {
-      flex: 1;
       text-align: justify;
+      padding-left: 20px;
+      padding-right: 5px;
     }
 
     .movie-info h3 {
@@ -173,10 +172,9 @@
   </header>
 
   <main class="main">
-    <fieldset class="movie-list">
-      <legend>Кино ертөнцийн шуугиан</legend>
-
-      <div class="movie">
+    <h2>Кино ертөнцийн шуугиан</h2>
+    <div class="movielist">
+            <div class="movie">
         <img src="assets/posters/a2.webp" alt="Blake Lively болон Justin Baldoni">
         <div class="movie-info">
           <h3>Blake Lively ба Justin Baldoni: “It Ends With Us” киноны маргаан</h3>
@@ -205,7 +203,7 @@
           <p>Sydney Sweeney болон Scooter Braun нарын харилцаа 2025 оны 9-р сард эхэлсэн бөгөөд тэднийг хамтдаа олон нийтийн арга хэмжээнүүдэд харагдсан байна. Sweeney нь саяхан 28 насныхаа төрсөн өдрийг тэмдэглэж, түүний эцэг эхтэйгээ хамт Halloween Horror Nights арга хэмжээнд оролцсон байна. Braun нь алдартай хөгжмийн менежер бөгөөд тэдний харилцаа нь "бодит" бөгөөд "тогтвортой" гэж эх сурвалжууд мэдээлж байна.</p>
         </div>
       </div>
-    </fieldset>
+    </div>
   </main>
 
      <footer role="contentinfo">
