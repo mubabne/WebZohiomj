@@ -22,7 +22,6 @@
     .container{max-width:1180px;margin:0 auto;padding:16px}
     header,footer{background:#000}
 
-    /* Header */
     header .bar{display:flex;align-items:center;gap:16px;padding:10px 0}
     .logo-wrap{display:flex;align-items:center;gap:12px}
     .site-title h1{margin:0;font-size:1.6rem}
@@ -39,7 +38,6 @@
     }
     nav.main a:hover{color:var(--bg);background:var(--gold);text-decoration:none}
 
-    /* Panels */
     section.panel{
       background:var(--panel);border:1px solid var(--teal-2);border-radius:8px;
       padding:16px;margin:16px 0;box-shadow:0 0 12px rgba(0,0,0,.35)
@@ -48,7 +46,6 @@
       color:var(--cyan);border-bottom:2px solid var(--teal-2);padding-bottom:8px;margin-top:0
     }
 
-    /* FLEX “table” (poster | name | trailer) */
     .list-head,.movie-row{
       display:flex;align-items:center;gap:12px;border-bottom:1px solid var(--border);padding:10px 8px
     }
@@ -79,33 +76,34 @@
 <body>
 
 <header role="banner">
-  <div class="container">
-    <div class="bar">
-      <div class="logo-wrap">
-        <img src="assets/logo.svg" alt="6r bag logo" width="64" height="64" />
-        <div class="site-title">
-          <h1>Movies</h1>
-          <p>Онлайн кино сайт</p>
+    <div class="container">
+      <div class="bar">
+        <div class="logo-wrap">
+          <img src="assets/logo.svg" alt="6r bag logo" width="64" height="64" />
+          <div class="site-title">
+            <h1>Movies</h1>
+            <p>Онлайн кино сайт</p>
+          </div>
+        </div>
+
+        <div class="top-links">
+          <a href="login.html">Нэвтрэх</a>
+          <a href="register.html">Бүртгүүлэх</a>
+          <a href="about.html">Бидний тухай</a>
         </div>
       </div>
 
-      <div class="top-links">
-        <a href="login.html">Нэвтрэх</a>
-        <a href="register.html">Бүртгүүлэх</a>
+      <nav class="main">
+        <a href="index.html">Нүүр</a>
+        <a href="genres.html">Төрлүүд</a>
+        <a href="movies.html">Кино жагсаалт</a>
+        <a href="profile.html">Профайл</a>
+        <a href="payment.html">Гишүүнчлэл</a>
+        <a href="shop.html">Дэлгүүр</a>
         <a href="about.html">Бидний тухай</a>
-      </div>
+      </nav>
     </div>
-
-    <nav class="main">
-      <a href="index.html">Нүүр</a> |
-      <a href="login.html">Гарах</a>
-      <a href="profile.html">Profile</a>
-      <a href="payment.html">Гишүүнчлэл</a>
-      <a href="shop.html">Дэлгүүр</a>
-    </nav>
-  </div>
-</header>
-
+  </header>
 <main class="container">
   <section class="panel" aria-labelledby="list-all">
     <h2 id="list-all">Бүх кино (жишээ)</h2>

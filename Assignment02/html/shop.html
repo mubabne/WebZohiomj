@@ -1,234 +1,98 @@
 <!doctype html>
 <html lang="mn">
 <head>
-  <meta charset="utf-8" />
-  <title>6r bag — Киноны дэлгүүр</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta charset="utf-8" />
+<title>6r bag — Киноны дэлгүүр</title>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<style>
+:root {
+  --bg:#1a1a1a; --panel:#2c2c2c; --ink:#f0f0f0; --muted:#9aa0a6;
+  --teal:#008080; --teal-2:#004d4d; --cyan:#00ffff; --gold:#ffd700; --border:#444;
+}
+* { box-sizing: border-box; }
+html, body { height:100%; margin:0; font-family: Arial,system-ui,-apple-system,Segoe UI,Roboto,sans-serif; background:var(--bg); color:var(--ink); line-height:1.6; }
+a { color: var(--gold); text-decoration: none; transition: 0.2s; }
+a:hover { color: var(--cyan); text-decoration: underline; }
 
-  <style>
-    :root {
-      --bg: #1a1a1a;
-      --panel: #2c2c2c;
-      --ink: #f0f0f0;
-      --muted: #9aa0a6;
-      --teal: #008080;
-      --teal-2: #004d4d;
-      --cyan: #00ffff;
-      --gold: #ffd700;
-      --border: #444;
-    }
-    * { box-sizing: border-box; }
-    html, body { height: 100%; }
-    body {
-      margin: 0;
-      font-family: Arial, system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
-      background: var(--bg);
-      color: var(--ink);
-      line-height: 1.6;
-    }
-    a { color: var(--gold); text-decoration: none; transition: color 0.2s; }
-    a:hover { color: var(--cyan); text-decoration: underline; }
-    .container { max-width: 1180px; margin: 0 auto; padding: 16px; }
+.container { max-width:1180px; margin:0 auto; padding:16px; }
 
-    header, footer { background: #000; }
-    header .bar {
-      display: flex; align-items: center; gap: 16px; padding: 10px 0;
-    }
-    .logo-wrap { display: flex; align-items: center; gap: 12px; }
-    .site-title h1 { margin: 0; font-size: 1.6rem; }
-    .site-title p { margin: 2px 0 0; color: var(--muted); font-size: .95rem; }
+header { background:#000; }
+header .bar { display:flex; align-items:center; gap:16px; padding:10px 0; }
+.logo-wrap { display:flex; align-items:center; gap:12px; }
+.site-title h1 { margin:0; font-size:1.6rem; }
+.site-title p { margin:2px 0 0; color:var(--muted); font-size:.95rem; }
+.top-links { display:flex; gap:14px; margin-left:auto; flex-wrap:wrap; }
+.top-links a { color: var(--ink); opacity:.9; }
+.top-links a:hover { opacity:1; color:var(--gold); }
+nav.main {
+  background:#000; border-top:1px solid var(--teal-2); border-bottom:1px solid var(--teal-2);
+  margin-top:8px; padding:10px 0; display:flex; gap:18px; flex-wrap:wrap;
+}
+nav.main a { padding:6px 14px; color:var(--ink); font-weight:bold; text-transform:uppercase; border-radius:4px; }
+nav.main a:hover { color:var(--bg); background:var(--gold); text-decoration:none; }
 
-    .top-links {
-      display: flex; gap: 14px; margin-left: auto; flex-wrap: wrap;
-    }
-    .top-links a { color: var(--ink); opacity: .9; }
-    .top-links a:hover { opacity: 1; color: var(--gold); }
+section.panel { background:var(--panel); border:1px solid var(--teal-2); border-radius:8px; padding:16px; margin:16px 0; box-shadow:0 0 12px rgba(0,0,0,.35); }
+section.panel>h2 { color:var(--cyan); border-bottom:2px solid var(--teal-2); padding-bottom:8px; margin-top:0; text-align:center; }
 
-    nav.main {
-      background: #000;
-      border-top: 1px solid var(--teal-2);
-      border-bottom: 1px solid var(--teal-2);
-      margin-top: 8px;
-      padding: 10px 0;
-      display: flex;
-      gap: 18px;
-      flex-wrap: wrap;
-    }
-    nav.main a {
-      padding: 6px 14px;
-      color: var(--ink);
-      font-weight: bold;
-      text-transform: uppercase;
-      border-radius: 4px;
-    }
-    nav.main a:hover {
-      color: var(--bg);
-      background: var(--gold);
-      text-decoration: none;
-    }
+.product-grid { display:flex; flex-wrap:wrap; gap:16px; justify-content:center; }
 
-    section.panel {
-      background: var(--panel);
-      border: 1px solid var(--teal-2);
-      border-radius: 8px;
-      padding: 16px;
-      margin: 16px 0;
-      box-shadow: 0 0 12px rgba(0,0,0,.35);
-    }
-    section.panel > h2 {
-      color: var(--cyan);
-      border-bottom: 2px solid var(--teal-2);
-      padding-bottom: 8px;
-      margin-top: 0;
-      text-align: center;
-    }
 
-    .product-grid {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 20px;
-      justify-content: center;
-    }
-    .product-card {
-      background-color: #1e1e1e;
-      border: 1px solid var(--teal-2);
-      border-radius: 10px;
-      padding: 15px;
-      text-align: center;
-      box-shadow: 0 0 10px rgba(0,0,0,0.4);
-      transition: transform 0.3s, box-shadow 0.3s;
-      flex: 1 1 220px;
-      max-width: 250px;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between; /* товч доод хэсэгт */
-    }
-    .product-card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 0 20px rgba(0,255,255,0.3);
-    }
-    .product-card img {
-      width: 90%;
-      border-radius: 6px;
-      border: 2px solid var(--gold);
-      margin: 0 auto;
-    }
-    .product-card h3 {
-      color: var(--cyan);
-      margin: 10px 0 5px;
-      font-size: 1rem;
-    }
-    .price {
-      color: var(--gold);
-      font-weight: bold;
-      margin: 8px 0;
-    }
-    .product-card p {
-      font-size: 0.9rem;
-      color: var(--muted);
-      margin-bottom: 10px;
-    }
+.product-card {
+  background: #1e1e1e; 
+  border:1px solid var(--teal-2); 
+  border-radius:10px; 
+  padding:20px;
+  text-align:center; 
+  box-shadow:0 0 12px rgba(0,0,0,0.5);
+  transition: transform 0.3s, box-shadow 0.3s;
+  flex:1 1 220px;
+  max-width:260px;
+  display:flex; 
+  flex-direction:column; 
+  justify-content:space-between;
+}
 
-    /* --- Товчнууд нэг хэмжээтэй --- */
-    .product-card button {
-      background-color: var(--cyan);
-      color: #000;
-      border: none;
-      padding: 10px 0;
-      border-radius: 5px;
-      cursor: pointer;
-      font-weight: bold;
-      transition: 0.3s;
-      width: 100%;
-      max-width: 160px;
-      margin: 0 auto;
-      display: inline-block;
-    }
-    .product-card button:hover {
-      background-color: var(--gold);
-      color: #000;
-    }
+.product-card:hover { transform:translateY(-5px); box-shadow:0 0 18px rgba(0,255,255,0.4); }
 
-    .popup {
-      display: none;
-      position: fixed;
-      z-index: 999;
-      left: 0; top: 0;
-      width: 100%; height: 100%;
-      background: rgba(0,0,0,0.7);
-      justify-content: center;
-      align-items: center;
-    }
-    .popup-content {
-      background: #222;
-      padding: 25px;
-      border-radius: 10px;
-      width: 320px;
-      text-align: center;
-      border: 1px solid var(--cyan);
-    }
-    .popup-content h3 { color: var(--gold); }
-    .popup-content input {
-      width: 90%;
-      padding: 8px;
-      margin: 8px 0;
-      border-radius: 5px;
-      border: none;
-      outline: none;
-    }
-    .popup-content button {
-      margin-top: 10px;
-      padding: 8px 14px;
-      border: none;
-      border-radius: 5px;
-      font-weight: bold;
-      cursor: pointer;
-    }
-    .popup-content .close {
-      background: #ff3333;
-      color: white;
-    }
-    .popup-content .submit {
-      background: var(--cyan);
-      color: black;
-    }
+.product-card img { width:80%; border-radius:6px; border:2px solid var(--gold); margin:0 auto; }
+.product-card h3 { color:var(--cyan); margin:10px 0 6px; font-size:1rem; }
+.product-card .price { color:var(--gold); font-weight:bold; margin:8px 0; font-size:1rem; }
+.product-card p { font-size:.9rem; color:var(--muted); margin-bottom:10px; }
+.product-card button {
+  background:var(--cyan); color:#000; border:none; padding:10px 0; border-radius:6px; cursor:pointer;
+  font-weight:bold; transition:.3s; width:100%; max-width:150px; margin:0 auto; display:inline-block;
+}
+.product-card button:hover { background:var(--gold); color:#000; }
 
-    footer .container {
-      padding: 18px 16px;
-    }
-    footer h2 {
-      margin: 0 0 8px;
-      color: var(--cyan);
-    }
-    footer p, footer address {
-      color: var(--muted);
-    }
-    footer .legal {
-      border-top: 2px solid var(--teal);
-      margin-top: 12px;
-      padding-top: 12px;
-      text-align: center;
-      color: #888;
-    }
 
-    @media (max-width: 600px) {
-      .product-card { flex-basis: 46%; max-width: none; }
-    }
-    @media (max-width: 380px) {
-      .product-card { flex-basis: 100%; }
-    }
-  </style>
+.popup { display:none; position:fixed; z-index:999; inset:0; background:rgba(0,0,0,0.7); justify-content:center; align-items:center; }
+.popup-content { 
+  background:#222; padding:50px; border-radius:10px; width:500px; max-width:90%; text-align:center; border:1px solid var(--cyan); 
+}
+.popup-content h3 { color:var(--gold); }
+.popup-content input { width:95%; padding:10px; margin:10px 0; border-radius:5px; border:none; outline:none; font-size:1rem; }
+.popup-content button { margin-top:10px; padding:10px 15px; border:none; border-radius:5px; font-weight:bold; cursor:pointer; font-size:1rem; }
+.popup-content .close { background:#ff3333; color:white; }
+.popup-content .submit { background:var(--cyan); color:black; }
+
+footer { background:#000; color:var(--muted); padding:18px 16px; }
+footer h2 { color:var(--cyan); margin-bottom:8px; }
+footer address, footer p { color:var(--muted); }
+footer .legal { border-top:2px solid var(--teal); margin-top:12px; padding-top:12px; text-align:center; color:#888; }
+
+@media (max-width:600px) { .product-card{ flex-basis:46%; max-width:none; } }
+@media (max-width:380px) { .product-card{ flex-basis:100%; } }
+</style>
 </head>
-
 <body>
-  <header role="banner">
+<header role="banner">
     <div class="container">
       <div class="bar">
         <div class="logo-wrap">
           <img src="assets/logo.svg" alt="6r bag logo" width="64" height="64" />
           <div class="site-title">
-            <h1>CinexShop</h1>
-            <p>Киноны албан ёсны барааны дэлгүүр</p>
+            <h1>Movies</h1>
+            <p>Онлайн кино сайт</p>
           </div>
         </div>
 
@@ -241,129 +105,137 @@
 
       <nav class="main">
         <a href="index.html">Нүүр</a>
-        <a href="#baraa">Бараа</a>
-        <a href="#tuuh">Бидний тухай</a>
-        <a href="#holboo">Холбоо</a>
+        <a href="genres.html">Төрлүүд</a>
+        <a href="movies.html">Кино жагсаалт</a>
+        <a href="profile.html">Профайл</a>
+        <a href="payment.html">Гишүүнчлэл</a>
+        <a href="shop.html">Дэлгүүр</a>
+        <a href="about.html">Бидний тухай</a>
       </nav>
     </div>
   </header>
 
-  <main class="container">
+<main class="container">
+  <section class="panel" id="nuur">
+    <h2>🎬 Манай дэлгүүрт тавтай морилно уу!</h2>
+    <p style="text-align:center;">Кино сонирхогч танд зориулсан постер, стикер, цуглуулгын фигурын дэлгүүр. Алдартай бүтээлүүдийн албан ёсны барааг хүргэнэ.</p>
+  </section>
 
-    <section class="panel" id="nuur">
-      <h2>🎬 Манай дэлгүүрт тавтай морилно уу!</h2>
-      <p style="text-align:center;">Кино сонирхогч танд зориулсан постер, стикер, цуглуулгын фигурын дэлгүүр.<br>Алдартай бүтээлүүдийн албан ёсны барааг хямд үнээр хүргэнэ.</p>
-    </section>
-
-    <section class="panel" id="baraa">
-      <h2>🎁 Барааны жагсаалт</h2>
-      <div class="product-grid">
-        <div class="product-card">
-          <img src="../html/assets/shop/headphones.jpg" alt="Avengers Poster">
-          <h3>Avengers Poster</h3>
-          <p class="price">₮25,000</p>
-          <p>Marvel-ийн албан ёсны постер. Материал: хатуу картон, хэмжээ A3.</p>
-          <button onclick="openPopup()">Захиалах</button>
-        </div>
-        <div class="product-card">
-          <img src="../html/assets/posters/28dayslater.jpg" alt="Star Wars Sticker">
-          <h3>Star Wars Sticker</h3>
-          <p class="price">₮10,000</p>
-          <p>Star Wars цувралын 24 ширхэг стикерийн багц.</p>
-          <button onclick="openPopup()">Захиалах</button>
-        </div>
-        <div class="product-card">
-          <img src="assets/posters/After.jpg" alt="Iron Man Figure">
-          <h3>Iron Man Figure</h3>
-          <p class="price">₮85,000</p>
-          <p>Металл материалтай, 18 см өндөртэй Iron Man дүр.</p>
-          <button onclick="openPopup()">Захиалах</button>
-        </div>
-        <div class="product-card">
-          <img src="assets/posters/Astronaut.jpg" alt="Ponyo Poster">
-          <h3>Ponyo Poster</h3>
-          <p class="price">₮25,000</p>
-          <p>Ghibli студийн Ponyo киноны постер. Хэмжээ A3.</p>
-          <button onclick="openPopup()">Захиалах</button>
-        </div>
-        <div class="product-card">
-          <img src="assets/posters/Paradise.jpg" alt="Avatar Poster">
-          <h3>Avatar Poster</h3>
-          <p class="price">₮25,000</p>
-          <p>Avatar киноны постер. Хэмжээ A3.</p>
-          <button onclick="openPopup()">Захиалах</button>
-        </div>
-        <div class="product-card">
-          <img src="assets/posters/Raven.jpg" alt="Gravity Falls Sticker">
-          <h3>Gravity Falls Sticker</h3>
-          <p class="price">₮15,000</p>
-          <p>Gravity Falls цувралын 24 ширхэг стикерийн багц.</p>
-          <button onclick="openPopup()">Захиалах</button>
-        </div>
-        <div class="product-card">
-          <img src="assets/posters/TheBoy.jpg" alt="Fallen angel poster">
-          <h3>Fallen angel poster</h3>
-          <p class="price">₮25,000</p>
-          <p>Fallen angel киноны постер. Хэмжээ A3.</p>
-          <button onclick="openPopup()">Захиалах</button>
-        </div>
-        <div class="product-card">
-          <img src="assets/posters/TheDarkKnight.jpg" alt="Aftersun poster">
-          <h3>Aftersun poster</h3>
-          <p class="price">₮25,000</p>
-          <p>Aftersun киноны постер. Хэмжээ A3.</p>
-          <button onclick="openPopup()">Захиалах</button>
-        </div>
+  <section class="panel" id="baraa">
+    <h2>🎁 Барааны жагсаалт</h2>
+    <div class="product-grid">
+      <div class="product-card">
+        <img src="avengers poster.jpg" alt="Avengers Poster">
+        <h3>Avengers Poster</h3>
+        <p class="price">₮25,000</p>
+        <p>Marvel-ийн албан ёсны постер. Материал: хатуу картон, хэмжээ A3.</p>
+        <button onclick="addToCart('Avengers Poster','₮25,000')">🛒 Захиалах</button>
       </div>
-    </section>
-
-    <section class="panel" id="tuuh">
-      <h2>🏢 Бидний тухай</h2>
-      <p style="text-align:center;">CinexShop нь 2025 онд байгуулагдсан, кино сонирхогчдод зориулсан онлайн дэлгүүр юм.<br>Бид өндөр чанартай постер, стикер, цуглуулгын фигүрүүдыг хүргэдэг.</p>
-    </section>
-
-    <section class="panel" id="holboo">
-      <h2>📞 Холбоо барих</h2>
-      <p style="text-align:center;">И-мэйл: <a href="mailto:cinex12@gmail.com">cinex12@gmail.com</a> | Утас: 99642538 | Facebook: <a href="#">@CinexShop</a></p>
-    </section>
-
-  </main>
-
-  <footer role="contentinfo">
-    <div class="container">
-      <section>
-        <h2>Холбоо барих</h2>
-        <address>
-          Имэйл: <a href="mailto:cinex12@gmail.com">cinex12@gmail.com</a><br>
-          Байршил: Улаанбаатар, Монгол
-        </address>
-      </section>
-      <div class="legal">
-        <p>© 2025 CinexShop. Бүх эрх хуулиар хамгаалагдсан.</p>
+      <div class="product-card">
+        <img src="star war sticker.png" alt="Star Wars Sticker">
+        <h3>Star Wars Sticker</h3>
+        <p class="price">₮10,000</p>
+        <p>Star Wars цувралын 24 ширхэг стикерийн багц.</p>
+        <button onclick="addToCart('Star Wars Sticker','₮10,000')">🛒 Захиалах</button>
+      </div>
+      <div class="product-card">
+        <img src="iron man figure.jpg" alt="Iron Man Figure">
+        <h3>Iron Man Figure</h3>
+        <p class="price">₮85,000</p>
+        <p>Металл материалтай, 18 см өндөртэй Iron Man дүр.</p>
+        <button onclick="addToCart('Iron Man Figure','₮85,000')">🛒 Захиалах</button>
+      </div>
+      <div class="product-card">
+        <img src="ponyo.jpg" alt="Ponyo Poster">
+        <h3>Ponyo Poster</h3>
+        <p class="price">₮25,000</p>
+        <p>Ghibli студийн Ponyo киноны постер. Хэмжээ A3.</p>
+        <button onclick="addToCart('Ponyo Poster','₮25,000')">🛒 Захиалах</button>
+      </div>
+      <div class="product-card">
+        <img src="Avatar.jpg" alt="Avatar Poster">
+        <h3>Avatar Poster</h3>
+        <p class="price">₮25,000</p>
+        <p>Avatar киноны постер. Хэмжээ A3.</p>
+        <button onclick="addToCart('Avatar Poster','₮25,000')">🛒 Захиалах</button>
+      </div>
+      <div class="product-card">
+        <img src="gravity falls sticker.png" alt="Gravity Falls Sticker">
+        <h3>Gravity Falls Sticker</h3>
+        <p class="price">₮15,000</p>
+        <p>Gravity Falls цувралын 24 ширхэг стикерийн багц.</p>
+        <button onclick="addToCart('Gravity Falls Sticker','₮15,000')">🛒Захиалах</button>
+      </div>
+      <div class="product-card">
+        <img src="fallen angels.jpg" alt="Fallen angel poster">
+        <h3>Fallen Angel Poster</h3>
+        <p class="price">₮25,000</p>
+        <p>Fallen angel киноны постер. Хэмжээ A3.</p>
+        <button onclick="addToCart('Fallen Angel Poster','₮25,000')">🛒 Захиалах</button>
+      </div>
+      <div class="product-card">
+        <img src="aftersun.jpg" alt="Aftersun poster">
+        <h3>Aftersun Poster</h3>
+        <p class="price">₮25,000</p>
+        <p>Aftersun киноны постер. Хэмжээ A3.</p>
+        <button onclick="addToCart('Aftersun Poster','₮25,000')">🛒 Захиалах</button>
       </div>
     </div>
-  </footer>
+  </section>
 
-  <div class="popup" id="orderPopup">
-    <div class="popup-content">
-      <h3>🛍 Захиалга</h3>
-      <input type="text" placeholder="Нэрээ оруулна уу">
-      <input type="text" placeholder="Утасны дугаар">
-      <div>
-        <button class="close" onclick="closePopup()">Болих</button>
-        <button class="submit" onclick="submitOrder()">Илгээх</button>
-      </div>
+  <section class="panel" id="tuuh">
+    <h2>🏢 Бидний тухай</h2>
+    <p style="text-align:center;">CinexShop нь 2025 онд байгуулагдсан, кино сонирхогчдод зориулсан онлайн дэлгүүр юм. Бид өндөр чанартай постер, стикер, цуглуулгын фигүрүүдыг албан ёсны дэлгүүртэй хамтран ажиллаж борлуулдаг.</p>
+  </section>
+
+  <section class="panel" id="holboo">
+    <h2>📞 Холбоо барих</h2>
+    <p style="text-align:center;">И-мэйл: <a href="mailto:cinex12@gmail.com">cinex12@gmail.com</a> | Утас: 99642538 | Facebook: <a href="#">@CinexShop</a></p>
+  </section>
+</main>
+
+<footer>
+  <div class="container">
+    <section>
+      <h2>Холбоо барих</h2>
+      <address>Имэйл: <a href="mailto:cinex12@gmail.com">cinex12@gmail.com</a><br>Байршил: БГД 29р хороо Улаанбаатар, Монгол</address>
+    </section>
+    <div class="legal"><p>© 2025 CinexShop. Бүх эрх хуулиар хамгаалагдсан.</p></div>
+  </div>
+</footer>
+
+
+<div class="popup" id="cartPopup">
+  <div class="popup-content">
+    <h3>🛍 Сагс</h3>
+    <p id="cartItemName">Бараа: </p>
+    <p id="cartItemPrice">Үнэ: </p>
+    <input type="text" placeholder="Нэрээ оруулна уу">
+    <input type="text" placeholder="Утасны дугаар">
+    <div style="display:flex; justify-content:space-around; margin-top:10px;">
+      <button class="close" onclick="closeCart()">Болих</button>
+      <button class="submit" onclick="submitCart()">Илгээх</button>
     </div>
   </div>
+</div>
 
-  <script>
-    const popup = document.getElementById("orderPopup");
-    function openPopup() { popup.style.display = "flex"; }
-    function closePopup() { popup.style.display = "none"; }
-    function submitOrder() {
-      alert("✅ Захиалга амжилттай илгээгдлээ!");
-      closePopup();
-    }
-  </script>
+<script>
+const cartPopup = document.getElementById("cartPopup");
+const cartItemName = document.getElementById("cartItemName");
+const cartItemPrice = document.getElementById("cartItemPrice");
+
+function addToCart(name, price) {
+  cartItemName.textContent = "Бараа: " + name;
+  cartItemPrice.textContent = "Үнэ: " + price;
+  cartPopup.style.display = "flex";
+}
+
+function closeCart() { cartPopup.style.display = "none"; }
+
+function submitCart() {
+  alert("✅ Захиалга амжилттай илгээгдлээ!");
+  closeCart();
+}
+</script>
 </body>
 </html>
