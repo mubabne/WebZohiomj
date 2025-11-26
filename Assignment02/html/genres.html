@@ -53,9 +53,18 @@
     .col-no{flex:0 0 50px;text-align:center}
     .col-name{flex:0 0 180px}
     .col-desc{flex:1 1 auto;min-width:240px}
-    .col-example{flex:0 0 220px}
-    .genre-row:nth-child(even){background:#2b2b2b}
-    .genre-row:hover{background:#323232}
+
+    a.genre-row{
+      color:var(--ink);
+      text-decoration:none;
+    }
+    a.genre-row:nth-of-type(even){background:#2b2b2b}
+    a.genre-row:nth-of-type(odd){background:#262626}
+    a.genre-row:hover{
+      background:#323232;
+      color:var(--ink);
+      text-decoration:none;
+    }
 
     @media (max-width:820px){
       .list-head{display:none}
@@ -63,7 +72,6 @@
       .col-no{flex:0 0 50px}
       .col-name{flex:1 1 220px}
       .col-desc{flex:1 1 100%}
-      .col-example{flex:1 1 220px}
       .label{display:inline-block;color:var(--muted);margin-right:8px}
     }
 
@@ -114,23 +122,29 @@
         <div class="col-desc">Тайлбар</div>
       </div>
 
-      <div class="genre-row" role="row" >
+      <a class="genre-row" role="row" href="adventure.html">
         <div class="col-no">1</div>
-        <div class="col-name">Адал явдалт &amp Тулаант</div>
+        <div class="col-name">Адал явдалт &amp; тулаант</div>
         <div class="col-desc">Эрэл хайгуул, аялал, зоригтой үйл явдлуудыг харуулдаг.</div>
-      </div>
-      <div class="genre-row" role="row">
+      </a>
+
+      <a class="genre-row" role="row" href="horror.html">
         <div class="col-no">2</div>
         <div class="col-name">Аймшгийн</div>
         <div class="col-desc">Сэтгэл түгшээх, айдас төрүүлэх үйл явдалтай.</div>
-      </div>
-      <div class="genre-row" role="row">
-        <a href="new.html">a</a>
-        <a href="news.html">b</a>
-        <a href="paparazzi.html">c</a>
-          <a href="ranking.html">d</a>
-          <a href="record.html"> e</a>
-        </div>  
+      </a>
+
+      <a class="genre-row" role="row" href="comedy.html">
+        <div class="col-no">3</div>
+        <div class="col-name">Комеди</div>
+        <div class="col-desc">Инээмсэглэл, хөгжилтэй байдал, хөнгөн уур амьсгалтай кинонууд.</div>
+      </a>
+
+      <a class="genre-row" role="row" href="romance.html">
+        <div class="col-no">4</div>
+        <div class="col-name">Романтик</div>
+        <div class="col-desc">Хайр дурлал, харилцаа, сэтгэл хөдлөлийг төвд нь тавьсан.</div>
+      </a>
     </section>
   </main>
 
@@ -139,7 +153,7 @@
       <section>
         <h2>Холбоо барих</h2>
         <address>
-          Имэйл: <a href="mailto:Munkhb4y4r@gmail.com">munkhb4y4r@gmail.com</a><br />
+          Имэйл: <a href="mailto:Munkhb4y4r@gmail.com">Munkhb4y4r@gmail.com</a><br />
           Байршил: Улаанбаатар, Монгол
         </address>
       </section>
