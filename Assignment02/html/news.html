@@ -14,6 +14,7 @@
       --teal-2:#004d4d;
       --cyan:#00ffff;
       --gold:#ffd700;
+      --panel:#2c2c2c;
     }
     *{
       box-sizing:border-box}
@@ -90,44 +91,46 @@
     footer p,footer address{color:var(--muted)}
     footer .legal{border-top:2px solid var(--teal);margin-top:12px;padding-top:12px;text-align:center;color:#888}
 
-     main{
+    main{
       padding:16px;
       max-width:1180px;
-      margin:0 auto;
+      margin:20px auto;
+      background-color: var(--panel);
+      border-radius: 15px;
+      border:1px solid var(--teal-2);
+      border-radius:15px;
+      box-shadow:0 0 12px rgba(0,0,0,.35)
     }
-    .movie-list {
-      border:var(--gold) 2px solid;
+    h2{
+      color:var(--cyan);
+      border-bottom:2px solid var(--teal-2);
+      padding-bottom:8px;
+      margin-top:0;
+    }
+    .movielist {
       display: flex;
-      flex-wrap: wrap;
       gap: 20px;
       justify-content: center;
-      padding: 20px; 
-      border-radius: 8px;
-    }
-    .movie-list legend {
-      background-color: var(--bg);
-      color: var(--cyan); 
-      font-size: 1.8rem;  
-      font-weight: bold;
-      padding: 0 10px;   
-      margin-left: 20px; 
+      margin: 0 auto;
     }
 
+
     .movie {
-      background-color: #2c2c2c;
-      padding: 10px;
+      background-color: #292929;
       border-radius: 10px;
+      padding: 10px;
       width: 300px;
       box-shadow: 0 0 10px rgba(0,0,0,0.5);
+      border: var(--gold) 2px solid;
     }
 
     .movie img {
       width: 100%;
       border-radius: 5px;
-      border: var(--gold) 3px solid;
+      border:var(--cyan) 1px solid;
       display: block;
+      height: 500px;
     }
-
 
      .movie img{
       transition: transform 0.3s;
@@ -151,11 +154,68 @@
       font-size: 14px;
       padding-left: 20px;
     }
+
+    
+.dropdown {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+.dropbtn {
+  background: none;
+  color: var(--ink);
+  padding: 10px 14px;
+  font-weight: bold;
+  text-transform: uppercase;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: 0.2s;
+  border: none;     
+}
+
+.dropbtn:hover {
+  background: var(--gold);
+  color: var(--bg);
+}
+
+.dropcontent {
+  display: none;
+  flex-direction: column;
+  position: absolute;
+  top: 105%;            
+  left: 0;
+  background: #000;   
+  border: 1px solid var(--teal-2);
+  border-radius: 4px;
+
+  min-width: 170px;
+  padding: 4px 0;       
+  box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+}
+
+.dropcontent a {
+  padding: 8px 10px;
+  color: var(--ink);
+  text-transform: uppercase;
+
+  display: flex;
+  align-items: center;
+  transition: 0.2s;
+}
+
+.dropcontent a:hover {
+  background: var(--gold);
+  color: var(--bg);
+}
+.dropdown:hover .dropcontent {
+  display: flex;
+}
+
   </style>
 </head>
 
 <body>
-  <header role="banner">
+   <header role="banner">
     <div class="container">
       <div class="bar">
         <div class="logo-wrap">
@@ -186,9 +246,8 @@
   </header>
 
   <main class="main">
-    <fieldset class="movie-list">
-      <legend>Дэлхий дахинаа шинээр нээлтээ хийж байгаа кинонууд</legend>
-
+    <h2>Дэлхий дахинаа шинээр нээлтээ хийж байгаа кинонууд</h2>
+    <div class="movielist">
         <div class="movie">
           <a href="assets/trailers/rave.mp4">
             <img src="assets/posters/Raven.jpg" alt="Rave кино зураг">
@@ -255,7 +314,7 @@
             </li>
           </ul>
         </div>
-    </fieldset>
+    </div>
   </main>
 
      <footer role="contentinfo">

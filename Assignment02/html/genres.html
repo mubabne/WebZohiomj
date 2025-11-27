@@ -79,6 +79,64 @@
     footer h2{margin:0 0 8px;color:var(--cyan)}
     footer p,footer address{color:var(--muted)}
     footer .legal{border-top:2px solid var(--teal);margin-top:12px;padding-top:12px;text-align:center;color:#888}
+
+    .dropdown {
+      position: relative;
+      display: inline-flex;
+      align-items: center;
+      margin-bottom: 12px;
+    }
+
+    .dropbtn {
+      background: none;
+      color: var(--ink);
+      padding: 8px 14px;
+      font-weight: bold;
+      text-transform: uppercase;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: 0.2s;
+      border: 1px solid var(--teal-2);
+    }
+
+    .dropbtn:hover {
+      background: var(--gold);
+      color: var(--bg);
+    }
+
+    .dropcontent {
+      display: none;
+      flex-direction: column;
+      position: absolute;
+      top: 110%;       
+      left: 0;
+      background: #000;
+      border: 1px solid var(--teal-2);
+      border-radius: 4px;
+      min-width: 170px;
+      padding: 4px 0;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+      z-index: 10;
+    }
+
+    .dropcontent a {
+      padding: 8px 10px;
+      color: var(--ink);
+      text-transform: uppercase;
+      display: flex;
+      align-items: center;
+      transition: 0.2s;
+      text-decoration: none;
+    }
+
+    .dropcontent a:hover {
+      background: var(--gold);
+      color: var(--bg);
+    }
+
+    .dropdown:hover .dropcontent {
+      display: flex;
+    }
   </style>
 </head>
 
@@ -115,7 +173,20 @@
 
   <main role="main" class="container">
     <section class="panel" aria-labelledby="genres-list" style="min-height: 80vh;">
+
+      <div class="dropdown">
+        <button class="dropbtn">Онцлох</button>
+        <div class="dropcontent">
+          <a href="new.html">Шинэ</a>
+          <a href="news.html">Мэдээ</a>
+          <a href="paparazzi.html">Папарацци</a>
+          <a href="ranking.html">Өндөр үнэлгээтэй</a>
+          <a href="record.html">Үзэх</a>
+        </div>
+      </div>
+
       <h2 id="genres-list">Төрлүүдийн жагсаалт</h2>
+
       <div class="list-head" role="row">
         <div class="col-no">№</div>
         <div class="col-name">Төрлийн нэр</div>
