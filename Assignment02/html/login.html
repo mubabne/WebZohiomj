@@ -1,40 +1,72 @@
 <!DOCTYPE html>
 <html lang="mn">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Нэвтрэх хуудас</title>
 
   <style>
+    :root {
+      --bg: #1a1a1a;
+      --panel: #2c2c2c;
+      --ink: #f0f0f0;
+      --muted: #9aa0a6;
+      --teal: #008080;
+      --teal-2: #004d4d;
+      --cyan: #00ffff;
+      --gold: #ffd700;
+      --border: #444;
+      --error-red: #cc0000;
+      --success-green: #00cc00;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html,
     body {
+      height: 100%;
       margin: 0;
-      font-family: Arial, sans-serif;
-      background-color: #1a1a1a;
-      color: #f0f0f0;
+      font-family: Arial, system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+      background: var(--bg);
+      color: var(--ink);
       line-height: 1.6;
     }
 
+    a {
+      color: var(--gold);
+      text-decoration: none;
+      transition: 0.2s;
+    }
+
+    a:hover {
+      color: var(--cyan);
+      text-decoration: underline;
+    }
+
     .container {
-      max-width: 1000px;
+      max-width: 1180px;
       margin: 0 auto;
       padding: 16px;
     }
 
-    header, footer {
-      background-color: #000;
-      color: #f0f0f0;
+    header {
+      background: #000;
     }
-    .bar {
+
+    header .bar {
       display: flex;
       align-items: center;
-      justify-content: space-between;
+      gap: 16px;
       padding: 10px 0;
     }
 
     .logo-wrap {
       display: flex;
       align-items: center;
-      gap: 10px;
+      gap: 12px;
     }
 
     .site-title h1 {
@@ -44,62 +76,69 @@
 
     .site-title p {
       margin: 2px 0 0;
-      color: #aaa;
-      font-size: 0.9rem;
+      color: var(--muted);
+      font-size: .95rem;
+    }
+
+    .top-links {
+      display: flex;
+      gap: 14px;
+      margin-left: auto;
+      flex-wrap: wrap;
     }
 
     .top-links a {
-      color: #f0f0f0;
-      text-decoration: none;
-      margin-left: 14px;
+      color: var(--ink);
+      opacity: .9;
     }
 
     .top-links a:hover {
-      color: #ffd700;
+      opacity: 1;
+      color: var(--gold);
     }
+
     nav.main {
-      background-color: #000;
-      border-top: 1px solid #004d4d;
-      border-bottom: 1px solid #004d4d;
+      background: #000;
+      border-top: 1px solid var(--teal-2);
+      border-bottom: 1px solid var(--teal-2);
+      margin-top: 8px;
       padding: 10px 0;
       display: flex;
+      gap: 18px;
       flex-wrap: wrap;
-      gap: 15px;
     }
 
     nav.main a {
-      color: #f0f0f0;
-      text-transform: uppercase;
+      padding: 6px 14px;
+      color: var(--ink);
       font-weight: bold;
-      text-decoration: none;
-      padding: 6px 12px;
+      text-transform: uppercase;
       border-radius: 4px;
     }
 
     nav.main a:hover {
-      background-color: #ffd700;
-      color: #000;
+      color: var(--bg);
+      background: var(--gold);
+      text-decoration: none;
     }
-    .panel {
-      background-color: #2c2c2c;
-      border: 1px solid #004d4d;
+
+    section.panel {
+      background: var(--panel);
+      border: 1px solid var(--teal-2);
       border-radius: 8px;
-      padding: 24px;
-      margin: 24px 0;
-      box-shadow: 0 0 10px rgba(0,0,0,0.5);
+      padding: 16px;
+      margin: 16px 0;
+      box-shadow: 0 0 12px rgba(0, 0, 0, .35);
     }
 
-    .panel h2 {
-      color: #00ffff;
-      border-bottom: 2px solid #004d4d;
+    section.panel>h2 {
+      color: var(--cyan);
+      border-bottom: 2px solid var(--teal-2);
       padding-bottom: 8px;
+      margin-top: 0;
       text-align: center;
     }
 
-    p.intro {
-      text-align: center;
-      margin-bottom: 20px;
-    }
     form {
       display: flex;
       flex-direction: column;
@@ -110,13 +149,13 @@
 
     label {
       font-weight: bold;
-      color: #00ffff;
+      color: var(--cyan);
     }
 
     input {
       padding: 10px;
       border-radius: 5px;
-      border: 1px solid #008080;
+      border: 1px solid var(--teal);
       background-color: #0b0c10;
       color: #fff;
       font-size: 15px;
@@ -124,12 +163,12 @@
 
     input:focus {
       outline: none;
-      border-color: #00ffff;
-      box-shadow: 0 0 5px #00ffff;
+      border-color: var(--cyan);
+      box-shadow: 0 0 5px var(--cyan);
     }
 
     button {
-      background-color: #008080;
+      background-color: var(--teal);
       color: #fff;
       font-weight: bold;
       padding: 12px;
@@ -141,7 +180,7 @@
     }
 
     button:hover {
-      background-color: #ffd700;
+      background-color: var(--gold);
       color: #000;
     }
 
@@ -151,42 +190,111 @@
     }
 
     .back-link a {
-      color: #00ffff;
+      color: var(--cyan);
       text-decoration: none;
     }
 
     .back-link a:hover {
       text-decoration: underline;
     }
-    footer .container {
+
+    footer {
+      background: #000;
+      color: var(--muted);
       padding: 18px 16px;
     }
 
     footer h2 {
-      margin: 0 0 8px;
-      color: #00ffff;
+      color: var(--cyan);
+      margin-bottom: 8px;
     }
 
-    footer p, footer address {
-      color: #9aa0a6;
+    footer address,
+    footer p {
+      color: var(--muted);
     }
 
     footer .legal {
-      border-top: 2px solid #008080;
+      border-top: 2px solid var(--teal);
       margin-top: 12px;
       padding-top: 12px;
       text-align: center;
       color: #888;
     }
 
+    /* Modal (Popup) Style START */
+
+    /* Модал дэлгэцийг бүрхэх хэсэг */
+    .modal-backdrop {
+      display: none;
+      position: fixed;
+      z-index: 1000;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      overflow: auto;
+      background-color: rgba(0, 0, 0, 0.7);
+      backdrop-filter: blur(5px);
+    }
+
+    .modal-content {
+      background-color: var(--panel);
+      margin: 15% auto;
+      padding: 30px;
+      border: 3px solid var(--cyan);
+      border-radius: 10px;
+      width: 80%;
+      max-width: 400px;
+      text-align: center;
+      box-shadow: 0 0 25px rgba(0, 255, 255, 0.5);
+      animation: fadeIn 0.3s ease-out;
+    }
+
+    .modal-content h3 {
+      margin-top: 0;
+      color: var(--gold);
+      font-size: 1.5rem;
+    }
+
+    .modal-message {
+      margin: 20px 0;
+      font-size: 1.1rem;
+    }
+
+    .modal-content.error {
+      border-color: var(--error-red);
+      box-shadow: 0 0 25px rgba(204, 0, 0, 0.5);
+    }
+
+    .modal-content.success {
+      border-color: var(--success-green);
+      box-shadow: 0 0 25px rgba(0, 204, 0, 0.5);
+    }
+
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(-20px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* Модал (Popup) Style END */
   </style>
 </head>
+
 <body>
-  <header>
+  <header role="banner">
     <div class="container">
       <div class="bar">
         <div class="logo-wrap">
-          <img src="assets/logo.svg" alt="6r bag logo" width="60" height="60">
+          <img src="assets/logo.svg" alt="6r bag logo" width="64" height="64">
           <div class="site-title">
             <h1>Movies</h1>
             <p>Онлайн кино сайт</p>
@@ -206,13 +314,14 @@
         <a href="profile.html">Профайл</a>
         <a href="payment.html">Гишүүнчлэл</a>
         <a href="shop.html">Дэлгүүр</a>
+        <a href="about.html">Бидний тухай</a>
       </nav>
     </div>
   </header>
   <main class="container">
     <section class="panel">
       <h2>Нэвтрэх</h2>
-      
+
       <form id="loginForm">
         <label for="username">Хэрэглэгчийн нэр:</label>
         <input type="text" id="username" name="username" required>
@@ -220,6 +329,7 @@
         <label for="password">Нууц үг:</label>
         <input type="password" id="password" name="password" required>
 
+        <!-- submitLogin() функц дуудах товч -->
         <button type="button" onclick="submitLogin()">Нэвтрэх</button>
       </form>
 
@@ -245,5 +355,70 @@
     </div>
   </footer>
 
+  <div id="loginModal" class="modal-backdrop">
+    <div class="modal-content">
+      <h3 id="modalTitle">Нэвтрэх Оролдлого</h3>
+      <p id="modalMessage" class="modal-message">Хэрэглэгчийн нэр эсвэл нууц үг хоосон байна.</p>
+      <button onclick="closeModal()">Хаах</button>
+    </div>
+  </div>
+
+
+  <script>
+    const modal = document.getElementById('loginModal');
+    const modalContent = modal.querySelector('.modal-content');
+    const modalTitle = document.getElementById('modalTitle');
+    const modalMessage = document.getElementById('modalMessage');
+
+    function showModal(title, message, isSuccess) {
+      modalTitle.innerText = title;
+      modalMessage.innerText = message;
+
+
+      modalContent.classList.remove('error', 'success');
+      if (isSuccess === true) {
+        modalContent.classList.add('success');
+      } else if (isSuccess === false) {
+        modalContent.classList.add('error');
+      } else {
+
+      }
+
+      modal.style.display = 'block';
+    }
+
+    function closeModal() {
+      modal.style.display = 'none';
+    }
+
+    window.onclick = function (event) {
+      if (event.target == modal) {
+        closeModal();
+      }
+    }
+
+    function submitLogin() {
+      const username = document.getElementById('username').value.trim();
+      const password = document.getElementById('password').value.trim();
+
+      if (username === '' || password === '') {
+        showModal('Алдаа!', 'Хэрэглэгчийн нэр болон нууц үгийг заавал бөглөнө үү.', false);
+        return;
+      }
+
+      if (username === 'admin' && password === '12345') {
+        showModal('Амжилттай!', 'Та амжилттай нэвтэрлээ. Үндсэн хуудас руу шилжиж байна...', true);
+
+        setTimeout(() => {
+          window.location.href = 'index.html';
+        }, 1500);
+
+      } else {
+        showModal('Алдаа!', 'Хэрэглэгчийн нэр эсвэл нууц үг буруу байна.', false);
+      }
+    }
+  </script>
+
 </body>
+
 </html>
