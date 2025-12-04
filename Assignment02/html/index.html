@@ -385,11 +385,16 @@
           item.classList.remove("active", "left", "right", "left2", "right2");
           const pos = (i - index + total) % total;
 
-          if (pos === 0)      item.classList.add("active");
-          else if (pos === 1) item.classList.add("right");
-          else if (pos === 2) item.classList.add("right2");
-          else if (pos === total - 1) item.classList.add("left");
-          else if (pos === total - 2) item.classList.add("left2");
+          if (pos === 0) 
+            item.classList.add("active");
+          else if (pos === 1)
+            item.classList.add("right");
+          else if (pos === 2) 
+            item.classList.add("right2");
+          else if (pos === total - 1) 
+            item.classList.add("left");
+          else if (pos === total - 2) 
+            item.classList.add("left2");
         });
       }
 
